@@ -140,13 +140,17 @@
     }
     .bottomdiv {
       padding-top: 70px;
+      padding-left: 30px;
       justify-content: space-between;
     }
     .textdiv {
-      width: 40%;
+      width: 65%;
     }
     .imagediv {
       align-self: center;
+    }
+    #expo{
+        padding-left: 110px;
     }
   }
 
