@@ -7,14 +7,23 @@ function Regulations() {
   return (
     <>
       <div className={css.bg}>
-        <h1 className="text-white text-3xl p-4 pl-12 pt-4" id={css.heading}>Regulations</h1>
-        <div className={css.container}>
-          <div className={css.imagediv}>
-            <Image alt="ieee" src={icon} width={450} className={css.imagetag} />
+        <h1 className="text-white text-4xl p-4 md:pl-12 2xl:text-6xl" id={css.heading}>
+          Regulations
+        </h1>
+        <div className="flex flex-wrap justify-between pt-6 pl-20 md:pt-10 md:pl-48 2xl:pl-64">
+          <div className="flex items-center four gap-6 self-center md:pr-24">
+            <div className="text-orange-500 text-7xl md:text-[160px] 2xl:text-[210px]">
+              4
+            </div>
+            <div className="text-white text-3xl md:text-[78px] 2xl:text-[100px] md:leading-[4rem] 2xl:leading-[5rem]">
+            MEMBERS 
+              <br className="hidden md:inline"/>
+            TEAM*
+            </div>
           </div>
 
-          <div className={css.textdiv}>
-            <ul className="list-disc text-white text-xl" id={css.bodytext}>
+          <div className="w-3/4 md:w-2/4 pt-8">
+            <ul className="list-disc text-white md:text-xl md:w-full 2xl:text-4xl 2xl:pt-16 md:pr-24 lg:text-left">
               <li>
                 Participants are required to pay the required registration fee
               </li>
@@ -40,11 +49,11 @@ function Regulations() {
             </ul>
           </div>
         </div>
-        <div className={css.bottomdiv}>
-          <div className="text-white pl-12 pt-9 opacity-30" id={css.instr}>
+        <div className="flex flex-wrap pt-10 md:justify-between md:pt-24 2xl:pt-28">
+          <div className="text-white pt-9 pl-4 md:pl-12 opacity-30">
             * MEMBER OF 3 PEOPLE CAN ASLO FORM A TEAM
           </div>
-          <div style={{ alignSelf: "flex-end"}} className="text-[10px]" id={css.expo}>
+          <div className="text-[10px] pl-28 md:pr-12 self-end">
             <span className="text-white tracking-[.7em] inline-block">
               EXPO
             </span>
