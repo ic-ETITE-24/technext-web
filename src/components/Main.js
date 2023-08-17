@@ -2,14 +2,14 @@ import Image from "next/image";
 import logo from "../assets/logo-icon.svg";
 import register from "../assets/register-icon.svg";
 import title from "../assets/title-combine.png";
-
 import CSS from "./Main.module.css";
+
 const Main = () => {
   return (
     <>
       <div className={CSS.background}>
-        <div className="flex justify-between fixed md:my-[30px] sm:my-[20px] my-[12px]  w-full">
-          <div className="flex felx justify-center items-center sm:mx-14 mx-4 sm:max-w-sm">
+        <div className="flex justify-between items-center w-full pt-6">
+          <div className="flex justify-between items-center felx mx-4 ml-5 sm:ml-20 sm:max-w-sm">
             <Image
               className="felx sm:w-[52px] w-[38px]"
               src={logo}
@@ -21,7 +21,7 @@ const Main = () => {
               <span className="text-[#FF7A00]">TECHNEXT EXPO 2024</span>
             </span>
           </div>
-          <div className="text-center flex flex-wrap justify-end items-center">
+          <div className="text-center flex flex-wrap justify-end items-center mr-4">
             <div className="flex mx-[30px]">
               <a
                 href="/input_page"
@@ -39,7 +39,7 @@ const Main = () => {
             </a>
           </div>
         </div>
-        <div className="flex justify-center sm:items-center items-start py-[250px] h-screen">
+        <div className="flex justify-center sm:items-center items-start md:py-[100px] py-[150px]">
           <Image
             className="flex mt-1 w-[90%] md:w-2/3 sm:w-[80%]"
             src={title}
