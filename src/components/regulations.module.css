@@ -2,8 +2,8 @@
   background-image: url(./../assets/background1.png),
     url(./../assets/Background-main.png);
   background-position: center center, center center;
-  background-size: cover, contain;
-  background-repeat: no-repeat, repeat;
+  background-size: cover, cover;
+  background-repeat: no-repeat, no-repeat;
   min-height: 100vh;
   background-image: linear-gradient(
       rgba(255, 255, 255, 0.00001),

@@ -1,5 +1,4 @@
 import Image from "next/image";
-import icon from "./../assets/4teams.png";
 import css from "./regulations.module.css";
 import line from "./../assets/SmallLine.png";
 
@@ -7,23 +6,23 @@ function Regulations() {
   return (
     <>
       <div className={css.bg}>
-        <h1 className="text-white text-4xl p-4 md:pl-12 2xl:text-6xl" id={css.heading}>
+        <h1 className="text-white text-4xl p-4 md:pl-12 2xl:text-6xl">
           Regulations
         </h1>
-        <div className="flex flex-wrap justify-between pt-6 pl-20 md:pt-10 md:pl-48 2xl:pl-64">
-          <div className="flex items-center four gap-6 self-center md:pr-24">
-            <div className="text-orange-500 text-7xl md:text-[160px] 2xl:text-[210px]">
+        <div className="flex flex-wrap justify-between pt-6 sm:pt-24 pl-16 md:pt-10 md:pl-48 2xl:pl-64">
+          <div className="flex items-center four gap-6 self-center sm:pl-10 md:pr-24">
+            <div className="text-orange-500 text-8xl sm:text-9xl md:text-[160px] 2xl:text-[210px]">
               4
             </div>
-            <div className="text-white text-3xl md:text-[78px] 2xl:text-[100px] md:leading-[4rem] 2xl:leading-[5rem]">
+            <div className="text-white text-4xl sm:text-5xl md:text-[78px] 2xl:text-[100px] md:leading-[4rem] 2xl:leading-[5rem]">
             MEMBERS 
               <br className="hidden md:inline"/>
             TEAM*
             </div>
           </div>
 
-          <div className="w-3/4 md:w-2/4 pt-8">
-            <ul className="list-disc text-white md:text-xl md:w-full 2xl:text-4xl 2xl:pt-16 md:pr-24 lg:text-left">
+          <div className="w-3/4 sm:pt-16 sm:pl-16 sm:w-2/3 md:w-2/4 pt-8 sm:leading-relaxed">
+            <ul className="list-disc text-white sm:text-xl md:text-xl md:w-full 2xl:text-4xl 2xl:pt-16 md:pr-24 lg:text-left">
               <li>
                 Participants are required to pay the required registration fee
               </li>
@@ -49,7 +48,7 @@ function Regulations() {
             </ul>
           </div>
         </div>
-        <div className="flex flex-wrap pt-10 md:justify-between md:pt-24 2xl:pt-28">
+        <div className="flex flex-wrap pl-2 sm:pt-24 pt-10 md:justify-between md:pt-24 2xl:pt-28">
           <div className="text-white pt-9 pl-4 md:pl-12 opacity-30">
             * MEMBER OF 3 PEOPLE CAN ASLO FORM A TEAM
           </div>
