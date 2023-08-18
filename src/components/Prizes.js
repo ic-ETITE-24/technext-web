@@ -10,7 +10,7 @@ const Prizes = () => {
           PRIZES
         </div>
         <div className="md:mx-20 mx-10">
-          <div className="uppercase flex justify-evenly items-center rounded-2xl bg-white bg-opacity-[0.16] backdrop-blur-md min-h-[400px] flex-wrap xl:flex-nowrap">
+          <div className="uppercase flex justify-evenly items-center rounded-2xl bg-white bg-opacity-[0.16] backdrop-blur-md min-h-[300px] flex-wrap xl:flex-nowrap">
             <div className="flex justify-start items-center w-[690px] mx-10 flex-wrap xl:flex-nowrap">
               <div className="xl:text-[160px] md:text-[80px] sm:text-[60px] text-[40px] font-semibold">
                 BEST
