@@ -42,3 +42,21 @@ h1,h2,h3,h4,h5,h6,button,label, .four, .price {
   font-family: 'futura BdCn BT';
   font-weight: 400;
 }
+
+::-webkit-scrollbar {
+  width: 0.4rem;
+  background: #535253;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #535253;
+  border-radius: 0.6rem;
+  z-index: -99;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #FF7A00;
+  border-radius: 1rem;
+}

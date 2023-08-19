@@ -6,10 +6,16 @@ import ContactUs from "@/components/contactus";
 import Timeline from "@/components/timeline";
 import Footer from "@/components/Footer";
 import Prizes from "@/components/Prizes";
+import Head from "next/head";
 
 export default function Home() {
   return (
-    <div>
+    <>
+    <Head>
+      <title>Technext | Home</title>
+      <link rel="icon" type="image/x-icon" href="/favicon.ico"></link>
+    </Head>
+    <main>
       <Main />
       <AboutEvent />
       <Regulations />
@@ -18,6 +24,7 @@ export default function Home() {
       <Prizes />
       <ContactUs />
       <Footer />
-    </div>
+    </main>
+    </>
   );
 }
