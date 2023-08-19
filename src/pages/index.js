@@ -2,6 +2,7 @@ import Main from "@/components/Main";
 import Registration from "@/components/registration";
 import Regulations from "@/components/regulations";
 import AboutEvent from "@/components/AboutEvent";
+import Footer from "@/components/Footer";
 import Prizes from "@/components/Prizes";
 
 export default function Home() {
@@ -12,6 +13,7 @@ export default function Home() {
       <Regulations />
       <Registration />
       <Prizes />
+      <Footer />
     </div>
   );
 }
