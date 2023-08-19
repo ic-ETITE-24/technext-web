@@ -38,7 +38,7 @@ body, span {
   
 }
 
-h1,h2,h3,h4,h5,h6,button, .four, .price {
+h1,h2,h3,h4,h5,h6,button,label, .four, .price {
   font-family: 'futura BdCn BT';
   font-weight: 400;
 }

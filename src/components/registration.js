@@ -61,11 +61,11 @@ function Registration() {
               <h1>Per Person for National Participants</h1>
             </div>
             <div className="flex flex-wrap flex-col items-center md:flex-row md:justify-start sm:justify-center pt-16 gap-10 md:gap-0 md:pl-0 md:pt-6 2xl:pt-10 sm:pt-24">
-              <button className="bg-orange-500 rounded text-white text-2xl sm:text-5xl 2xl:text-4xl w-fit px-3 py-2">
+              <button className="bg-orange-500 rounded text-white text-2xl sm:text-5xl md:text-2xl 2xl:text-4xl w-fit px-3 py-2">
                 REGISTER NOW{" "}
                 <Image src={checkout} alt="checkout" className="inline pb-2" />
               </button>
-              <button className="md:ml-10 2xl:ml-16 rounded text-white border-[3px] sm:mt-10 md:mt-0 sm:text-5xl border-white text-2xl 2xl:text-4xl w-fit px-4 py-1">
+              <button className="md:ml-10 2xl:ml-16 rounded text-white border-[3px] sm:mt-10 md:mt-0 md:text-2xl sm:text-5xl border-white text-2xl 2xl:text-4xl w-fit px-4 py-1">
                 Learn More
               </button>
             </div>
