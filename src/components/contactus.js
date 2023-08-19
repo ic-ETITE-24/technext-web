@@ -5,7 +5,6 @@ import { useRef, useState } from "react";
 import axios from "axios";
 
 function ContactUs() {
-  const [isInvalid, setIsInvalid] = useState(false);
 
   const nameInputRef = useRef();
   const emailInputRef = useRef();
@@ -16,7 +15,6 @@ function ContactUs() {
   const queryInputRef = useRef();
 
   function submitQueryData(event) {
-    event.preventDefault();
 
     const enteredName = nameInputRef.current.value;
     const enteredEmail = emailInputRef.current.value;
@@ -25,16 +23,6 @@ function ContactUs() {
     const enteredDay = dayInputRef.current.value;
     const enteredYear = yearInputRef.current.value;
     const enteredQuery = queryInputRef.current.value;
-
-    if (
-      enteredEmail.trim() === "" ||
-      !enteredEmail.includes("@") ||
-      !enteredName ||
-      enteredName.trim() === ""
-    ) {
-      setIsInvalid(true);
-      return;
-    }
 
     const queryData = {
       name: enteredName,
@@ -117,7 +105,7 @@ function ContactUs() {
                 type="text"
                 id="email"
                 ref={mobileInputRef}
-                class="w-full p-1 sm:p-3 lg:p-2 2xl:p-4 2xl:text-2xl bg-[rgba(255,255,255,0.28)] rounded-3xl focus:outline-none focus:ring focus:border-blue-500 text-orange-500 placeholder:text-orange-500 placeholder:pl-9 placeholder:text-sm placeholder:opacity-30 placeholder:tracking-[0.4rem]"
+                className="w-full p-1 sm:p-3 lg:p-2 2xl:p-4 2xl:text-2xl bg-[rgba(255,255,255,0.28)] rounded-3xl focus:outline-none focus:ring focus:border-blue-500 text-orange-500 placeholder:text-orange-500 placeholder:pl-9 placeholder:text-sm placeholder:opacity-30 placeholder:tracking-[0.4rem]"
                 placeholder="PHONE NUMBER"
               />
             </div>
@@ -132,9 +120,9 @@ function ContactUs() {
                 required
                 id="month"
                 ref={monthInputRef}
-                class="self-end w-4/12 p-3 2xl:text-2xl 2xl:p-4 bg-[rgba(255,255,255,0.28)] rounded-3xl focus:outline-none focus:ring focus:border-blue-500 text-orange-500 lg:mr-11 sm:mr-5 mr-3"
+                className="self-end w-4/12 p-3 2xl:text-2xl 2xl:p-4 bg-[rgba(255,255,255,0.28)] rounded-3xl focus:outline-none focus:ring focus:border-blue-500 text-orange-500 lg:mr-11 sm:mr-5 mr-3"
               >
-                <option value="January" selected defaultChecked></option>
+                <option value="January" default defaultChecked></option>
                 <option value="January">January</option>
                 <option value="February">February</option>
                 <option value="March">March</option>
@@ -151,7 +139,7 @@ function ContactUs() {
               <select
                 required
                 ref={dayInputRef}
-                class="self-end p-3 w-3/12 2xl:text-2xl 2xl:p-4 bg-[rgba(255,255,255,0.28)] rounded-3xl focus:outline-none focus:ring focus:border-blue-500 text-orange-500 lg:mr-11 sm:mr-5 mr-3"
+                className="self-end p-3 w-3/12 2xl:text-2xl 2xl:p-4 bg-[rgba(255,255,255,0.28)] rounded-3xl focus:outline-none focus:ring focus:border-blue-500 text-orange-500 lg:mr-11 sm:mr-5 mr-3"
               >
                 <option value="" defaultChecked></option>
                 {[...Array(31)].map((_, index) => (
@@ -163,7 +151,7 @@ function ContactUs() {
               <select
                 required
                 ref={yearInputRef}
-                class="self-end p-3 w-3/12 2xl:text-2xl 2xl:p-4 bg-[rgba(255,255,255,0.28)] rounded-3xl focus:outline-none focus:ring focus:border-blue-500 text-orange-500"
+                className="self-end p-3 w-3/12 2xl:text-2xl 2xl:p-4 bg-[rgba(255,255,255,0.28)] rounded-3xl focus:outline-none focus:ring focus:border-blue-500 text-orange-500"
               >
                 <option value="" defaultChecked></option>
                 {[...Array(2023 - 1960 + 1)].map((_, index) => (
