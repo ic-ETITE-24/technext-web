@@ -3,15 +3,17 @@ import Registration from "@/components/registration";
 import Regulations from "@/components/regulations";
 import AboutEvent from "@/components/AboutEvent";
 import Footer from "@/components/Footer";
+import Prizes from "@/components/Prizes";
 
 export default function Home() {
-    return (
-        <div>
-            <Main />
-            <AboutEvent />
-            <Regulations />
-            <Registration />
-            <Footer />
-        </div>
-    );
+  return (
+    <div>
+      <Main />
+      <AboutEvent />
+      <Regulations />
+      <Registration />
+      <Prizes />
+      <Footer />
+    </div>
+  );
 }
