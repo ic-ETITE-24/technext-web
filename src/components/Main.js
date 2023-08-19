@@ -39,7 +39,7 @@ const Main = () => {
             </a>
           </div>
         </div>
-        <div className="flex justify-center sm:items-center items-start md:py-[100px] py-[150px]">
+        <div className="flex justify-center sm:items-center items-start md:py-[100px] py-[180px]">
           <Image
             className="flex mt-1 w-[90%] md:w-2/3 sm:w-[80%]"
             src={title}
