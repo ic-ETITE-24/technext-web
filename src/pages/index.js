@@ -4,6 +4,8 @@ import Regulations from "@/components/regulations";
 import AboutEvent from "@/components/AboutEvent";
 import ContactUs from "@/components/contactus";
 import Timeline from "@/components/timeline";
+import Footer from "@/components/Footer";
+import Prizes from "@/components/Prizes";
 
 export default function Home() {
   return (
@@ -13,7 +15,9 @@ export default function Home() {
       <Regulations />
       <Registration />
       <Timeline />
+      <Prizes />
       <ContactUs />
+      <Footer />
     </div>
   );
 }
