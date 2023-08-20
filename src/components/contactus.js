@@ -245,7 +245,7 @@ function ContactUs() {
                 type="submit"
                 className="bg-orange-500 rounded-2xl text-white text-2xl sm:text-5xl md:text-2xl 2xl:text-4xl w-fit px-3 py-2 mt-12 sm:mt-16 lg:mt-8 2xl:mt-14"
               >
-                REGISTER NOW
+                CONTACT US
               </button>
             </div>
           </div>
