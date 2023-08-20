@@ -26,15 +26,15 @@ const Prizes = () => {
                 <div className="xl:text-[105px] md:text-[70px] sm:text-[70px] text-[30px] font-semibold text-[#FF7A00]">
                   1
                 </div>
-                <div className="xl:text-[42px] md:text-[28px] sm:text-[32px] text-[15px] xl:leading-[44px] md:leading-8 px-5 w-[150px] font-medium">
+                <div className="xl:text-[40px] md:text-[28px] sm:text-[32px] text-[15px] xl:leading-[44px] md:leading-8 px-5 w-[150px] font-medium">
                   FIRST WINNER
                 </div>
               </div>
-              <div className="flex justify-center items-center lg:mx-3 mx-0">
+              <div className="flex justify-center items-center lg:mx-8 mx-0">
                 <div className="xl:text-[105px] md:text-[70px] sm:text-[70px] text-[30px] font-semibold xl:ml-14 text-[#FF7A00]">
                   2
                 </div>
-                <div className="xl:text-[42px] md:text-[28px] sm:text-[32px] text-[15px] xl:leading-[44px] md:leading-8 px-5 w-[150px] font-medium">
+                <div className="xl:text-[40px] md:text-[28px] sm:text-[32px] text-[15px] xl:leading-[44px] md:leading-8 px-5 w-[150px] font-medium">
                   SECOND WINNER
                 </div>
               </div>
@@ -42,13 +42,13 @@ const Prizes = () => {
                 <div className="xl:text-[105px] md:text-[70px] sm:text-[70px] text-[30px] font-semibold text-[#FF7A00]">
                   3
                 </div>
-                <div className="xl:text-[42px] md:text-[28px] sm:text-[32px] text-[15px] xl:leading-[44px] md:leading-8 px-5 w-[150px] font-medium">
+                <div className="xl:text-[40px] md:text-[28px] sm:text-[32px] text-[15px] xl:leading-[44px] md:leading-8 px-5 w-[150px] font-medium">
                   THIRD WINNER
                 </div>
               </div>
             </div>
           </div>
-          <div className="flex md:justify-between justify-start items-center flex-wrap sm:flex-nowrap my-7">
+          <div className="flex md:justify-around md:gap-40 justify-start items-center flex-wrap sm:flex-nowrap my-7">
             <div className="flex justify-center items-center  md:w-[400px] sm:w-[200px]">
               <div className="xl:text-[170px] lg:text-[150px] md:text-[70px] sm:text-[50px] text-[40px] font-semibold">
                 <span className="text-[#FF7A00]">5</span>
