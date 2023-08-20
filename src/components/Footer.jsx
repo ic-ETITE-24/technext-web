@@ -5,7 +5,7 @@ import { BiLogoLinkedin } from "react-icons/bi";
 const Footer = () => {
     return (
         <div className="bg-[#1F1F1F] w-full h-auto text-white">
-            <div className="  md:flex-row overflow-hidden text-center grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3  ">
+            <div className="md:flex-row overflow-hidden text-center grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3  ">
                 <div className="flex flex-row ">
                     <Image
                         src="/footerAsset.png"
@@ -70,7 +70,7 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
-            <div className="grid grid-cols-4 md:grid-cols-3 lg:grid-cols-2 p-5 pb-10 lg:-mt-16 md:-mt-8 ">
+            <div className="grid grid-cols-4 md:grid-cols-3 lg:grid-cols-2 p-5 pb-2 lg:-mt-16 md:-mt-8 ">
                 <p className="col-span-3 md:col-span-2 lg:col-span-1 px-4 lg:px-28 md:px-14  text-xs md:text-sm">
                     © 2023-24 TECHNEXTEXPO. All Rights Reserved by VELLORE
                     INSTITUTE OF TECHNOLOGY

@@ -1,35 +1,75 @@
 import css from "./contactus.module.css";
 import Image from "next/image";
 import expo from "../assets/expo-mark.png";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import axios from "axios";
 
 function ContactUs() {
-  const nameInputRef = useRef();
+  const firstNameInputRef = useRef();
+  const lastNameInputRef = useRef();
   const emailInputRef = useRef();
   const mobileInputRef = useRef();
-  const monthInputRef = useRef();
-  const dayInputRef = useRef();
-  const yearInputRef = useRef();
+  // const monthInputRef = useRef();
+  // const dayInputRef = useRef();
+  // const yearInputRef = useRef();
   const queryInputRef = useRef();
+  const [country, setCountry] = useState("IN");
+
+  const getCountryCode = async () => {
+    await axios.get("https://ipapi.co/json/").then((response) => {
+      setCountry(response.data.country);
+    });
+  };
+
+  useEffect(() => {
+    getCountryCode();
+  }, [country]);
+
+  function varlidateQueryData(
+    enteredName,
+    enteredEmail,
+    enteredNumber,
+    enteredQuery
+  ) {
+    if (
+      enteredName.trim() === "" ||
+      enteredEmail.trim() === "" ||
+      enteredNumber.trim() === "" ||
+      enteredQuery.trim() === ""
+    ) {
+      alert("Please fill all the fields");
+      return false;
+    }
+    if (enteredNumber.length !== 10) {
+      alert("Please enter a valid mobile number");
+      return false;
+    }
+    return true;
+  }
 
   function submitQueryData(event) {
-    const enteredName = nameInputRef.current.value;
+    event.preventDefault();
+    const enteredName = firstNameInputRef.current.value + " " + lastNameInputRef.current.value;
     const enteredEmail = emailInputRef.current.value;
     const enteredNumber = mobileInputRef.current.value;
-    const enteredMonth = monthInputRef.current.value;
-    const enteredDay = dayInputRef.current.value;
-    const enteredYear = yearInputRef.current.value;
+    // const enteredMonth = monthInputRef.current.value;
+    // const enteredDay = dayInputRef.current.value;
+    // const enteredYear = yearInputRef.current.value;
     const enteredQuery = queryInputRef.current.value;
+
+    if(!varlidateQueryData(enteredName, enteredEmail, enteredNumber, enteredQuery)){
+      return;
+    } 
 
     const queryData = {
       name: enteredName,
       email: enteredEmail,
       mobile: enteredNumber,
-      month: enteredMonth,
-      day: enteredDay,
-      year: enteredYear,
+      // month: enteredMonth,
+      // day: enteredDay,
+      // year: enteredYear,
       query: enteredQuery,
+      country: country,
     };
 
     console.log(queryData);
@@ -62,17 +102,33 @@ function ContactUs() {
             <div className="w-11/12 lg:w-5/12 sm:w-5/12">
               <label
                 className="block text-xl 2xl:text-2xl font-medium text-white mb-1 pl-12"
-                htmlFor="fullName"
+                htmlFor="firstName"
               >
-                FULL NAME
+                FIRST NAME
               </label>
               <input
                 required
                 type="text"
-                id="fullName"
-                ref={nameInputRef}
+                id="firstName"
+                ref={firstNameInputRef}
                 className="w-full py-1 px-4 sm:py-3 2xl:py-2 2xl:px-6 2xl:text-2xl bg-[rgba(255,255,255,0.28)] rounded-3xl focus:outline-none focus:ring focus:border-blue-500 text-orange-500 placeholder:text-orange-500 placeholder:text-sm placeholder:opacity-70 placeholder:tracking-[0.3rem] placeholder:font-bold"
-                placeholder="FULL NAME"
+                placeholder="FIRST NAME"
+              />
+            </div>
+            <div className="w-11/12 lg:w-5/12 sm:w-5/12">
+              <label
+                className="block text-xl 2xl:text-2xl font-medium text-white mb-1 pl-12"
+                htmlFor="lastName"
+              >
+                LAST NAME
+              </label>
+              <input
+                required
+                type="text"
+                id="lastName"
+                ref={lastNameInputRef}
+                className="w-full py-1 px-4 sm:py-3 2xl:py-2 2xl:px-6 2xl:text-2xl bg-[rgba(255,255,255,0.28)] rounded-3xl focus:outline-none focus:ring focus:border-blue-500 text-orange-500 placeholder:text-orange-500 placeholder:text-sm placeholder:opacity-70 placeholder:tracking-[0.3rem] placeholder:font-bold"
+                placeholder="LAST NAME"
               />
             </div>
             <div className="w-11/12 lg:w-5/12 sm:w-5/12">
@@ -100,14 +156,19 @@ function ContactUs() {
               </label>
               <input
                 required
-                type="text"
+                type="number"
                 id="email"
                 ref={mobileInputRef}
+                onBlur={(e) => {
+                  if (e.target.value.match(/^[0-9]{10}$/) === null) {
+                    alert("Please enter a valid mobile number");
+                  }
+                }}
                 className="w-full py-1 px-4 sm:py-3 2xl:py-2 2xl:px-6 2xl:text-2xl bg-[rgba(255,255,255,0.28)] rounded-3xl focus:outline-none focus:ring focus:border-blue-500 text-orange-500 placeholder:text-orange-500 placeholder:opacity-70 placeholder:text-sm placeholder:tracking-[0.3rem] placeholder:font-bold"
-                placeholder="PHONE NUMBER"
+                placeholder="PHONE NUMBER - (without country code)"
               />
             </div>
-            <div className="w-full lg:w-5/12">
+            {/* <div className="w-full lg:w-5/12">
               <label
                 className="block text-xl 2xl:text-2xl font-medium text-white mb-1 pl-12"
                 htmlFor="email"
@@ -164,7 +225,7 @@ function ContactUs() {
                   </option>
                 ))}
               </select>
-            </div>
+            </div> */}
             <div className="w-full lg:w-full">
               <label
                 className="block text-xl 2xl:text-3xl font-medium text-white mb-1 pl-12"
@@ -180,8 +241,11 @@ function ContactUs() {
                 placeholder="Tell us your Query..."
                 rows="4"
               ></textarea>
-              <button className="bg-orange-500 rounded-2xl text-white text-2xl sm:text-5xl md:text-2xl 2xl:text-4xl w-fit px-3 py-2 mt-12 sm:mt-16 lg:mt-8 2xl:mt-14">
-                REGISTER NOW{" "}
+              <button
+                type="submit"
+                className="bg-orange-500 rounded-2xl text-white text-2xl sm:text-5xl md:text-2xl 2xl:text-4xl w-fit px-3 py-2 mt-12 sm:mt-16 lg:mt-8 2xl:mt-14"
+              >
+                REGISTER NOW
               </button>
             </div>
           </div>
