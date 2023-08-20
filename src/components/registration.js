@@ -4,16 +4,17 @@ import checkout from "./../assets/checkout.png";
 import Modal from "react-modal";
 import expo from "../assets/expo-mark.png";
 import { useState, useEffect } from "react";
+import axios from "axios";
 
 function Registration() {
-  const [latitude, setLatitude] = useState(null);
-  const [longtiude, setLongitude] = useState(null);
+  const [conutryName, setCountryName] = useState("");
+
   const [error, setError] = useState(false);
   const [price, setPrice] = useState(null);
   const [text, setText] = useState(null);
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
-  Modal.setAppElement('#__next');
+  Modal.setAppElement("#__next");
 
   const openModal = () => {
     setModalIsOpen(true);
@@ -24,29 +25,24 @@ function Registration() {
   };
 
   useEffect(() => {
-    if ("geolocation" in navigator) {
-      navigator.geolocation.getCurrentPosition(
-        function (position) {
-          setLatitude(position.coords.latitude);
-          setLongitude(position.coords.longitude);
-          latlong();
-        },
-        function (error) {
-          setError(true);
-          console.error("Error getting location:", error);
-        }
-      );
-    } else {
-      setError(true);
-      console.log("Geolocation is not available in this browser.");
-    }
+    axios
+      .get("https://ipapi.co/json/")
+      .then((response) => {
+        let data = response.data;
+        setCountryName(data.country_name);
+        countryCall();
+      })
+      .catch((error) => {
+        setError(true);
+        console.log(error);
+      });
   });
 
-  function latlong() {
+  function countryCall() {
     if (error) {
       setPrice("₹999");
       setText("Per Person for National Participants");
-    } else if ((latitude >= 8.0666 && latitude <= 37.1) && (longtiude >= 68.1166 && longtiude <= 97.4166)) {
+    } else if (conutryName === "India") {
       setPrice("₹999");
       setText("Per Person for National Participants");
     } else {
@@ -90,18 +86,19 @@ function Registration() {
           isOpen={modalIsOpen}
           onRequestClose={closeModal}
           shouldCloseOnOverlayClick={true}
+          
           style={{
             overlay: {
               backgroundColor: "rgba(0, 0, 0, 0.5)",
             },
             content: {
               backgroundColor: "rgb(241 245 249)",
-              width: "50%",
-              height: "fit-content",
+              width: "60%",
+              height: "50vh",
               margin: "auto",
               border: "1px solid #ccc",
               borderRadius: "4px",
-              padding: "20px",
+              padding: "20px", 
             },
           }}
         >
@@ -111,7 +108,9 @@ function Registration() {
           >
             x
           </button>
-          <h2 className="text-black text-3xl 2xl:text-4xl py-4">Modal Content</h2>
+          <h2 className="text-black text-3xl 2xl:text-4xl py-4">
+            Modal Content
+          </h2>
           <ul className="list-disc text-black 2xl:text-xl px-4 pb-4">
             <li>
               Nibh sit amet commodo nulla. Nunc vel risus commodo viverra
@@ -125,7 +124,7 @@ function Registration() {
               Pellentesque adipiscing commodo elit at imperdiet. Ipsum consequat
               nisl vel pretium lectus quam.
             </li>
-            
+
             <li>
               Tristique senectus et netus et malesuada. Arcu felis bibendum ut
               tristique et egestas quis. Sodales ut etiam sit amet.
