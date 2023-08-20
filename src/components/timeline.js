@@ -1,7 +1,7 @@
 import Image from "next/image";
 import css from "./timeline.module.css";
-import line from "./../assets/SmallLine.png";
-import icon from './../assets/Top-right-logo.png'
+import icon from "./../assets/Top-right-logo.png";
+import expo from "../assets/expo-mark.png";
 
 import {
   VerticalTimeline,
@@ -13,15 +13,19 @@ function Timeline() {
   return (
     <>
       <div className={css.bg}>
-        <h1 className="text-white text-4xl sm:text-5xl p-4 md:pl-12 2xl:text-6xl mb-12 md:mb-24">
-          TIMELINE
-        </h1>
-        <Image src={icon} alt="ieee logo" className="float-right mr-40 hidden lg:block"/>
+        <div className="mx-10 md:mx-20 text-lg sm:text-4xl font-[600] py-10">
+          Timeline
+        </div>
+        <Image
+          src={icon}
+          alt="ieee logo"
+          className="float-right mr-40 hidden lg:block"
+        />
         <VerticalTimeline lineColor={"rgb(249 115 22)"}>
           <VerticalTimelineElement
             className="vertical-timeline-element--work pb-20"
-            contentStyle={{ background: "rgb(249 115 22)" }}
-            iconStyle={{ background: "rgb(249 115 22)", color: "#fff" }}
+            contentStyle={{ background: "rgb(249 115 22)", height: "80px" }}
+            iconStyle={{ background: "rgb(249 115 22)" }}
             contentArrowStyle={{ borderRight: "7px solid  rgb(249 115 22)" }}
             date="8:00 AM"
 
@@ -40,7 +44,8 @@ function Timeline() {
             // icon={<WorkIcon />}
           >
             <h3 className="vertical-timeline-element-title tracking-wider text-lg text-orange-500">
-              Setup by Teams (stall allotment and prototype assembly)
+              Commencement ceremony ( Introduction, Flow of event, Judges
+              introduction, Speeches of Guests ) 35-45 minutes
             </h3>
           </VerticalTimelineElement>
           <VerticalTimelineElement
@@ -112,16 +117,8 @@ function Timeline() {
         </VerticalTimeline>
         <div className="flex flex-wrap pl-2 sm:pt-56 pt-10 md:justify-between md:pt-20 2xl:pt-28">
           <div className="text-white pt-9 pl-4 md:pl-12 opacity-30"></div>
-          <div className="text-[10px] pl-28 md:pr-12 self-end">
-            <span className="text-white tracking-[.7em] inline-block">
-              EXPO
-            </span>
-            <span className="inline-block text-center">
-              <Image alt="line" src={line} width={40} />
-            </span>
-            <span className="text-orange-500 tracking-[.7em] inline-block">
-              .2024
-            </span>
+          <div className="w-full flex justify-end px-24 pb-10">
+            <Image src={expo} alt="expo-mark" quality={100} />
           </div>
         </div>
       </div>

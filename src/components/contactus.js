@@ -1,11 +1,10 @@
 import css from "./contactus.module.css";
 import Image from "next/image";
-import line from "./../assets/SmallLine.png";
+import expo from "../assets/expo-mark.png";
 import { useRef, useState } from "react";
 import axios from "axios";
 
 function ContactUs() {
-
   const nameInputRef = useRef();
   const emailInputRef = useRef();
   const mobileInputRef = useRef();
@@ -15,7 +14,6 @@ function ContactUs() {
   const queryInputRef = useRef();
 
   function submitQueryData(event) {
-
     const enteredName = nameInputRef.current.value;
     const enteredEmail = emailInputRef.current.value;
     const enteredNumber = mobileInputRef.current.value;
@@ -48,23 +46,22 @@ function ContactUs() {
     //   .catch((error) => {
     //     console.error("Error:", error);
     //   });
-
   }
 
   return (
     <div className="" id={css.bg}>
-      <h1 className="text-white text-4xl sm:text-5xl p-4 lg:pl-12 2xl:text-6xl">
+      <div className="mx-10 md:mx-20 text-lg sm:text-4xl font-[600] py-10">
         Contact Us
-      </h1>
+      </div>
       <div className="pt-6 sm:pl-10 lg:pl-8 2xl:pl-12">
-        <h1 className="text-orange-500 text-4xl lg:text-4xl sm:text-6xl p-4 lg:pl-12 2xl:text-7xl">
-          FILL YOUR DETAILS
+        <h1 className="text-orange-500 text-4xl lg:text-4xl sm:text-6xl p-4 pl-8 lg:pl-12 2xl:text-5xl">
+          Fill Your Details
         </h1>
         <form onSubmit={submitQueryData}>
-          <div className="flex flex-wrap gap-y-4 sm:gap-x-16 sm:gap-y-16 lg:gap-x-32 lg:gap-y-12 2xl:gap-x-36 2xl:gap-y-16 pl-6 lg:pl-10 sm:pt-10 lg:pt-8 xl:pt-12">
+          <div className="flex flex-wrap gap-y-4 sm:gap-x-16 sm:gap-y-16 lg:gap-x-32 lg:gap-y-12 2xl:gap-x-36 2xl:gap-y-16 pl-6 lg:pl-10 sm:pt-10 lg:pt-8 xl:pt-6">
             <div className="w-11/12 lg:w-5/12 sm:w-5/12">
               <label
-                className="block text-xl 2xl:text-3xl font-medium text-white mb-1 pl-12"
+                className="block text-xl 2xl:text-2xl font-medium text-white mb-1 pl-12"
                 htmlFor="fullName"
               >
                 FULL NAME
@@ -74,12 +71,13 @@ function ContactUs() {
                 type="text"
                 id="fullName"
                 ref={nameInputRef}
-                className="w-full p-1 sm:p-3 lg:p-2 2xl:p-4 2xl:text-2xl bg-[rgba(255,255,255,0.28)] rounded-3xl focus:outline-none focus:ring focus:border-blue-500 text-orange-500 placeholder-transparent"
+                className="w-full py-1 px-4 sm:py-3 2xl:py-2 2xl:px-6 2xl:text-2xl bg-[rgba(255,255,255,0.28)] rounded-3xl focus:outline-none focus:ring focus:border-blue-500 text-orange-500 placeholder:text-orange-500 placeholder:text-sm placeholder:opacity-70 placeholder:tracking-[0.3rem] placeholder:font-bold"
+                placeholder="FULL NAME"
               />
             </div>
             <div className="w-11/12 lg:w-5/12 sm:w-5/12">
               <label
-                className="block text-xl 2xl:text-3xl font-medium text-white mb-1 pl-12"
+                className="block text-xl 2xl:text-2xl font-medium text-white mb-1 pl-12"
                 htmlFor="email"
               >
                 E-MAIL
@@ -89,13 +87,13 @@ function ContactUs() {
                 type="email"
                 id="email"
                 ref={emailInputRef}
-                className="w-full p-1 lg:p-2 sm:p-3 2xl:p-4 2xl:text-2xl bg-[rgba(255,255,255,0.28)] rounded-3xl focus:outline-none focus:ring focus:border-blue-500 text-orange-500 placeholder:text-orange-500 placeholder:pl-9 placeholder:text-sm placeholder:opacity-30 placeholder:tracking-[0.4rem]"
+                className="w-full py-1 px-4 sm:py-3 2xl:py-2 2xl:px-6 2xl:text-2xl bg-[rgba(255,255,255,0.28)] rounded-3xl focus:outline-none focus:ring focus:border-blue-500 text-orange-500 placeholder:text-orange-500 placeholder:text-sm placeholder:opacity-70 placeholder:tracking-[0.3rem] placeholder:font-bold"
                 placeholder="EMAIL - ADDRESS"
               />
             </div>
             <div className="w-11/12 lg:w-5/12 sm:w-5/12">
               <label
-                className="block text-xl 2xl:text-3xl font-medium text-white mb-1 pl-12"
+                className="block text-xl 2xl:text-2xl font-medium text-white mb-1 pl-12"
                 htmlFor="email"
               >
                 PHONE NUMBER
@@ -105,13 +103,13 @@ function ContactUs() {
                 type="text"
                 id="email"
                 ref={mobileInputRef}
-                className="w-full p-1 sm:p-3 lg:p-2 2xl:p-4 2xl:text-2xl bg-[rgba(255,255,255,0.28)] rounded-3xl focus:outline-none focus:ring focus:border-blue-500 text-orange-500 placeholder:text-orange-500 placeholder:pl-9 placeholder:text-sm placeholder:opacity-30 placeholder:tracking-[0.4rem]"
+                className="w-full py-1 px-4 sm:py-3 2xl:py-2 2xl:px-6 2xl:text-2xl bg-[rgba(255,255,255,0.28)] rounded-3xl focus:outline-none focus:ring focus:border-blue-500 text-orange-500 placeholder:text-orange-500 placeholder:opacity-70 placeholder:text-sm placeholder:tracking-[0.3rem] placeholder:font-bold"
                 placeholder="PHONE NUMBER"
               />
             </div>
             <div className="w-full lg:w-5/12">
               <label
-                className="block text-xl 2xl:text-3xl font-medium text-white mb-1 pl-12"
+                className="block text-xl 2xl:text-2xl font-medium text-white mb-1 pl-12"
                 htmlFor="email"
               >
                 DATE OF BIRTH
@@ -120,9 +118,11 @@ function ContactUs() {
                 required
                 id="month"
                 ref={monthInputRef}
-                className="self-end w-4/12 p-3 2xl:text-2xl 2xl:p-4 bg-[rgba(255,255,255,0.28)] rounded-3xl focus:outline-none focus:ring focus:border-blue-500 text-orange-500 lg:mr-11 sm:mr-5 mr-3"
+                className="self-end w-4/12 p-3 2xl:text-2xl bg-[rgba(255,255,255,0.28)] rounded-3xl focus:outline-none focus:ring focus:border-blue-500 text-orange-500 lg:mr-11 sm:mr-5 mr-3"
               >
-                <option value="January" default defaultChecked></option>
+                <option value="January" className="" default>
+                  Month
+                </option>
                 <option value="January">January</option>
                 <option value="February">February</option>
                 <option value="March">March</option>
@@ -139,9 +139,11 @@ function ContactUs() {
               <select
                 required
                 ref={dayInputRef}
-                className="self-end p-3 w-3/12 2xl:text-2xl 2xl:p-4 bg-[rgba(255,255,255,0.28)] rounded-3xl focus:outline-none focus:ring focus:border-blue-500 text-orange-500 lg:mr-11 sm:mr-5 mr-3"
+                className="self-end p-3 w-3/12 2xl:text-2xl bg-[rgba(255,255,255,0.28)] rounded-3xl focus:outline-none focus:ring focus:border-blue-500 text-orange-500 lg:mr-11 sm:mr-5 mr-3"
               >
-                <option value="" defaultChecked></option>
+                <option value="" defaultChecked>
+                  Day
+                </option>
                 {[...Array(31)].map((_, index) => (
                   <option key={index + 1} value={index + 1}>
                     {index + 1}
@@ -151,9 +153,11 @@ function ContactUs() {
               <select
                 required
                 ref={yearInputRef}
-                className="self-end p-3 w-3/12 2xl:text-2xl 2xl:p-4 bg-[rgba(255,255,255,0.28)] rounded-3xl focus:outline-none focus:ring focus:border-blue-500 text-orange-500"
+                className="self-end p-3 w-3/12 2xl:text-2xl bg-[rgba(255,255,255,0.28)] rounded-3xl focus:outline-none focus:ring focus:border-blue-500 text-orange-500"
               >
-                <option value="" defaultChecked></option>
+                <option value="" defaultChecked>
+                  Year
+                </option>
                 {[...Array(2023 - 1960 + 1)].map((_, index) => (
                   <option key={index + 1960} value={index + 1960}>
                     {index + 1960}
@@ -172,7 +176,7 @@ function ContactUs() {
                 required
                 ref={queryInputRef}
                 id="query"
-                className="block 2xl:text-2xl p-2.5 w-11/12 sm:w-11/12 lg:w-11/12 bg-[rgba(255,255,255,0.28)] rounded-3xl focus:outline-none focus:ring focus:border-blue-500 text-orange-500 placeholder:text-orange-500 placeholder:pl-6 placeholder:text-sm placeholder:opacity-70 placeholder:pt-1 placeholder:tracking-[0.4rem] pt-1 pl-6"
+                className="block 2xl:text-2xl p-2.5 w-11/12 sm:w-11/12 lg:w-11/12 bg-[rgba(255,255,255,0.28)] rounded-3xl focus:outline-none focus:ring focus:border-blue-500 text-orange-500 placeholder:text-orange-500 placeholder:text-sm placeholder:opacity-70 placeholder:pt-2 placeholder:uppercase placeholder:tracking-[0.3rem] pt-4 pl-6 placeholder:font-bold"
                 placeholder="Tell us your Query..."
                 rows="4"
               ></textarea>
@@ -183,16 +187,10 @@ function ContactUs() {
           </div>
         </form>
       </div>
-      <div className="flex flex-wrap pl-2 sm:pt-56 pt-10 lg:justify-between lg:pt-6 2xl:pt-28">
+      <div className="flex flex-wrap pl-2 sm:pt-56 pt-10 lg:justify-between lg:pt-6 2xl:pt-12">
         <div className="text-white pt-9 pl-4 lg:pl-12 opacity-30"></div>
-        <div className="text-[10px] pl-24 sm:pl-72 lg:pr-12 self-end">
-          <span className="text-white tracking-[.7em] inline-block">EXPO</span>
-          <span className="inline-block text-center">
-            <Image alt="line" src={line} width={40} />
-          </span>
-          <span className="text-orange-500 tracking-[.7em] inline-block">
-            .2024
-          </span>
+        <div className="w-full flex justify-end px-24 pb-10">
+          <Image src={expo} alt="expo-mark" quality={100} />
         </div>
       </div>
     </div>
