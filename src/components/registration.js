@@ -86,7 +86,6 @@ function Registration() {
           isOpen={modalIsOpen}
           onRequestClose={closeModal}
           shouldCloseOnOverlayClick={true}
-          
           style={{
             overlay: {
               backgroundColor: "rgba(0, 0, 0, 0.5)",
@@ -98,7 +97,7 @@ function Registration() {
               margin: "auto",
               border: "1px solid #ccc",
               borderRadius: "4px",
-              padding: "20px", 
+              padding: "20px",
             },
           }}
         >
@@ -132,8 +131,8 @@ function Registration() {
             <li>Laoreet non curabitur gravida arcu ac tortor dignissim.</li>
           </ul>
         </Modal>
-        <div className="flex flex-wrap md:justify-between sm:pl-0 pt-48 sm:pt-60 md:pt-44 2xl:pt-72">
-          <div className="text-white pt-9 pl-4 md:pl-12 opacity-30">
+        <div className="flex flex-col md:flex-row pl-10 sm:pl-8 sm:pt-56 pt-10 justify-center md:pt-20 lg:pt-0 2xl:pt-20 lg:w-full">
+          <div className="text-white pt-9 px-10 md:pl-12 md:text-lg text-xs opacity-30 py-4 sm:py-0 lg:w-3/4">
             *All amounts mentioned shall be inclusive of 18% GST
           </div>
           <div className="w-full flex justify-end px-24 pb-10">

@@ -9,33 +9,37 @@ function ContactUs() {
   const lastNameInputRef = useRef();
   const emailInputRef = useRef();
   const mobileInputRef = useRef();
+  const ccInputRef = useRef();
+  const [value, setValue] = useState("");
   // const monthInputRef = useRef();
   // const dayInputRef = useRef();
   // const yearInputRef = useRef();
   const queryInputRef = useRef();
-  const [country, setCountry] = useState("IN");
+  const [countryCode, setCountryCode] = useState("+91");
 
   const getCountryCode = async () => {
     await axios.get("https://ipapi.co/json/").then((response) => {
-      setCountry(response.data.country);
+      setCountryCode(response.data.country_calling_code);
     });
   };
 
   useEffect(() => {
     getCountryCode();
-  }, [country]);
+  }, [countryCode]);
 
   function varlidateQueryData(
     enteredName,
     enteredEmail,
     enteredNumber,
-    enteredQuery
+    enteredQuery,
+    enteredCode
   ) {
     if (
       enteredName.trim() === "" ||
       enteredEmail.trim() === "" ||
       enteredNumber.trim() === "" ||
-      enteredQuery.trim() === ""
+      enteredQuery.trim() === "" ||
+      enteredCode.trim() === ""
     ) {
       alert("Please fill all the fields");
       return false;
@@ -49,17 +53,27 @@ function ContactUs() {
 
   function submitQueryData(event) {
     event.preventDefault();
-    const enteredName = firstNameInputRef.current.value + " " + lastNameInputRef.current.value;
+    const enteredName =
+      firstNameInputRef.current.value + " " + lastNameInputRef.current.value;
     const enteredEmail = emailInputRef.current.value;
     const enteredNumber = mobileInputRef.current.value;
     // const enteredMonth = monthInputRef.current.value;
     // const enteredDay = dayInputRef.current.value;
     // const enteredYear = yearInputRef.current.value;
     const enteredQuery = queryInputRef.current.value;
+    const enteredCode = ccInputRef.current.value;
 
-    if(!varlidateQueryData(enteredName, enteredEmail, enteredNumber, enteredQuery)){
+    if (
+      !varlidateQueryData(
+        enteredName,
+        enteredEmail,
+        enteredNumber,
+        enteredQuery,
+        enteredCode
+      )
+    ) {
       return;
-    } 
+    }
 
     const queryData = {
       name: enteredName,
@@ -150,22 +164,34 @@ function ContactUs() {
             <div className="w-11/12 lg:w-5/12 sm:w-5/12">
               <label
                 className="block text-xl 2xl:text-2xl font-medium text-white mb-1 pl-12"
-                htmlFor="email"
+                htmlFor="mobilenum"
               >
                 PHONE NUMBER
               </label>
               <input
                 required
-                type="number"
-                id="email"
+                type="text"
+                defaultValue={countryCode}
+                ref={ccInputRef}
+                onBlur={(e) => {
+                  if (e.target.value.match(/^\+[0-9]{1,3}$/) === null) {
+                    alert("Please enter a valid calling code");
+                  }
+                }}
+                className="lg:w-2/12 w-1/4 py-1 lg:ml-2 text-center sm:py-3 px-4 2xl:py-2 2xl:text-2xl bg-[rgba(255,255,255,0.28)] rounded-3xl focus:outline-none focus:ring focus:border-blue-500 text-orange-500"
+              />
+              <input
+                required
+                type="text"
+                id="mobilenum"
                 ref={mobileInputRef}
                 onBlur={(e) => {
                   if (e.target.value.match(/^[0-9]{10}$/) === null) {
                     alert("Please enter a valid mobile number");
                   }
                 }}
-                className="w-full py-1 px-4 sm:py-3 2xl:py-2 2xl:px-6 2xl:text-2xl bg-[rgba(255,255,255,0.28)] rounded-3xl focus:outline-none focus:ring focus:border-blue-500 text-orange-500 placeholder:text-orange-500 placeholder:opacity-70 placeholder:text-sm placeholder:tracking-[0.3rem] placeholder:font-bold"
-                placeholder="PHONE NUMBER - (without country code)"
+                className="lg:w-9/12 w-3/4 py-1 px-4 lg:ml-4 sm:py-3 2xl:py-2 2xl:px-6 2xl:text-2xl bg-[rgba(255,255,255,0.28)] rounded-3xl focus:outline-none focus:ring focus:border-blue-500 text-orange-500 placeholder:text-orange-500 placeholder:opacity-70 placeholder:text-sm placeholder:tracking-[0.2rem] placeholder:font-bold"
+                placeholder="PHONE NUMBER"
               />
             </div>
             {/* <div className="w-full lg:w-5/12">
