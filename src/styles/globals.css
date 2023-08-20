@@ -18,10 +18,45 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
+  background: linear-gradient(to bottom,
       transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+}
+@font-face {
+  font-family: 'futura BdCn BT';
+  src: url('./../../public/FuturaBoldCondensedBT.ttf');
+}
+
+@font-face {
+  font-family: 'futura Md BT';
+  src: url('./../../public/FuturaMediumBT.ttf');
+}
+
+body, span {
+  font-family: 'futura Md BT';
+  font-weight: 400;
+  
+}
+
+h1,h2,h3,h4,h5,h6,button,label, .four, .price {
+  font-family: 'futura BdCn BT';
+  font-weight: 400;
+}
+
+::-webkit-scrollbar {
+  width: 0.4rem;
+  background: #535253;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #535253;
+  border-radius: 0.6rem;
+  z-index: -99;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #FF7A00;
+  border-radius: 1rem;
 }

@@ -1,0 +1,9 @@
+#bg {
+  background-image: url(./../assets/blurbackground.png),
+    url(./../assets/Background-main.png);
+  background-position: center center, center center;
+  background-size: cover, cover;
+  background-repeat: no-repeat, no-repeat;
+  background-attachment: scroll, fixed;
+  min-height: 100vh;
+}
