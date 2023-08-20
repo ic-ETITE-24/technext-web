@@ -1,4 +1,5 @@
 import Image from "next/image";
+import React, { useState, useEffect } from 'react';
 import css from "./timeline.module.css";
 import icon from "./../assets/Top-right-logo.png";
 import expo from "../assets/expo-mark.png";
@@ -10,6 +11,20 @@ import {
 import "react-vertical-timeline-component/style.min.css";
 
 function Timeline() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkWindowWidth = () => {
+      setIsMobile(window.innerWidth <= 768); // Adjust the width breakpoint as needed
+    };
+
+    checkWindowWidth();
+    window.addEventListener("resize", checkWindowWidth);
+
+    return () => {
+      window.removeEventListener("resize", checkWindowWidth);
+    };
+  }, []);
   return (
     <>
       <div className={css.bg}>
@@ -21,7 +36,7 @@ function Timeline() {
           alt="ieee logo"
           className="float-right mr-40 hidden lg:block"
         />
-        <VerticalTimeline lineColor={"rgb(249 115 22)"}>
+        <VerticalTimeline lineColor={"rgb(249 115 22)"} animate={!isMobile}>
           <VerticalTimelineElement
             className="vertical-timeline-element--work pb-20"
             contentStyle={{ background: "rgb(249 115 22)", height: "80px" }}
