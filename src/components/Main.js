@@ -9,7 +9,7 @@ const Main = () => {
     <>
       <div className={CSS.background}>
         <div className="flex justify-between items-center w-full pt-6">
-          <div className="flex justify-between items-center felx mx-4 ml-5 sm:ml-20 sm:max-w-md w-[300px]">
+          <div className="flex justify-between items-center felx mx-4 ml-5 sm:ml-20 sm:w-[450px] w-[300px]">
             <Image
               className="felx sm:w-[52px] w-[38px]"
               src={logo}
