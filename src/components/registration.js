@@ -1,15 +1,27 @@
 import css from "./registration.module.css";
 import Image from "next/image";
 import checkout from "./../assets/checkout.png";
+import Modal from "react-modal";
 import expo from "../assets/expo-mark.png";
 import { useState, useEffect } from "react";
 
 function Registration() {
   const [latitude, setLatitude] = useState(null);
-  const [longitude, setLongitude] = useState(null);
+  const [longtiude, setLongitude] = useState(null);
   const [error, setError] = useState(false);
   const [price, setPrice] = useState(null);
   const [text, setText] = useState(null);
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+
+  Modal.setAppElement('#__next');
+
+  const openModal = () => {
+    setModalIsOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalIsOpen(false);
+  };
 
   useEffect(() => {
     if ("geolocation" in navigator) {
@@ -34,7 +46,7 @@ function Registration() {
     if (error) {
       setPrice("₹999");
       setText("Per Person for National Participants");
-    } else if (latitude >= 8.0666 && latitude <= 37.1) {
+    } else if ((latitude >= 8.0666 && latitude <= 37.1) && (longtiude >= 68.1166 && longtiude <= 97.4166)) {
       setPrice("₹999");
       setText("Per Person for National Participants");
     } else {
@@ -65,15 +77,64 @@ function Registration() {
                 REGISTER NOW{" "}
                 <Image src={checkout} alt="checkout" className="inline pb-2" />
               </button>
-              <button className="md:ml-10 2xl:ml-16 rounded text-white border-[3px] sm:mt-10 md:mt-0 md:text-2xl sm:text-5xl border-white text-2xl 2xl:text-4xl w-fit px-4 py-1">
+              <button
+                className="md:ml-10 2xl:ml-16 rounded text-white border-[3px] sm:mt-10 md:mt-0 md:text-2xl sm:text-5xl border-white text-2xl 2xl:text-4xl w-fit px-4 py-1"
+                onClick={openModal}
+              >
                 Learn More
               </button>
             </div>
           </div>
         </div>
-
-        <div className="flex flex-col md:flex-row pl-2 sm:pt-56 pt-10 md:justify-between justify-center md:pt-20 2xl:pt-0 2xl:w-full">
-          <div className="text-white pt-9 pl-4 md:pl-12 opacity-30 md:text-lg text-xs py-4 sm:py-0 2xl:w-[800px]">
+        <Modal
+          isOpen={modalIsOpen}
+          onRequestClose={closeModal}
+          shouldCloseOnOverlayClick={true}
+          style={{
+            overlay: {
+              backgroundColor: "rgba(0, 0, 0, 0.5)",
+            },
+            content: {
+              backgroundColor: "rgb(241 245 249)",
+              width: "50%",
+              height: "fit-content",
+              margin: "auto",
+              border: "1px solid #ccc",
+              borderRadius: "4px",
+              padding: "20px",
+            },
+          }}
+        >
+          <button
+            onClick={closeModal}
+            className="text-black border-black rounded float-right border-[2px] px-2"
+          >
+            x
+          </button>
+          <h2 className="text-black text-3xl 2xl:text-4xl py-4">Modal Content</h2>
+          <ul className="list-disc text-black 2xl:text-xl px-4 pb-4">
+            <li>
+              Nibh sit amet commodo nulla. Nunc vel risus commodo viverra
+              maecenas.
+            </li>
+            <li>
+              Et netus et malesuada fames ac. Lorem dolor sed viverra ipsum nunc
+              aliquet.
+            </li>
+            <li>
+              Pellentesque adipiscing commodo elit at imperdiet. Ipsum consequat
+              nisl vel pretium lectus quam.
+            </li>
+            
+            <li>
+              Tristique senectus et netus et malesuada. Arcu felis bibendum ut
+              tristique et egestas quis. Sodales ut etiam sit amet.
+            </li>
+            <li>Laoreet non curabitur gravida arcu ac tortor dignissim.</li>
+          </ul>
+        </Modal>
+        <div className="flex flex-wrap md:justify-between sm:pl-0 pt-48 sm:pt-60 md:pt-44 2xl:pt-72">
+          <div className="text-white pt-9 pl-4 md:pl-12 opacity-30">
             *All amounts mentioned shall be inclusive of 18% GST
           </div>
           <div className="w-full flex justify-end px-24 pb-10">
