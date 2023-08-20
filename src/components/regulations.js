@@ -50,7 +50,7 @@ function Regulations() {
         </div>
         <div className="flex flex-col md:flex-row pl-10 sm:pl-8 sm:pt-56 pt-10 justify-center md:pt-20 2xl:pt-20 2xl:w-full">
           <div className="text-white pt-9 px-10 md:pl-12 md:text-lg text-xs opacity-30 py-4 sm:py-0 2xl:w-[800px]">
-            * MEMBER OF 3 PEOPLE CAN ASLO FORM A TEAM
+            * 3 MEMBERS CAN ALSO FORM A TEAM
           </div>
           <div className="w-full flex justify-end px-24 pb-10">
             <Image src={expo} alt="expo-mark" quality={100} />
