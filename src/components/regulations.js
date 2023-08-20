@@ -1,28 +1,28 @@
 import Image from "next/image";
 import css from "./regulations.module.css";
-import line from "./../assets/SmallLine.png";
+import expo from "../assets/expo-mark.png";
 
 function Regulations() {
   return (
     <>
       <div className={css.bg}>
-        <h1 className="text-white text-4xl sm:text-5xl p-4 md:pl-12 2xl:text-6xl">
+        <div className="mx-10 md:mx-20 text-lg sm:text-4xl font-[600] py-10">
           Regulations
-        </h1>
-        <div className="flex flex-wrap justify-between pt-6 sm:pt-24 pl-16 md:pt-10 md:pl-28 2xl:pl-64">
-          <div className="flex items-center four gap-6 self-center sm:pl-4">
-            <div className="text-orange-500 text-8xl sm:pl-12 sm:text-9xl md:text-[160px] 2xl:text-[210px]">
+        </div>
+        <div className="flex lg:flex-nowrap flex-wrap justify-around items-center">
+          <div className="flex items-center four gap-6 sm:pl-4">
+            <div className="text-orange-500 text-6xl sm:pl-12 2xl:pl-20 sm:text-9xl md:text-[160px] 2xl:text-[210px]">
               4
             </div>
             <div className="text-white text-4xl sm:text-5xl md:text-[78px] 2xl:text-[100px] md:leading-[4rem] 2xl:leading-[5rem]">
-            MEMBERS&nbsp;
-              <br className="hidden md:inline"/>
-            TEAM*
+              MEMBERS&nbsp;
+              <br className="hidden md:inline" />
+              TEAM*
             </div>
           </div>
 
-          <div className="w-3/4 sm:pt-16 sm:pl-24 sm:w-2/3 md:w-2/4 md:pl-6 pt-8 sm:leading-relaxed">
-            <ul className="list-disc text-white sm:text-xl md:text-xl md:w-full 2xl:text-4xl 2xl:pt-16 md:pr-24 lg:text-left">
+          <div className="sm:pt-4 pt-6 sm:pl-24 w-[400px] md:w-[800px] md:pl-6 sm:leading-relaxed">
+            <ul className="list-disc text-white sm:text-xl md:text-xl md:w-full 2xl:text-2xl 2xl:pt-16 px-14 lg:text-left">
               <li>
                 Participants are required to pay the required registration fee
               </li>
@@ -48,20 +48,12 @@ function Regulations() {
             </ul>
           </div>
         </div>
-        <div className="flex flex-wrap pl-2 sm:pt-56 pt-10 md:justify-between md:pt-20 2xl:pt-28">
-          <div className="text-white pt-9 pl-4 md:pl-12 opacity-30">
+        <div className="flex flex-col md:flex-row pl-10 sm:pl-8 sm:pt-56 pt-10 justify-center md:pt-20 2xl:pt-20 2xl:w-full">
+          <div className="text-white pt-9 px-10 md:pl-12 md:text-lg text-xs opacity-30 py-4 sm:py-0 2xl:w-[800px]">
             * MEMBER OF 3 PEOPLE CAN ASLO FORM A TEAM
           </div>
-          <div className="text-[10px] pl-28 md:pr-12 self-end">
-            <span className="text-white tracking-[.7em] inline-block">
-              EXPO
-            </span>
-            <span className="inline-block text-center">
-              <Image alt="line" src={line} width={40} />
-            </span>
-            <span className="text-orange-500 tracking-[.7em] inline-block">
-              .2024
-            </span>
+          <div className="w-full flex justify-end px-24 pb-10">
+            <Image src={expo} alt="expo-mark" quality={100} />
           </div>
         </div>
       </div>
