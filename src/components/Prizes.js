@@ -51,10 +51,10 @@ const Prizes = () => {
           <div className="flex md:justify-around md:gap-40 justify-start items-center flex-wrap sm:flex-nowrap my-7">
             <div className="flex justify-center items-center  md:w-[400px] sm:w-[200px]">
               <div className="xl:text-[170px] lg:text-[150px] md:text-[70px] sm:text-[50px] text-[40px] font-semibold">
-                <span className="text-[#FF7A00]">5</span>
+                <span className="text-[#FF7A00] pr-2">5</span>
               </div>
-              <div className="xl:text-[75px] lg:text-[55px] md:text-[30px] sm:text-[25px] font-semibold lg:leading-[70px] md:leading-8 sm:leading-6 md:w-[200px] sm:w-[200px]">
-                WINNING POSITION
+              <div className="xl:text-[75px] lg:text-[55px] md:text-[30px] sm:text-[25px] text-[20px] font-semibold lg:leading-[70px] md:leading-8 sm:leading-6 md:w-[200px] sm:w-[200px]">
+                WINNING POSITIONS
               </div>
             </div>
             <div className="uppercase xl:text-5xl lg:text-3xl md:text-xl sm:text-md md:text-right font-medium xl:w-[700px] md:w-[500px]">

@@ -178,7 +178,7 @@ function ContactUs() {
                     alert("Please enter a valid calling code");
                   }
                 }}
-                className="lg:w-2/12 w-1/4 py-1 lg:ml-2 text-center sm:py-3 px-4 2xl:py-2 2xl:text-2xl bg-[rgba(255,255,255,0.28)] rounded-3xl focus:outline-none focus:ring focus:border-blue-500 text-orange-500"
+                className="lg:w-2/12 w-1/5 mr-1 py-1 lg:ml-2 text-center sm:py-3 px-4 2xl:py-2 2xl:text-2xl bg-[rgba(255,255,255,0.28)] rounded-3xl focus:outline-none focus:ring focus:border-blue-500 text-orange-500"
               />
               <input
                 required
