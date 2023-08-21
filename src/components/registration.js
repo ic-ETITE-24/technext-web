@@ -69,16 +69,16 @@ function Registration() {
               <h1>{text}</h1>
             </div>
             <div className="flex flex-wrap flex-col items-center md:flex-row md:justify-start sm:justify-center pt-16 gap-10 md:gap-0 md:pl-0 md:pt-6 2xl:pt-10 sm:pt-24">
-              <button className="bg-orange-500 rounded text-white text-2xl sm:text-5xl md:text-2xl 2xl:text-3xl w-fit px-3 py-2">
-                REGISTER NOW{" "}
-                <Image src={checkout} alt="checkout" className="inline pb-2" />
+              <button className="bg-orange-500 rounded text-white text-2xl sm:text-5xl md:text-2xl 2xl:text-3xl w-fit px-3 py-2" disabled>
+                REGISTRATIONS OPEN SOON
+                {/* <Image src={checkout} alt="checkout" className="inline pb-2" /> */}
               </button>
-              <button
+              {/* <button
                 className="md:ml-10 2xl:ml-16 rounded text-white border-[3px] sm:mt-10 md:mt-0 md:text-2xl sm:text-5xl border-white text-2xl 2xl:text-4xl w-fit px-4 py-1"
                 onClick={openModal}
               >
                 Learn More
-              </button>
+              </button> */}
             </div>
           </div>
         </div>

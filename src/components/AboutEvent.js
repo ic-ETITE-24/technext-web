@@ -45,11 +45,11 @@ const AboutEvent = () => {
               <h1 className="md:text-2xl text-lg text-[#FF7A00] font-[600] my-2">
                 DURATION
               </h1>
-              <p>12 Hours (may be stretched to 16 if hosted over 2 days)</p>
+              <p>12 Hours</p>
               <h1 className="md:text-2xl text-lg text-[#FF7A00] font-[600] my-2">
                 ROUNDS
               </h1>
-              <p>2 rounds, one online, one offline</p>
+              <p>2 rounds (one online, one offline)</p>
             </div>
           </div>
         </div>

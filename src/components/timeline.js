@@ -42,54 +42,24 @@ function Timeline() {
             contentStyle={{ background: "rgb(249 115 22)", height: "80px" }}
             iconStyle={{ background: "rgb(249 115 22)" }}
             contentArrowStyle={{ borderRight: "7px solid  rgb(249 115 22)" }}
-            date="8:00 AM"
-
-            // icon={<WorkIcon />}
-          >
-            <h3 className="vertical-timeline-element-title tracking-wider text-lg align-baseline">
-              Setup by Teams (stall allotment and prototype assembly)
-            </h3>
-          </VerticalTimelineElement>
-          <VerticalTimelineElement
-            className="vertical-timeline-element--work pb-20"
-            date="8:00 AM"
-            dateClassName="text-orange-500 lg:text-white"
-            iconStyle={{
-              backgroundColor: "white",
-            }}
-            // icon={<WorkIcon />}
-          >
-            <h3 className="vertical-timeline-element-title tracking-wider text-lg text-orange-500">
-              Commencement ceremony ( Introduction, Flow of event, Judges
-              introduction, Speeches of Guests ) 35-45 minutes
-            </h3>
-          </VerticalTimelineElement>
-          <VerticalTimelineElement
-            className="vertical-timeline-element--work pb-20"
-            contentStyle={{ background: "rgb(249 115 22)" }}
-            iconStyle={{ background: "rgb(249 115 22)", color: "#fff" }}
-            contentArrowStyle={{ borderRight: "7px solid  rgb(249 115 22)" }}
-            date="9:30 AM"
+            date="6 October 2023"
 
             // icon={<WorkIcon />}
           >
             <h3 className="vertical-timeline-element-title tracking-wider text-lg">
-              Commencement ceremony ( Introduction, Flow of event, Judges
-              introduction, Speeches of Guests ) 35-45 minutes
+              Tracks Launch
             </h3>
           </VerticalTimelineElement>
           <VerticalTimelineElement
             className="vertical-timeline-element--work pb-20"
-            date="9:00 AM"
-            dateClassName="text-orange-500 lg:text-white"
+            date="4 November 2023"
             iconStyle={{
               backgroundColor: "white",
             }}
             // icon={<WorkIcon />}
           >
             <h3 className="vertical-timeline-element-title tracking-wider text-lg text-orange-500">
-              Commencement ceremony ( Introduction, Flow of event, Judges
-              introduction, Speeches of Guests ) 35-45 minutes
+              Registration Starts
             </h3>
           </VerticalTimelineElement>
           <VerticalTimelineElement
@@ -97,33 +67,58 @@ function Timeline() {
             contentStyle={{ background: "rgb(249 115 22)" }}
             iconStyle={{ background: "rgb(249 115 22)", color: "#fff" }}
             contentArrowStyle={{ borderRight: "7px solid  rgb(249 115 22)" }}
-            date="10:15 AM"
+            date="3 December 2023"
 
             // icon={<WorkIcon />}
           >
-            <h3 className="vertical-timeline-element-title text-center tracking-wider text-lg">
-              Visiting Time
+            <h3 className="vertical-timeline-element-title tracking-wider text-lg">
+              Registration Ends
             </h3>
           </VerticalTimelineElement>
           <VerticalTimelineElement
             className="vertical-timeline-element--work pb-20"
-            date="10:15 AM"
-            dateClassName="text-orange-500 lg:text-white"
+            date="10 - 17 December 2023"
+            iconStyle={{
+              backgroundColor: "white",
+            }}
+            // icon={<WorkIcon />}
+          >
+            <h3 className="vertical-timeline-element-title tracking-wider text-lg text-orange-500">
+              Check-in Review
+            </h3>
+          </VerticalTimelineElement>
+          <VerticalTimelineElement
+            className="vertical-timeline-element--work pb-20"
+            contentStyle={{ background: "rgb(249 115 22)" }}
+            iconStyle={{ background: "rgb(249 115 22)", color: "#fff" }}
+            contentArrowStyle={{ borderRight: "7px solid  rgb(249 115 22)" }}
+            date="24 December 2023"
+
+            // icon={<WorkIcon />}
+          >
+            <h3 className="vertical-timeline-element-title text-center tracking-wider text-lg">
+              Result Declaration for Round 1
+            </h3>
+          </VerticalTimelineElement>
+          <VerticalTimelineElement
+            className="vertical-timeline-element--work pb-20"
+            date="23 February 2024"
             iconStyle={{
               backgroundColor: "white",
             }}
             // icon={<WorkIcon />}
           >
             <h3 className="vertical-timeline-element-title text-center tracking-wider text-lg text-orange-500">
-              Visiting Time
+              Exhibition Day
             </h3>
           </VerticalTimelineElement>
+          
         </VerticalTimeline>
-        <div className="flex min-[1172px]:justify-center">
+        {/* <div className="flex min-[1172px]:justify-center">
           <button className="rounded text-white border-[3px] sm:mt-10 md:mt-0 md:text-2xl sm:text-5xl border-white text-2xl 2xl:text-4xl w-fit px-4 py-1">
             Learn More
           </button>
-        </div>
+        </div> */}
 
         <div className="flex flex-wrap pl-2 sm:pt-56 pt-10 md:justify-between md:pt-20 2xl:pt-28">
           <div className="text-white pt-9 pl-4 md:pl-12 opacity-30"></div>
