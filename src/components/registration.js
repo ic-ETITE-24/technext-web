@@ -73,12 +73,12 @@ function Registration() {
                 REGISTRATIONS OPEN SOON
                 {/* <Image src={checkout} alt="checkout" className="inline pb-2" /> */}
               </button>
-              {/* <button
+              <button
                 className="md:ml-10 2xl:ml-16 rounded text-white border-[3px] sm:mt-10 md:mt-0 md:text-2xl sm:text-5xl border-white text-2xl 2xl:text-4xl w-fit px-4 py-1"
                 onClick={openModal}
               >
                 Learn More
-              </button> */}
+              </button>
             </div>
           </div>
         </div>
@@ -108,27 +108,21 @@ function Registration() {
             x
           </button>
           <h2 className="text-black text-3xl 2xl:text-4xl py-4">
-            Modal Content
+            Registration Details
           </h2>
           <ul className="list-disc text-black 2xl:text-xl px-4 pb-4">
             <li>
-              Nibh sit amet commodo nulla. Nunc vel risus commodo viverra
-              maecenas.
+              The registration fee is inclusive of all taxes and GST.
             </li>
             <li>
-              Et netus et malesuada fames ac. Lorem dolor sed viverra ipsum nunc
-              aliquet.
+              Kindly note that the registration fee will not be subject to refund in the event that your project is not chosen for participation in the expo.
             </li>
             <li>
-              Pellentesque adipiscing commodo elit at imperdiet. Ipsum consequat
-              nisl vel pretium lectus quam.
+              Participants are responsible for managing their own logistics costs. 
             </li>
-
             <li>
-              Tristique senectus et netus et malesuada. Arcu felis bibendum ut
-              tristique et egestas quis. Sodales ut etiam sit amet.
+              Organising team shall be assisting in local accommodation if needed, at extra charge.
             </li>
-            <li>Laoreet non curabitur gravida arcu ac tortor dignissim.</li>
           </ul>
         </Modal>
         <div className="flex flex-col md:flex-row pl-10 sm:pl-8 sm:pt-56 pt-10 justify-center md:pt-20 lg:pt-0 2xl:pt-20 lg:w-full">
