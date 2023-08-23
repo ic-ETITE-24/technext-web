@@ -23,7 +23,7 @@ const AboutEvent = () => {
             <div className="md:text-5xl sm:text-4xl text-2xl font-[700]">
               TECHNEXT <span className="text-[#FF7A00]"> EXPO 2024</span>
             </div>
-            <div className="text-justify text-sm sm:text-lg md:text-xl my-10">
+            <div className="text-justify text-sm sm:text-lg md:text-xl my-10 text-white">
               <p className="my-3">
                 Technext - Technology Exhibition of the Future, an integral
                 component of the ic-ETITE&apos;24 Conference, tentatively slated for

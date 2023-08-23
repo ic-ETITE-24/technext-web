@@ -4,6 +4,6 @@
     background-size: cover, cover;
     background-repeat: no-repeat, no-repeat;
     background-attachment: scroll, fixed;
-    background-image: linear-gradient(rgba(255, 255, 255, 0.00001), rgba(255, 255, 255, 0.00001)), url(../assets/grid-bg.png), url(../assets/aboutevent-bg.png);
+    background-image: linear-gradient(rgba(255, 255, 255, 0.00001), rgba(255, 255, 255, 0.00001)), url(../assets/aboutevent-bg.png);
 
 }

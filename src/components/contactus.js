@@ -115,7 +115,7 @@ function ContactUs() {
           <div className="flex flex-wrap gap-y-4 sm:gap-x-16 sm:gap-y-16 lg:gap-x-32 lg:gap-y-12 2xl:gap-x-36 2xl:gap-y-16 pl-6 lg:pl-10 sm:pt-10 lg:pt-8 xl:pt-6">
             <div className="w-11/12 lg:w-5/12 sm:w-5/12">
               <label
-                className="block text-xl 2xl:text-2xl font-medium text-white mb-1 pl-12"
+                className="block text-xl 2xl:text-xl font-medium text-white mb-1 pl-12"
                 htmlFor="firstName"
               >
                 FIRST NAME
@@ -125,13 +125,13 @@ function ContactUs() {
                 type="text"
                 id="firstName"
                 ref={firstNameInputRef}
-                className="w-full py-1 px-4 sm:py-3 2xl:py-2 2xl:px-6 2xl:text-2xl bg-[rgba(255,255,255,0.28)] rounded-3xl focus:outline-none focus:ring focus:border-blue-500 text-orange-500 placeholder:text-orange-500 placeholder:text-sm placeholder:opacity-70 placeholder:tracking-[0.3rem] placeholder:font-bold"
+                className="w-full py-1 px-4 sm:py-3 2xl:py-2 2xl:px-6 2xl:text-xl bg-[rgba(255,255,255,0.28)] rounded-lg focus:outline-none focus:ring focus:border-blue-500 text-orange-500 placeholder:text-[#ff7b00a9] placeholder:opacity-70 placeholder:tracking-[0.3rem] placeholder:font-bold"
                 placeholder="FIRST NAME"
               />
             </div>
             <div className="w-11/12 lg:w-5/12 sm:w-5/12">
               <label
-                className="block text-xl 2xl:text-2xl font-medium text-white mb-1 pl-12"
+                className="block text-xl 2xl:text-xl font-medium text-white mb-1 pl-12"
                 htmlFor="lastName"
               >
                 LAST NAME
@@ -141,13 +141,13 @@ function ContactUs() {
                 type="text"
                 id="lastName"
                 ref={lastNameInputRef}
-                className="w-full py-1 px-4 sm:py-3 2xl:py-2 2xl:px-6 2xl:text-2xl bg-[rgba(255,255,255,0.28)] rounded-3xl focus:outline-none focus:ring focus:border-blue-500 text-orange-500 placeholder:text-orange-500 placeholder:text-sm placeholder:opacity-70 placeholder:tracking-[0.3rem] placeholder:font-bold"
+                className="w-full py-1 px-4 sm:py-3 2xl:py-2 2xl:px-6 2xl:text-xl bg-[rgba(255,255,255,0.28)] rounded-lg focus:outline-none focus:ring focus:border-blue-500 text-orange-500 placeholder:text-[#ff7b00a9] placeholder:opacity-70 placeholder:tracking-[0.3rem] placeholder:font-bold"
                 placeholder="LAST NAME"
               />
             </div>
             <div className="w-11/12 lg:w-5/12 sm:w-5/12">
               <label
-                className="block text-xl 2xl:text-2xl font-medium text-white mb-1 pl-12"
+                className="block text-xl 2xl:text-xl font-medium text-white mb-1 pl-12"
                 htmlFor="email"
               >
                 E-MAIL
@@ -157,13 +157,13 @@ function ContactUs() {
                 type="email"
                 id="email"
                 ref={emailInputRef}
-                className="w-full py-1 px-4 sm:py-3 2xl:py-2 2xl:px-6 2xl:text-2xl bg-[rgba(255,255,255,0.28)] rounded-3xl focus:outline-none focus:ring focus:border-blue-500 text-orange-500 placeholder:text-orange-500 placeholder:text-sm placeholder:opacity-70 placeholder:tracking-[0.3rem] placeholder:font-bold"
+                className="w-full py-1 px-4 sm:py-3 2xl:py-2 2xl:px-6 2xl:text-xl bg-[rgba(255,255,255,0.28)] rounded-lg focus:outline-none focus:ring focus:border-blue-500 text-orange-500 placeholder:text-[#ff7b00a9] placeholder:opacity-70 placeholder:tracking-[0.3rem] placeholder:font-bold"
                 placeholder="EMAIL - ADDRESS"
               />
             </div>
             <div className="w-11/12 lg:w-5/12 sm:w-5/12">
               <label
-                className="block text-xl 2xl:text-2xl font-medium text-white mb-1 pl-12"
+                className="block text-xl 2xl:text-xl font-medium text-white mb-1 pl-12"
                 htmlFor="mobilenum"
               >
                 PHONE NUMBER
@@ -178,7 +178,7 @@ function ContactUs() {
                     alert("Please enter a valid calling code");
                   }
                 }}
-                className="lg:w-2/12 w-1/5 mr-1 py-1 lg:ml-2 text-center sm:py-3 px-4 2xl:py-2 2xl:text-2xl bg-[rgba(255,255,255,0.28)] rounded-3xl focus:outline-none focus:ring focus:border-blue-500 text-orange-500"
+                className="lg:w-2/12 w-1/5 mr-1 py-1 lg:ml-2 text-center sm:py-3 px-4 2xl:py-2 2xl:text-xl bg-[rgba(255,255,255,0.28)] rounded-lg focus:outline-none focus:ring focus:border-blue-500 text-orange-500"
               />
               <input
                 required
@@ -190,7 +190,7 @@ function ContactUs() {
                     alert("Please enter a valid mobile number");
                   }
                 }}
-                className="lg:w-9/12 w-3/4 py-1 px-4 lg:ml-4 sm:py-3 2xl:py-2 2xl:px-6 2xl:text-2xl bg-[rgba(255,255,255,0.28)] rounded-3xl focus:outline-none focus:ring focus:border-blue-500 text-orange-500 placeholder:text-orange-500 placeholder:opacity-70 placeholder:text-sm placeholder:tracking-[0.2rem] placeholder:font-bold"
+                className="lg:w-9/12 w-3/4 py-1 px-4 lg:ml-4 sm:py-3 2xl:py-2 2xl:px-6 2xl:text-xl bg-[rgba(255,255,255,0.28)] rounded-lg focus:outline-none focus:ring focus:border-blue-500 text-orange-500 placeholder:text-[#ff7b00a9] placeholder:opacity-70 placeholder:tracking-[0.2rem] placeholder:font-bold"
                 placeholder="PHONE NUMBER"
               />
             </div>
@@ -254,7 +254,7 @@ function ContactUs() {
             </div> */}
             <div className="w-full lg:w-full">
               <label
-                className="block text-xl 2xl:text-3xl font-medium text-white mb-1 pl-12"
+                className="block text-xl 2xl:text-xl font-medium text-white mb-1 pl-12"
                 htmlFor="query"
               >
                 MESSAGE
@@ -263,13 +263,13 @@ function ContactUs() {
                 required
                 ref={queryInputRef}
                 id="query"
-                className="block 2xl:text-2xl p-2.5 w-11/12 sm:w-11/12 lg:w-11/12 bg-[rgba(255,255,255,0.28)] rounded-3xl focus:outline-none focus:ring focus:border-blue-500 text-orange-500 placeholder:text-orange-500 placeholder:text-sm placeholder:opacity-70 placeholder:pt-2 placeholder:uppercase placeholder:tracking-[0.3rem] pt-4 pl-6 placeholder:font-bold"
+                className="block 2xl:text-xl p-2.5 w-11/12 sm:w-11/12 lg:w-11/12 bg-[rgba(255,255,255,0.28)] rounded-lg focus:outline-none focus:ring focus:border-blue-500 text-orange-500 placeholder:text-[#ff7b00a9] placeholder:text-sm placeholder:opacity-70 placeholder:pt-2 placeholder:uppercase placeholder:tracking-[0.3rem] pt-4 pl-6 placeholder:font-bold"
                 placeholder="Tell us your Query..."
                 rows="4"
               ></textarea>
               <button
                 type="submit"
-                className="bg-orange-500 rounded-2xl text-white text-2xl sm:text-5xl md:text-2xl 2xl:text-4xl w-fit px-3 py-2 mt-12 sm:mt-16 lg:mt-8 2xl:mt-14"
+                className="bg-orange-500 rounded-2xl text-white text-xl sm:text-5xl md:text-2xl 2xl:text-2xl w-fit px-3 py-2 mt-12 sm:mt-16 lg:mt-8 2xl:mt-14"
               >
                 CONTACT US
               </button>

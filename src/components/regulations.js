@@ -15,7 +15,7 @@ function Regulations() {
               4
             </div>
             <div className="text-white text-4xl sm:text-5xl md:text-[78px] 2xl:text-[100px] md:leading-[4rem] 2xl:leading-[5rem]">
-              MEMBERS&nbsp;
+              MEMBER&nbsp;
               <br className="hidden md:inline" />
               TEAM*
             </div>

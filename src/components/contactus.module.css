@@ -1,6 +1,5 @@
 #bg {
-  background-image: url(./../assets/blurbackground.png),
-    url(./../assets/Background-main.png);
+  background-image: url(./../assets/blurbackground.png);
   background-position: center center, center center;
   background-size: cover, cover;
   background-repeat: no-repeat, no-repeat;

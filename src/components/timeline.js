@@ -53,6 +53,7 @@ function Timeline() {
           <VerticalTimelineElement
             className="vertical-timeline-element--work pb-20"
             date="4 November 2023"
+            dateClassName="max-[1169px]:text-orange-500"
             iconStyle={{
               backgroundColor: "white",
             }}
@@ -78,6 +79,7 @@ function Timeline() {
           <VerticalTimelineElement
             className="vertical-timeline-element--work pb-20"
             date="10 - 17 December 2023"
+            dateClassName="max-[1169px]:text-orange-500"
             iconStyle={{
               backgroundColor: "white",
             }}
@@ -96,19 +98,20 @@ function Timeline() {
 
             // icon={<WorkIcon />}
           >
-            <h3 className="vertical-timeline-element-title text-center tracking-wider text-lg">
+            <h3 className="vertical-timeline-element-title tracking-wider text-lg">
               Result Declaration for Round 1
             </h3>
           </VerticalTimelineElement>
           <VerticalTimelineElement
             className="vertical-timeline-element--work pb-20"
             date="23 February 2024"
+            dateClassName="max-[1169px]:text-orange-500"
             iconStyle={{
               backgroundColor: "white",
             }}
             // icon={<WorkIcon />}
           >
-            <h3 className="vertical-timeline-element-title text-center tracking-wider text-lg text-orange-500">
+            <h3 className="vertical-timeline-element-title tracking-wider text-lg text-orange-500">
               Exhibition Day
             </h3>
           </VerticalTimelineElement>

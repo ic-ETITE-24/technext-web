@@ -7,7 +7,7 @@ const Prizes = () => {
     <>
       <div className={CSS.background}>
         <div className="mx-10 md:mx-20 text-lg sm:text-4xl font-[600] py-10">
-          PRIZES
+          Prizes
         </div>
         <div className="md:mx-20 mx-10">
           <div className="uppercase flex justify-evenly items-center rounded-2xl bg-white bg-opacity-[0.16] backdrop-blur-md min-h-[300px] flex-wrap xl:flex-nowrap">
