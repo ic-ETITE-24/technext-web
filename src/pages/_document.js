@@ -8,7 +8,7 @@ export default function Document() {
         {/* Google Analytics tracking code */}
         <script
           async
-          src="https://www.googletagmanager.com/gtag/js?id=G-6EV94V5J2K"
+          src="https://www.googletagmanager.com/gtag/js?id=G-PN55CHGJK4"
         ></script>
         <script>
           {`
@@ -16,7 +16,7 @@ export default function Document() {
             function gtag(){window.dataLayer.push(arguments);}
             gtag('js', new Date());
 
-            gtag('config', 'G-6EV94V5J2K');
+            gtag('config', 'G-PN55CHGJK4');
           `}
         </script>
       </Head>
