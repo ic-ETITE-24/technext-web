@@ -125,11 +125,11 @@ function Registration() {
             </li>
           </ul>
         </Modal>
-        <div className="flex flex-col md:flex-row pl-10 sm:pl-8 sm:pt-56 pt-10 justify-center md:pt-20 lg:pt-0 2xl:pt-20 lg:w-full">
-          <div className="text-white pt-9 px-10 md:pl-12 md:text-lg text-xs opacity-30 py-4 sm:py-0 lg:w-3/4">
+        <div className="flex flex-col items-center md:flex-row sm:pt-56 pt-10 justify-center md:pt-20 lg:pt-0 2xl:pt-20 lg:w-full">
+          <div className="flex justify-center text-white pt-9 md:pl-12 lg:pl-4 xl:pl-8 2xl:pl-0 xl:pr-44 md:text-lg text-xs opacity-30 py-4 sm:py-0 md:w-full">
             *All amounts mentioned shall be inclusive of 18% GST
           </div>
-          <div className="w-full flex justify-end px-24 pb-10">
+          <div className="w-full flex justify-center md:justify-end md:px-10">
             <Image src={expo} alt="expo-mark" quality={100} />
           </div>
         </div>

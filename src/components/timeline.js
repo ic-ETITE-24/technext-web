@@ -53,6 +53,7 @@ function Timeline() {
           <VerticalTimelineElement
             className="vertical-timeline-element--work pb-20"
             date="4 November 2023"
+            dateClassName="xl:text-white text-orange-500"
             iconStyle={{
               backgroundColor: "white",
             }}
@@ -78,6 +79,7 @@ function Timeline() {
           <VerticalTimelineElement
             className="vertical-timeline-element--work pb-20"
             date="10 - 17 December 2023"
+            dateClassName="xl:text-white text-orange-500"
             iconStyle={{
               backgroundColor: "white",
             }}
@@ -103,6 +105,7 @@ function Timeline() {
           <VerticalTimelineElement
             className="vertical-timeline-element--work pb-20"
             date="23 February 2024"
+            dateClassName="xl:text-white text-orange-500"
             iconStyle={{
               backgroundColor: "white",
             }}
