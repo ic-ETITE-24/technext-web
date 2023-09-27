@@ -8,7 +8,7 @@ import Link from "next/link";
 const Main = () => {
   return (
     <>
-      <div className={CSS.background}>
+      <div className={`${CSS.background} text-white`}>
         <div className="flex justify-between items-center w-full pt-6">
           <div className="flex justify-between items-center felx mx-4 ml-5 sm:ml-20 sm:w-[450px] w-[300px]">
             <Image

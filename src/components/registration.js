@@ -54,7 +54,7 @@ function Registration() {
   return (
     <>
       <div className={css.bg}>
-        <div className="mx-10 md:mx-20 text-lg sm:text-4xl font-[600] py-10">
+        <div className="mx-10 text-white md:mx-20 text-lg sm:text-4xl font-[600] py-10">
           Registration
         </div>
         <div className="flex flex-wrap place-content-center place-self-center h-[600px] ">
@@ -69,7 +69,10 @@ function Registration() {
               <h1>{text}</h1>
             </div>
             <div className="flex flex-wrap flex-col items-center md:flex-row md:justify-start sm:justify-center pt-16 gap-10 md:gap-0 md:pl-0 md:pt-6 2xl:pt-10 sm:pt-24">
-              <button className="bg-orange-500 rounded text-white text-2xl sm:text-5xl md:text-2xl 2xl:text-3xl w-fit px-3 py-2" disabled>
+              <button
+                className="bg-orange-500 rounded text-white text-2xl sm:text-5xl md:text-2xl 2xl:text-3xl w-fit px-3 py-2"
+                disabled
+              >
                 REGISTRATIONS OPEN SOON
                 {/* <Image src={checkout} alt="checkout" className="inline pb-2" /> */}
               </button>
@@ -111,17 +114,19 @@ function Registration() {
             Registration Details
           </h2>
           <ul className="list-disc text-black 2xl:text-xl px-4 pb-4">
+            <li>The registration fee is inclusive of all taxes and GST.</li>
             <li>
-              The registration fee is inclusive of all taxes and GST.
+              Kindly note that the registration fee will not be subject to
+              refund in the event that your project is not chosen for
+              participation in the expo.
             </li>
             <li>
-              Kindly note that the registration fee will not be subject to refund in the event that your project is not chosen for participation in the expo.
+              Participants are responsible for managing their own logistics
+              costs.
             </li>
             <li>
-              Participants are responsible for managing their own logistics costs. 
-            </li>
-            <li>
-              Organising team shall be assisting in local accommodation if needed, at extra charge.
+              Organising team shall be assisting in local accommodation if
+              needed, at extra charge.
             </li>
           </ul>
         </Modal>
