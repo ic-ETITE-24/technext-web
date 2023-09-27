@@ -6,7 +6,7 @@ function Regulations() {
   return (
     <>
       <div className={css.bg}>
-        <div className="mx-10 md:mx-20 text-lg sm:text-4xl font-[600] py-10">
+        <div className="mx-10 md:mx-20 text-lg sm:text-4xl text-white font-[600] py-10">
           Regulations
         </div>
         <div className="flex lg:flex-nowrap flex-wrap justify-around items-center lg:h-[600px]">

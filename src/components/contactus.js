@@ -83,7 +83,6 @@ function ContactUs() {
       // day: enteredDay,
       // year: enteredYear,
       query: enteredQuery,
-      country: country,
     };
 
     console.log(queryData);
@@ -103,7 +102,7 @@ function ContactUs() {
   }
 
   return (
-    <div className="" id={css.bg}>
+    <div className="text-white" id={css.bg}>
       <div className="mx-10 md:mx-20 text-lg sm:text-4xl font-[600] py-10">
         Contact Us
       </div>

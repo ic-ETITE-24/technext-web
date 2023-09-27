@@ -7,7 +7,7 @@ const AboutEvent = () => {
   return (
     <>
       <div className={CSS.background}>
-        <div className="mx-10 md:mx-20 text-lg sm:text-4xl font-[600] py-10">
+        <div className="text-white mx-10 md:mx-20 text-lg sm:text-4xl font-[600] py-10">
           About us & Events
         </div>
         <div className="flex justify-between items-center">
@@ -19,16 +19,16 @@ const AboutEvent = () => {
               quality={100}
             />
           </div>
-          <div className="sm:w-[700px] md:mx-20 mx-10">
+          <div className="text-white sm:w-[700px] md:mx-20 mx-10">
             <div className="md:text-5xl sm:text-4xl text-2xl font-[700]">
               TECHNEXT <span className="text-[#FF7A00]"> EXPO 2024</span>
             </div>
-            <div className="text-justify text-sm sm:text-lg md:text-xl my-10">
+            <div className="text-justify text-sm  sm:text-lg md:text-xl my-10">
               <p className="my-3">
                 Technext - Technology Exhibition of the Future, an integral
-                component of the ic-ETITE&apos;24 Conference, tentatively slated for
-                February 22nd and 23rd, 2024, is an event designed to serve as a
-                global stage, empowering students to transition from the
+                component of the ic-ETITE&apos;24 Conference, tentatively slated
+                for February 22nd and 23rd, 2024, is an event designed to serve
+                as a global stage, empowering students to transition from the
                 conceptualization and planning of groundbreaking technologies to
                 their full-fledged realization.
               </p>

@@ -5,7 +5,7 @@ import expo from "../assets/expo-mark.png";
 const Prizes = () => {
   return (
     <>
-      <div className={CSS.background}>
+      <div className={`${CSS.background} text-white`}>
         <div className="mx-10 md:mx-20 text-lg sm:text-4xl font-[600] py-10">
           PRIZES
         </div>
