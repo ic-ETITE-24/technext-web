@@ -7,6 +7,7 @@ import Timeline from "@/components/timeline";
 import Footer from "@/components/Footer";
 import Prizes from "@/components/Prizes";
 import Head from "next/head";
+import Investors from "@/components/investors";
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
       <Registration />
       <Timeline />
       <Prizes />
+      <Investors />
       <ContactUs />
       <Footer />
     </main>
