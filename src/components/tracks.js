@@ -15,7 +15,7 @@ function Tracks() {
         <div className="ml-1 hidden lg:flex">
             <Image src={trackl} quality={100} width={1300} className="mx-auto"/>
         </div>
-        <div className="ml-5 lg:hidden flex">
+        <div className="ml-3 sm:ml-4 lg:hidden flex">
             <Image src={tracksm} quality={100} className="mx-auto"/>
         </div>
         <div className="w-full flex justify-center md:justify-end px-24 py-12">
