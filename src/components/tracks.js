@@ -12,10 +12,10 @@ function Tracks() {
         <div className="mx-10 text-white md:mx-20 text-lg sm:text-4xl font-[600] py-10">
           TRACKS
         </div>
-        <div className="hidden lg:flex">
+        <div className="ml-1 hidden lg:flex">
             <Image src={trackl} quality={100} width={1300} className="mx-auto"/>
         </div>
-        <div className="lg:hidden flex">
+        <div className="ml-5 lg:hidden flex">
             <Image src={tracksm} quality={100} className="mx-auto"/>
         </div>
         <div className="w-full flex justify-center md:justify-end px-24 py-12">
