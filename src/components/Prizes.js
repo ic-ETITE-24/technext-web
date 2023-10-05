@@ -65,7 +65,7 @@ const Prizes = () => {
             </div>
           </div>
         </div>
-        <div className="w-full flex justify-end px-24 pb-10">
+        <div className="w-full flex md:justify-end justify-center px-24 pb-10">
           <Image src={expo} alt="expo-mark" quality={100} />
         </div>
       </div>
