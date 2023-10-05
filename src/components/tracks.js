@@ -1,9 +1,8 @@
 import Image from "next/image";
 import CSS from "./tracks.module.css";
-import trackl from './../assets/trackslf.png'
-import tracksm from './../assets/tracksm.png'
+import trackl from "./../assets/trackslf.png";
+import tracksm from "./../assets/tracksm.png";
 import expo from "../assets/expo-mark.png";
-
 
 function Tracks() {
   return (
@@ -13,10 +12,16 @@ function Tracks() {
           TRACKS
         </div>
         <div className="ml-1 hidden lg:flex">
-            <Image src={trackl} quality={100} width={1300} className="mx-auto"/>
+          <Image
+            src={trackl}
+            quality={100}
+            width={1300}
+            className="mx-auto"
+            alt="chart"
+          />
         </div>
         <div className="ml-3 sm:ml-4 lg:hidden flex">
-            <Image src={tracksm} quality={100} className="mx-auto"/>
+          <Image src={tracksm} quality={100} className="mx-auto" alt="chart" />
         </div>
         <div className="w-full flex justify-center md:justify-end px-24 py-12">
           <Image src={expo} alt="expo-mark" quality={100} />
