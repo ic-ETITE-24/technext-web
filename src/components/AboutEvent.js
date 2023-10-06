@@ -25,7 +25,7 @@ const AboutEvent = () => {
             </div>
             <div className="text-justify text-sm  sm:text-lg md:text-xl my-10">
               <p className="my-3">
-                Technext - Technology Exhibition of the Future, an integral
+                Technext - Technology Exhibition for the Future, an integral
                 component of the ic-ETITE&apos;24 Conference, tentatively slated
                 for February 22nd and 23rd, 2024, is an event designed to serve
                 as a global stage, empowering students to transition from the

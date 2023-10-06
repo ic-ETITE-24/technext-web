@@ -46,7 +46,7 @@ function Timeline() {
 
             // icon={<WorkIcon />}
           >
-            <h3 className="vertical-timeline-element-title tracking-wider text-lg">
+            <h3 className="vertical-timeline-element-title min-[1170px]:text-center tracking-wider text-lg">
               Tracks Launch
             </h3>
           </VerticalTimelineElement>
@@ -59,7 +59,7 @@ function Timeline() {
             }}
             // icon={<WorkIcon />}
           >
-            <h3 className="vertical-timeline-element-title tracking-wider text-lg text-orange-500">
+            <h3 className="vertical-timeline-element-title min-[1170px]:text-center tracking-wider text-lg text-orange-500">
               Registration Starts
             </h3>
           </VerticalTimelineElement>
@@ -72,7 +72,7 @@ function Timeline() {
 
             // icon={<WorkIcon />}
           >
-            <h3 className="vertical-timeline-element-title tracking-wider text-lg">
+            <h3 className="vertical-timeline-element-title min-[1170px]:text-center tracking-wider text-lg">
               Registration Ends
             </h3>
           </VerticalTimelineElement>
@@ -85,7 +85,7 @@ function Timeline() {
             }}
             // icon={<WorkIcon />}
           >
-            <h3 className="vertical-timeline-element-title tracking-wider text-lg text-orange-500">
+            <h3 className="vertical-timeline-element-title min-[1170px]:text-center tracking-wider text-lg text-orange-500">
               Check-in Review
             </h3>
           </VerticalTimelineElement>
@@ -98,7 +98,7 @@ function Timeline() {
 
             // icon={<WorkIcon />}
           >
-            <h3 className="vertical-timeline-element-title text-center tracking-wider text-lg">
+            <h3 className="vertical-timeline-element-title min-[1170px]:text-center tracking-wider text-lg">
               Result Declaration for Round 1
             </h3>
           </VerticalTimelineElement>
@@ -111,7 +111,7 @@ function Timeline() {
             }}
             // icon={<WorkIcon />}
           >
-            <h3 className="vertical-timeline-element-title text-center tracking-wider text-lg text-orange-500">
+            <h3 className="vertical-timeline-element-title min-[1170px]:text-center tracking-wider text-lg text-orange-500">
               Exhibition Day
             </h3>
           </VerticalTimelineElement>
