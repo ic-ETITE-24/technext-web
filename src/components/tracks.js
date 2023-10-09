@@ -23,7 +23,7 @@ function Tracks() {
         </div>
         <Link href="/trackdetails">
           <div className="flex justify-center">
-            <button className="rounded text-white border-[3px] md:text-2xl sm:text-5xl border-white text-xl 2xl:text-3xl w-fit px-4 py-1 mt-8">
+            <button className="rounded text-white border-[3px] md:text-2xl sm:text-5xl border-white text-xl 2xl:text-3xl w-fit px-4 py-1 mt-8 hover:bg-orange-500 hover:border-orange-500 hover:text-white">
               VIEW TRACK DETAILS
             </button>
           </div>
