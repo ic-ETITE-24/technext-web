@@ -12,7 +12,7 @@ function Guidelines1() {
         </div>
         <div className="flex flex-col lg:flex-row items-center gap-y-2 lg:justify-center gap-x-12 mt-12">
           <div className="text-orange-500 text-5xl price">Student Groups</div>
-          <div className="text-white text-center w-[40%] text-lg">
+          <div className="text-white text-center w-[70%] md:w-[40%] text-lg">
             This competition is open to both Indian nationals and Foreign
             citizens. Participants must be currently enrolled in an academic
             institution at the time of the competition.
@@ -22,7 +22,7 @@ function Guidelines1() {
         
         <div className="flex flex-col lg:flex-row items-center gap-y-2 lg:justify-center gap-x-12 mt-12">
           <div className="text-orange-500 text-5xl price">Startups</div>
-          <div className="text-white text-center w-[40%] text-lg">
+          <div className="text-white text-center w-[70%] md:w-[40%] text-lg">
             The startup must be in its early stages, defined as having been
             founded within the last three years. The startup must have a
             technology-based product or service as its core offering. The
