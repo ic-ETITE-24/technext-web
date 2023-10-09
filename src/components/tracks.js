@@ -3,12 +3,13 @@ import CSS from "./tracks.module.css";
 import trackl from "./../assets/trackslf.png";
 import tracksm from "./../assets/tracksm.png";
 import expo from "../assets/expo-mark.png";
+import Link from "next/link";
 
 function Tracks() {
   return (
     <>
       <div className={CSS.background}>
-        <div className="mx-10 text-white md:mx-20 text-lg sm:text-4xl font-[600] py-10">
+        <div className="mx-10 text-white md:mx-20 text-lg sm:text-4xl font-[600] py-6">
           TRACKS
         </div>
         <div className="ml-1 hidden lg:flex">
@@ -20,6 +21,14 @@ function Tracks() {
             alt="chart"
           />
         </div>
+        <Link href="/trackdetails">
+          <div className="flex justify-center">
+            <button className="rounded text-white border-[3px] md:text-2xl sm:text-5xl border-white text-xl 2xl:text-3xl w-fit px-4 py-1 mt-8">
+              VIEW TRACK DETAILS
+            </button>
+          </div>
+        </Link>
+
         <div className="ml-3 sm:ml-4 lg:hidden flex">
           <Image src={tracksm} quality={100} className="mx-auto" alt="chart" />
         </div>

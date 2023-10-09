@@ -13,7 +13,7 @@ function Tracks7() {
         </div>
         <div className="py-12 lg:py-0 lg:pr-8 mx-auto my-auto h-[80%] w-[80%] lg:w-[80%] xl:w-[60%] sm:w-[60%] rounded-md pb-3 backdrop-blur-md backdrop-brightness-125 flex flex-col lg:flex-row lg:justify-center ">
           <div className="my-auto mx-2 md:mx-8 lg:mx-24 text-center">
-            <h1 className="text-[#FF7A00] text-6xl">OPEN INNOVATION</h1>
+            <h1 className="text-[#FF7A00] text-4xl lg:text-6xl">OPEN INNOVATION</h1>
           </div>
 
           <Image
