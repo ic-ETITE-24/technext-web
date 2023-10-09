@@ -77,7 +77,7 @@ function Registration() {
                 {/* <Image src={checkout} alt="checkout" className="inline pb-2" /> */}
               </button>
               <button
-                className="md:ml-10 2xl:ml-16 rounded text-white border-[3px] sm:mt-10 md:mt-0 md:text-2xl sm:text-5xl border-white text-2xl 2xl:text-4xl w-fit px-4 py-1"
+                className="md:ml-10 2xl:ml-16 rounded text-white border-[3px] sm:mt-10 md:mt-0 md:text-2xl sm:text-5xl border-white text-2xl 2xl:text-4xl w-fit px-4 py-1 hover:bg-orange-500 hover:border-orange-500 hover:text-white"
                 onClick={openModal}
               >
                 Learn More

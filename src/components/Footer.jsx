@@ -2,7 +2,7 @@ import axios from "axios";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { AiFillFacebook,  AiOutlineInstagram } from "react-icons/ai";
+import { AiFillFacebook, AiOutlineInstagram } from "react-icons/ai";
 import { BiLogoLinkedin } from "react-icons/bi";
 
 const Footer = () => {
@@ -58,7 +58,10 @@ const Footer = () => {
             </ul>
           </div> */}
           <div>
-            <h2 className=" text-xs md:text-base lg:text-xl">HOME</h2>
+            <Link href="/">
+              <h2 className=" text-xs md:text-base lg:text-xl">HOME</h2>
+            </Link>
+
             <ul className=" text-xs md:text-sm lg:text-base mt-5 text-[#ffffff80]">
               <li>ABOUT</li>
               <li className=" mt-2">REGULATIONS</li>
@@ -88,6 +91,12 @@ const Footer = () => {
                 rel="noreferrer noopener"
               >
                 <li className=" mt-2">EVENT BROCHURE</li>
+              </Link>
+              <Link href="/guidelines">
+                <li className=" mt-2">REGULATION & GUIDELINES</li>
+              </Link>
+              <Link href="/trackguidlines">
+                <li className=" mt-2">TRACK GUIDELINES</li>
               </Link>
             </ul>
           </div>
