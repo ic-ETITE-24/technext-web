@@ -1,6 +1,7 @@
 import Image from "next/image";
 import css from "./regulations.module.css";
 import expo from "../assets/expo-mark.png";
+import Link from "next/link";
 
 function Regulations() {
   return (
@@ -46,6 +47,13 @@ function Regulations() {
                 2024.
               </li>
             </ul>
+            <div className="flex justify-center mt-5">
+              <Link href="guidelines">
+                <button className="rounded text-white border-[3px] md:text-2xl sm:text-5xl border-white text-2xl 2xl:text-4xl w-fit px-4 py-1 hover:bg-orange-500 hover:border-orange-500 hover:text-white">
+                  Learn More
+                </button>
+              </Link>
+            </div>
           </div>
         </div>
         <div className="flex flex-col items-center md:flex-row sm:pt-56 pt-10 justify-center md:pt-20 lg:pt-0 2xl:pt-20 lg:w-full">

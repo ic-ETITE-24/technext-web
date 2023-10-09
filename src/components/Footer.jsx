@@ -95,6 +95,9 @@ const Footer = () => {
               <Link href="/guidelines">
                 <li className=" mt-2">REGULATION & GUIDELINES</li>
               </Link>
+              <Link href="/trackguidlines">
+                <li className=" mt-2">TRACK GUIDELINES</li>
+              </Link>
             </ul>
           </div>
           <div className="col-span-2 md:col-span-1">

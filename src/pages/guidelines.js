@@ -1,5 +1,8 @@
-import AboutEvent from "@/components/AboutEvent";
 import Head from "next/head";
+import Footer from "@/components/Footer";
+import Guidelines1 from "@/components/guidelines1";
+import Guidelines2 from "@/components/guidelines2";
+
 function Guidelines() {
   return (
     <>
@@ -7,7 +10,9 @@ function Guidelines() {
         <title>Technext | Guidelines</title>
         <link rel="icon" type="image/x-icon" href="/favicon.ico"></link>
       </Head>
-      <AboutEvent />
+      <Guidelines1 />
+      <Guidelines2 />
+      <Footer />
     </>
   );
 }
