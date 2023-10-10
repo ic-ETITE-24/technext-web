@@ -7,16 +7,27 @@ function Guidelines2() {
   return (
     <>
       <div className={css.bg}>
-        <div className="mx-10 md:mx-20 text-lg sm:text-4xl text-white font-[600] py-10 uppercase">
+        <div className="mx-10 md:mx-20 text-lg sm:text-4xl text-white font-[600] py-10 uppercase" 
+        style={{
+              fontFamily: "Futura BdCn BT",
+              fontStyle: "normal",
+              fontWeight: 100
+            }}>
           general rules and regulations
         </div>
-        <div className="ml-12 mr-4 text-lg">
+        <div className="ml-12 mr-4 text-lg px-8" style={{
+              fontFamily: "Futura Md BT",
+              // fontStyle: "normal",
+              fontWeight: 100,
+              fontSize: "15px"
+            }}>
           <ul className="list-disc">
+
             <li>
               Registration for the competition is open to eligible teams. Each
               team must register online during the designated registration
               period. Late registrations will not be accepted.
-            </li>
+              </li>
             <li>
               Participants must select one of the project tracks specified for
               the competition. For detailed information on the event timeline,
