@@ -38,6 +38,15 @@ body, span {
   
 }
 
+p {
+  font-family: 'futura Md BT';
+  font-weight: 100;
+  font-size: 16px;
+  padding-bottom: 24px;
+  
+}
+
+
 h1,h2,h3,h4,h5,h6,button,label, .four, .price {
   font-family: 'futura BdCn BT';
   font-weight: 400;

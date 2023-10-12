@@ -38,7 +38,7 @@ function Timeline() {
         />
         <VerticalTimeline lineColor={"rgb(249 115 22)"} animate={!isMobile}>
           <VerticalTimelineElement
-            className="vertical-timeline-element--work pb-20 text-white"
+            className="vertical-timeline-element--work pb-20 text-white pr-4"
             contentStyle={{ background: "rgb(249 115 22)", height: "80px" }}
             iconStyle={{ background: "rgb(249 115 22)" }}
             contentArrowStyle={{ borderRight: "7px solid  rgb(249 115 22)" }}
@@ -51,7 +51,7 @@ function Timeline() {
             </h3>
           </VerticalTimelineElement>
           <VerticalTimelineElement
-            className="vertical-timeline-element--work pb-20 text-white"
+            className="vertical-timeline-element--work pb-20 text-white  pr-4"
             date="4 November 2023"
             dateClassName="xl:text-white text-orange-500"
             iconStyle={{
@@ -64,7 +64,7 @@ function Timeline() {
             </h3>
           </VerticalTimelineElement>
           <VerticalTimelineElement
-            className="vertical-timeline-element--work pb-20 text-white"
+            className="vertical-timeline-element--work pb-20 text-white  pr-4"
             contentStyle={{ background: "rgb(249 115 22)" }}
             iconStyle={{ background: "rgb(249 115 22)", color: "#fff" }}
             contentArrowStyle={{ borderRight: "7px solid  rgb(249 115 22)" }}
@@ -77,7 +77,7 @@ function Timeline() {
             </h3>
           </VerticalTimelineElement>
           <VerticalTimelineElement
-            className="vertical-timeline-element--work pb-20 text-white"
+            className="vertical-timeline-element--work pb-20 text-white  pr-4"
             date="10 - 17 December 2023"
             dateClassName="xl:text-white text-orange-500"
             iconStyle={{
@@ -90,7 +90,7 @@ function Timeline() {
             </h3>
           </VerticalTimelineElement>
           <VerticalTimelineElement
-            className="vertical-timeline-element--work pb-20 text-white"
+            className="vertical-timeline-element--work pb-20 text-white  pr-4"
             contentStyle={{ background: "rgb(249 115 22)" }}
             iconStyle={{ background: "rgb(249 115 22)", color: "#fff" }}
             contentArrowStyle={{ borderRight: "7px solid  rgb(249 115 22)" }}
@@ -103,7 +103,7 @@ function Timeline() {
             </h3>
           </VerticalTimelineElement>
           <VerticalTimelineElement
-            className="vertical-timeline-element--work pb-20 text-white"
+            className="vertical-timeline-element--work pb-20 text-white  pr-4"
             date="23 February 2024"
             dateClassName="xl:text-white text-orange-500"
             iconStyle={{
