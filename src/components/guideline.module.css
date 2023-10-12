@@ -1,0 +1,20 @@
+.bg {
+    background-image: url(./../assets/background1.png),
+      url(./../assets/Background-main.png);
+    background-position: center center, center center;
+    font-family: "Futura BdCn BT";
+    font-style: "normal";
+    background-size: cover, cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    background-image: linear-gradient(
+        rgba(255, 255, 255, 0.00001),
+        rgba(255, 255, 255, 0.00001)
+      ),
+      url(./../assets/Background-main.png), url(./../assets/background1.png);
+  }
+  
+  
+  
+  
