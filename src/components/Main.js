@@ -17,7 +17,7 @@ const Main = () => {
               alt="logo"
             />
             <span className="felx uppercase sm:text-sm text-[8px] mx-3 sm:mx-5">
-              International Conference on Emerging Trends in Information
+              Second International Conference on Emerging Trends in Information
               Technology and Engineering{" "}
               <span className="text-[#FF7A00]">TECHNEXT EXPO 2024</span>
             </span>
