@@ -23,12 +23,12 @@ jobs:
         - name: Build with Next.js
           run: npm run build
 
-   Deploy:
+  Deploy:
     needs: Build
     runs-on: ubuntu-latest
 
     steps:
-      - name: Deploy
+      - name: SSH and Deploy
         uses: appleboy/ssh-action@v1.0.0
         with:
           host: ${{ secrets.SERVER_HOST }}
@@ -37,8 +37,6 @@ jobs:
           port: 22
           script: |
             cd technext-landing/
-            git pull origin main 
+            git pull origin redesign 
             echo "${{ secrets.SSH_KEY }}" | sudo -S docker-compose down
             echo "${{ secrets.SSH_KEY }}" | sudo -S docker-compose up -d --build
-
-
