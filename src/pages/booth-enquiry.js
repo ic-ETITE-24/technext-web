@@ -89,9 +89,10 @@ function BoothEnquiry() {
               <span className="text-[#FF7A00] four">TECHNEXT EXPO 2024</span>
             </span>
           </div>
-          <Image src={logo} alt="Icetite-logo" className="mx-auto mt-6" />
+          <Image src={logo} alt="Icetite-logo" className="mx-auto xl:my-32" />
         </div>
-        <div className="mx-8 my-auto h-fit w-[100%] rounded-md py-6 backdrop-blur-md backdrop-brightness-150 lg:w-[50%]">
+
+        <div className="mx-8 xl:my-28 h-fit w-[100%] rounded-md py-6 backdrop-blur-md backdrop-brightness-150 lg:w-[50%]">
           <div className="flex justify-center whitespace-pre text-xl sm:text-3xl text-white lg:text-3xl xl:text-4xl">
             <div className="uppercase text-[#FF7A00] price">
               technext&apos;24 exhibition stall booking
