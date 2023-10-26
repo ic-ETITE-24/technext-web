@@ -112,12 +112,12 @@ function BoothEnquiry() {
                       // onChange={handleChange}
                       // onBlur={handleBlur}
                       placeholder="Name"
-                      className={`mx-auto block w-[60%] rounded-md border-2 bg-inherit px-4 py-2.5 placeholder:[rgba(255, 255, 255, 0.53)]
+                      className={`mx-auto block w-[80%] lg:w-[60%] rounded-md border-2 bg-inherit px-4 py-2.5 placeholder:[rgba(255, 255, 255, 0.53)]
                           `}
                     />
                     <div className="flex justify-center">
                       {formik.errors.name ? (
-                        <div className="text-[#D9D9D999] mt-1 ml-2 block w-[60%]">
+                        <div className="text-[#D9D9D999] mt-1 ml-2 block w-[80%] lg:w-[60%]">
                           {formik.errors.name}
                         </div>
                       ) : null}
@@ -135,11 +135,11 @@ function BoothEnquiry() {
                       // onChange={handleChange}
                       // onBlur={handleBlur}
                       placeholder="Job Profile"
-                      className={`mx-auto block w-[60%] rounded-md border-2 bg-inherit px-4 py-2.5 placeholder:text-[rgba(255, 255, 255, 0.53)] `}
+                      className={`mx-auto block w-[80%] lg:w-[60%] rounded-md border-2 bg-inherit px-4 py-2.5 placeholder:text-[rgba(255, 255, 255, 0.53)] `}
                     />
                     <div className="flex justify-center">
                       {formik.errors.job_profile ? (
-                        <div className="text-[#D9D9D999] mt-1 ml-2 w-[60%]">
+                        <div className="text-[#D9D9D999] mt-1 ml-2 w-[80%] lg:w-[60%]">
                           {formik.errors.job_profile}
                         </div>
                       ) : null}
@@ -157,12 +157,12 @@ function BoothEnquiry() {
                       // onChange={handleChange}
                       // onBlur={handleBlur}
                       placeholder="Company Name"
-                      className={`mx-auto block w-[60%] rounded-md border-2 bg-inherit px-4 py-2.5 placeholder:text-[rgba(255, 255, 255, 0.53)]
+                      className={`mx-auto block w-[80%] lg:w-[60%] rounded-md border-2 bg-inherit px-4 py-2.5 placeholder:text-[rgba(255, 255, 255, 0.53)]
                           `}
                     />
                     <div className="flex justify-center">
                       {formik.errors.company_name ? (
-                        <div className="text-[#D9D9D999] mt-1 ml-2 w-[60%]">
+                        <div className="text-[#D9D9D999] mt-1 ml-2 w-[80%] lg:w-[60%]">
                           {formik.errors.company_name}
                         </div>
                       ) : null}
@@ -180,12 +180,12 @@ function BoothEnquiry() {
                         onChange={formik.handleChange}
                         //   onBlur={handleBlur}
                         placeholder="Phone"
-                        className={`mx-auto block w-[70%] rounded-md border-2 bg-inherit px-4 py-2.5 placeholder:text-[rgba(255, 255, 255, 0.53)] lg:mx-0 lg:w-[98%]
+                        className={`mx-auto block w-[94%] lg:w-[98%] rounded-md border-2 bg-inherit px-4 py-2.5 placeholder:text-[rgba(255, 255, 255, 0.53)] lg:mx-0 
                           `}
                       />
                       <div className="flex justify-center">
                         {formik.errors.phone ? (
-                          <div className="text-[#D9D9D999] mt-1 ml-2 w-[70%] lg:w-[98%]">
+                          <div className="text-[#D9D9D999] mt-1 ml-2 w-[94%] lg:w-[98%]">
                             {formik.errors.phone}
                           </div>
                         ) : null}
@@ -202,12 +202,12 @@ function BoothEnquiry() {
                         onChange={formik.handleChange}
                         //   onBlur={handleBlur}
                         placeholder="Email"
-                        className={`mx-auto block w-[70%] rounded-md border-2 bg-inherit px-4 py-2.5 placeholder:text-[rgba(255, 255, 255, 0.53)] lg:mx-0 lg:w-[98%]
+                        className={`mx-auto block w-[94%] rounded-md border-2 bg-inherit px-4 py-2.5 placeholder:text-[rgba(255, 255, 255, 0.53)] lg:mx-0 lg:w-[98%]
                           `}
                       />
                       <div className="flex justify-center">
                         {formik.errors.email ? (
-                          <div className="text-[#D9D9D999] mt-1 ml-2 w-[70%] lg:w-[98%]">
+                          <div className="text-[#D9D9D999] mt-1 ml-2 w-[94%] lg:w-[98%]">
                             {formik.errors.email}
                           </div>
                         ) : null}
@@ -226,11 +226,11 @@ function BoothEnquiry() {
                       onChange={formik.handleChange}
                       // onBlur={handleBlur}
                       placeholder="City"
-                      className={`mx-auto block w-[60%] rounded-md border-2 bg-inherit px-4 py-2.5 placeholder:text-[rgba(255, 255, 255, 0.53)] `}
+                      className={`mx-auto block w-[80%] lg:w-[60%] rounded-md border-2 bg-inherit px-4 py-2.5 placeholder:text-[rgba(255, 255, 255, 0.53)] `}
                     />
                     <div className="flex justify-center">
                       {formik.errors.city ? (
-                        <div className="text-[#D9D9D999] mt-1 ml-2 w-[60%]">
+                        <div className="text-[#D9D9D999] mt-1 ml-2 w-[80%] lg:w-[60%]">
                           {formik.errors.city}
                         </div>
                       ) : null}
@@ -248,7 +248,7 @@ function BoothEnquiry() {
                       // onBlur={handleBlur}
                       placeholder="Message"
                       rows={4}
-                      className={`mx-auto block w-[60%] rounded-md border-2 bg-inherit px-4 py-2.5 placeholder:text-[rgba(255, 255, 255, 0.53)] `}
+                      className={`mx-auto block w-[80%] lg:w-[60%] rounded-md border-2 bg-inherit px-4 py-2.5 placeholder:text-[rgba(255, 255, 255, 0.53)] `}
                     />
                     {/* <div className="mx-auto w-[80%]">
                         <span className="text-sm text-red-500">
