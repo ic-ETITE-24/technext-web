@@ -16,6 +16,14 @@
   }
 }
 
+.register {
+  background-image: url(./../assets/background1.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(to bottom,
@@ -32,7 +40,7 @@ body {
   src: url('./../../public/FuturaMediumBT.ttf');
 }
 
-body, span {
+body, span, .left {
   font-family: 'futura Md BT';
   font-weight: 400;
   
