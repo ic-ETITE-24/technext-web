@@ -15,9 +15,9 @@ const validate = (values) => {
   }
 
   if (!values.job_profile) {
-    errors.job_profile = "Job Profile is required";
+    errors.job_profile = "Sector is required";
   } else if (values.job_profile.length < 3) {
-    errors.job_profile = "Enter a valid Job Profile";
+    errors.job_profile = "Enter a valid Sector";
   }
   if (!values.company_name) {
     errors.company_name = "Compnay Name is required";
@@ -135,7 +135,7 @@ function BoothEnquiry() {
                       onChange={formik.handleChange}
                       // onChange={handleChange}
                       // onBlur={handleBlur}
-                      placeholder="Job Profile"
+                      placeholder="Sector"
                       className={`mx-auto block w-[80%] lg:w-[60%] rounded-md border-2 bg-inherit px-4 py-2.5 placeholder:text-[rgba(255, 255, 255, 0.53)] `}
                     />
                     <div className="flex justify-center">
@@ -247,7 +247,7 @@ function BoothEnquiry() {
                       value={formik.values.message}
                       onChange={formik.handleChange}
                       // onBlur={handleBlur}
-                      placeholder="Message"
+                      placeholder="Any Queries?"
                       rows={4}
                       className={`mx-auto block w-[80%] lg:w-[60%] rounded-md border-2 bg-inherit px-4 py-2.5 placeholder:text-[rgba(255, 255, 255, 0.53)] `}
                     />
