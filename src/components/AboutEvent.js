@@ -27,7 +27,7 @@ const AboutEvent = () => {
               <p className="my-3">
                 Technext - Technology Exhibition for the Future, an integral
                 component of the ic-ETITE&apos;24 Conference, tentatively slated
-                for February 22nd and 23rd, 2024, is an event designed to serve
+                for February 22nd 2024, is an event designed to serve
                 as a global stage, empowering students to transition from the
                 conceptualization and planning of groundbreaking technologies to
                 their full-fledged realization.
