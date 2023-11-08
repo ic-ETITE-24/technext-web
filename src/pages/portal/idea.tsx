@@ -44,7 +44,7 @@ const Idea = () => {
           localStorage.getItem("access_token");
         await RefreshToken();
         const response = await axios.get<ideaData>(
-          "https://bolt.vit.ac.in/api/idea/get",
+          `${process.env.NEXT_PUBLIC_BASE_URL}/idea/get`,
           {
             headers: {
               Authorization: `Bearer ${access_token}`,
@@ -92,7 +92,7 @@ const Idea = () => {
         await RefreshToken();
         if (isEditted) {
           const response = await axios.post<ideaData>(
-            "https://icetite.vit.ac.in/bolt/idea/update",
+            `${process.env.NEXT_PUBLIC_BASE_URL}/idea/update`,
             obj,
             {
               headers: {
@@ -111,7 +111,7 @@ const Idea = () => {
           }
         } else {
           const response = await axios.post<ideaData>(
-            "https://icetite.vit.ac.in/bolt/idea/create",
+            `${process.env.NEXT_PUBLIC_BASE_URL}/idea/create`,
             obj,
             {
               headers: {

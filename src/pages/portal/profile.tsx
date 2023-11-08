@@ -59,7 +59,7 @@ const Profile = () => {
           localStorage.getItem("access_token");
         await RefreshToken();
         const response = await axios.get<UserData>(
-          "https://bolt.vit.ac.in/api/users/me",
+          `${process.env.NEXT_PUBLIC_BASE_URL}/users/me`,
           {
             headers: {
               Authorization: `Bearer ${access_token}`,
@@ -143,8 +143,8 @@ const Profile = () => {
           localStorage.getItem("access_token");
         await RefreshToken();
         const apiUrl = changePasswordMode
-          ? "https://bolt.vit.ac.in/api/users/reset-pass"
-          : "https://bolt.vit.ac.in/api/users/update";
+          ? `${process.env.NEXT_PUBLIC_BASE_URL}/users/reset-pas`
+          : `${process.env.NEXT_PUBLIC_BASE_URL}/users/update`;
 
         const method = changePasswordMode ? "POST" : "PATCH";
 

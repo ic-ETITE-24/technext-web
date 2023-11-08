@@ -56,7 +56,7 @@ const Dashboard = () => {
           localStorage.getItem("access_token");
         await RefreshToken();
         const response = await axios.get<UserData>(
-          "https://bolt.vit.ac.in/api/users/me",
+          `${process.env.NEXT_PUBLIC_BASE_URL}/users/me`,
           {
             headers: {
               Authorization: `Bearer ${access_token}`,
@@ -87,7 +87,7 @@ const Dashboard = () => {
             localStorage.getItem("access_token");
           await RefreshToken();
           const response = await axios.post<joinResponse>(
-            "https://bolt.vit.ac.in/api/teams/join",
+            `${process.env.NEXT_PUBLIC_BASE_URL}/teams/join`,
             {
               code: joinRef.current.value,
             },
@@ -127,7 +127,7 @@ const Dashboard = () => {
         try {
           await RefreshToken();
           const response = await axios.post<createResponse>(
-            "https://bolt.vit.ac.in/api/teams/",
+            `${process.env.NEXT_PUBLIC_BASE_URL}/teams`,
             {
               name: createRef.current.value,
             },

@@ -68,7 +68,7 @@ export default function Home() {
       try {
         setChangeText(true);
         const response = await axios.post<LoginResponse>(
-          "https://bolt.vit.ac.in/api/users/login",
+          `${process.env.NEXT_PUBLIC_BASE_URL}/users/login`,
           send
         );
         if (response.status >= 200 && response.status < 300) {

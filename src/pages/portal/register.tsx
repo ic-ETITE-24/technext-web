@@ -124,7 +124,7 @@ function Register() {
       try {
         setChangeText(true);
         const response = await axios.post(
-          "https://bolt.vit.ac.in/api/users/signup",
+          `${process.env.NEXT_PUBLIC_BASE_URL}/users/signup`,
           send
         );
         await router.push("/portal/verify");

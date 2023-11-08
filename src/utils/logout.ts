@@ -20,7 +20,7 @@ export default async function Logout(): Promise<void> {
         refresh_token: refresh_token,
     }
     const response = await axios.post<logoutResponse>(
-        "https://bolt.vit.ac.in/api//users/logout",
+        `${process.env.NEXT_PUBLIC_BASE_URL}/users/logout`,
         value,
         {
           headers: {

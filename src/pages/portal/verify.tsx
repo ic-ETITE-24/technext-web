@@ -55,14 +55,14 @@ const Verify = () => {
       try {
         if (!isOtp || resendOtp) {
           const response = await axios.post(
-            "https://bolt.vit.ac.in/api/users/verify",
+            `${process.env.NEXT_PUBLIC_BASE_URL}/users/verify`,
             val
           );
           setGetOtpLoader(false);
           setIsOtp(true);
         } else {
           const response = await axios.patch(
-            "https://bolt.vit.ac.in/api/users/verify",
+            `${process.env.NEXT_PUBLIC_BASE_URL}/users/verify`,
             val
           );
           await router.push("/portal");

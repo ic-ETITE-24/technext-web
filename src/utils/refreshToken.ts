@@ -20,7 +20,7 @@ export default async function RefreshToken(): Promise<void> {
     }
 
     const response = await axios.post<RefreshResponse>(
-      "https://bolt.vit.ac.in/api/users/refresh",
+      `${process.env.NEXT_PUBLIC_BASE_URL}/users/refresh`,
       {
         refresh_token: refresh_token,
       },
