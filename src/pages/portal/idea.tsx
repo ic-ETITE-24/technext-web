@@ -15,6 +15,7 @@ import Logout from "@/utils/logout";
 import axios from "axios";
 import Router from "next/router";
 import React from "react";
+import { Spinner } from "@nextui-org/react";
 
 interface ideaData {
   data: {
@@ -37,6 +38,7 @@ const Idea = () => {
   const titleRef = useRef<HTMLInputElement>(null);
   const trackRef = useRef<HTMLSelectElement>(null);
   const descRef = useRef<HTMLTextAreaElement>(null);
+  const [loader, setLoader] = useState(false);
   useEffect(() => {
     async function getDashboard(): Promise<void> {
       try {
@@ -179,6 +181,7 @@ const Idea = () => {
         >
           <Link
             href="/portal/profile"
+            onClick={() => setLoader(true)}
             className="mb-1 rounded-sm px-5 py-4 text-2xl text-[#f6f3f3ca] active:border-b-4 active:text-white"
           >
             <span>PROFILE</span>
@@ -186,6 +189,7 @@ const Idea = () => {
 
           <Link
             href="/portal/teamInfo"
+            onClick={() => setLoader(true)}
             className="mb-1 rounded-sm px-5 py-4 text-2xl text-[#f6f3f3ca] active:border-b-4 active:text-white"
           >
             <span>TEAM</span>
@@ -216,6 +220,12 @@ const Idea = () => {
             </span>
           </Link>
         </div>
+        {loader && (
+          <div className="absolute left-[50%] top-4 flex justify-center items-center text-[#d6a453] text-lg">
+            <span>Loading...</span>&nbsp;&nbsp;
+            <Spinner color="warning" />
+          </div>
+        )}
         <div className="flex flex-col items-center py-[30px] uppercase md:flex-row md:items-start md:justify-start md:py-[40px]">
           <div className="relative flex h-[72vh] w-[90%] flex-col items-center rounded-3xl text-white md:mx-auto md:justify-center lg:mx-0 lg:w-[65%] lg:items-start">
             <h1
@@ -312,13 +322,13 @@ const Idea = () => {
           </div>
           <div className="mt-[82px] hidden h-[60vh] w-[2.3px] rounded-3xl bg-white lg:block"></div>
           <div className="bdcn mx-auto my-auto hidden flex-col text-center lg:flex">
-            <Link href="/portal/profile">
+            <Link href="/portal/profile" onClick={() => setLoader(true)}>
               <div className="flex justify-around">
                 <div className="mb-3 text-4xl text-[#ffffff80]">PROFILE</div>
                 <BsFillSquareFill className="mb-3 self-center text-xs text-[#FF7A00]" />
               </div>
             </Link>
-            <Link href="/portal/teamInfo">
+            <Link href="/portal/teamInfo" onClick={() => setLoader(true)}>
               <div className="flex justify-around">
                 <div className="mb-3 text-4xl text-[#ffffff4d]">TEAM</div>
                 <BsFillSquareFill className="mb-3 self-center text-xs text-[#FF7A00]" />

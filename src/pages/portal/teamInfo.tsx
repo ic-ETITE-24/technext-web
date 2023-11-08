@@ -16,6 +16,7 @@ import Router from "next/router";
 import Logout from "@/utils/logout";
 import { Toaster, toast } from "sonner";
 import React from "react";
+import { Spinner } from "@nextui-org/react";
 
 interface UserData {
   status: boolean;
@@ -43,6 +44,7 @@ const Main = () => {
   const [members, setMembers] = useState<string[]>([]);
   const [name, setName] = useState<string | undefined>("");
   const [code, setCode] = useState<string>("");
+  const [loader, setLoader] = useState(false);
 
   useEffect(() => {
     async function getDashboard(): Promise<void> {
@@ -160,6 +162,7 @@ const Main = () => {
           <Link
             href="/portal/profile"
             className="mb-1 rounded-sm px-5 py-4 text-2xl text-[#f6f3f3ca] active:border-b-4 active:text-white"
+            onClick={() => setLoader(true)}
           >
             <span>PROFILE</span>
           </Link>
@@ -170,6 +173,7 @@ const Main = () => {
 
           <Link
             href="/portal/idea"
+            onClick={() => setLoader(true)}
             className="mb-1 rounded-sm px-5 py-4 text-2xl text-[#f6f3f3ca] active:border-b-4 active:text-white"
           >
             <span>IDEA</span>
@@ -191,6 +195,12 @@ const Main = () => {
             &nbsp;LOG OUT
           </span>
         </div>
+        {loader && (
+          <div className="absolute left-[50%] top-4 flex justify-center items-center text-[#d6a453] text-lg">
+            <span>Loading...</span>&nbsp;&nbsp;
+            <Spinner color="warning" />
+          </div>
+        )}
         {/* <Menu>
           <Link href='/profile'><h1>PROFILE</h1></Link>
         </Menu> */}
@@ -285,7 +295,7 @@ const Main = () => {
           </div>
           <div className="mt-[82px] hidden h-[60vh] w-[2.3px] rounded-3xl bg-white md:block"></div>
           <div className="bdcn mx-auto my-auto hidden flex-col text-center md:flex">
-            <Link href="/portal/profile">
+            <Link href="/portal/profile" onClick={() => setLoader(true)}>
               <div className="flex justify-around">
                 <div className="mb-3 text-4xl text-[#ffffff80]">PROFILE</div>
                 <BsFillSquareFill className="mb-3 self-center text-xs text-[#FF7A00]" />
@@ -298,7 +308,7 @@ const Main = () => {
               </div>
               <BsFillSquareFill className="mb-3 ml-12 rotate-45 self-center text-lg text-[#FF7A00] " />
             </div>
-            <Link href="/portal/idea">
+            <Link href="/portal/idea" onClick={() => setLoader(true)}>
               <div className="flex justify-around">
                 <div className="mb-3 text-4xl text-[#ffffff80]">IDEA</div>
                 <BsFillSquareFill className="mb-3 self-center text-xs text-[#FF7A00]" />

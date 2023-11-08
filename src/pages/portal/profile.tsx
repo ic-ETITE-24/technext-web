@@ -38,6 +38,8 @@ interface UserData {
 
 const Profile = () => {
   const router = useRouter();
+  const [editPass, setEditPass] = useState(false);
+  const [editDetails, setEditDetails] = useState(true);
   const [editName, setEditName] = useState(false);
   const [first_name, setFirst_Name] = useState<string | undefined>("");
   const [last_Name, setLastName] = useState<string | undefined>("");
@@ -220,10 +222,11 @@ const Profile = () => {
         </div>
         {loader && (
           <div className="absolute left-[50%] top-4 flex justify-center items-center text-[#d6a453] text-lg">
-            <span>Loading</span>&nbsp;&nbsp;
+            <span>Loading...</span>&nbsp;&nbsp;
             <Spinner color="warning" />
           </div>
         )}
+        
         <Toaster richColors closeButton position="top-right" theme="light" />
         <div
           className={`ham absolute right-2 z-30 flex flex-col bg-[#FF7A00] bg-opacity-90 px-10 py-8 text-center font-bold md:hidden ${
@@ -260,13 +263,39 @@ const Profile = () => {
           </Link>
         </div>
 
+          
         <div className="mt-16 flex flex-col items-center uppercase md:mt-0 md:flex-row md:items-start md:justify-start md:py-[40px]">
-          <div className="relative flex h-[72vh] w-[50%] flex-col items-center justify-evenly rounded-3xl text-white md:w-[65%] md:items-start">
+          <div className="relative flex h-[72vh] w-[50%] flex-col items-center justify-evenly rounded-3xl text-white md:w-[65%] md:items-center">
+            <div className={`flex items-center flex-col md:flex-row justify-center px-[33px] `}>
+                <div
+                  className={`text-md mb-2 mt-3 flex h-[5vh] w-[40vw] items-center justify-center cursor-pointer rounded-md  px-[33px] py-[10px] text-center font-semibold text-xl text-white lg:text-3xl md:h-[7vh] md:w-[20vw] md:py-[12px] md:text-2xl ${!editDetails?"opacity-50":""}`}
+                  onClick={() => {
+                    setEditDetails(!editDetails);setEditPass(!editPass)
+                    
+                  }}
+                >
+                  <span className={`${editDetails?"border-[#FF7A00] border-b-[3px]":""}`}>
+                    Edit profile
+                  </span>
+                </div>
+                <div
+                  className={`text-md mb-2 mt-3 md:ml-6 ml-0 flex h-[5vh]  w-[40vw] items-center justify-center cursor-pointer rounded-md  px-[33px] py-[10px] text-center font-semibold  text-xl text-white lg:text-3xl md:h-[7vh] md:w-[20vw] md:py-[12px]  ${!editPass?"opacity-50":""}`}
+                  onClick={() => {
+                    setEditPass(!editPass);setEditDetails(!editDetails)
+                  }}
+                >
+                  <span className={`${editPass?"border-[#FF7A00] border-b-[3px]":""}`}>
+                    Edit Password
+                  </span>
+                </div>
+              </div>
             <form
               className="flex flex-col md:mt-4"
               onSubmit={formik.handleSubmit}
             >
-              {editName ? (
+              {editDetails &&
+              <>
+                {editName ? (
                 <>
                   <div className="flex flex-col items-center justify-end md:flex-row">
                     <input
@@ -333,23 +362,7 @@ const Profile = () => {
                       Other
                     </option>
                   </select>
-                  {/* <input
-                    className="mt-3 w-[75vw] rounded-md bg-[#4b4b4b] px-[33px] py-[6px] text-lg font-semibold text-[#D9D9D999] md:w-[25vw] md:py-[6px] 2xl:py-[10px] md:text-2xl"
-                    id="email"
-                    type="text"
-                    name="gender"
-                    onChange={formik.handleChange}
-                    onBlur={formik.handleBlur}
-                    value={formik.values.gender || gender}
-                    placeholder="Gender"
-                  /> */}
-                  {/* {formik.touched.gender && formik.errors.gender && (
-                    <div className="mx-auto w-[80%] lg:w-[98%]">
-                      <span className="text-sm text-red-500">
-                        {formik.errors.gender}
-                      </span>
-                    </div>
-                  )} */}
+                  
                 </div>
                 <div>
                   <h1 className="   mt-2 text-xs  font-bold text-white">
@@ -365,36 +378,9 @@ const Profile = () => {
                     value={formik.values.phone_number ?? phone_number}
                     placeholder="Phone No"
                   />
-                  {/* {formik.touched.phone_number && formik.errors.phone_number && (
-                    <div className="mx-auto w-[80%] lg:w-[98%]">
-                      <span className="text-sm text-red-500">
-                        {formik.errors.phone_number}
-                      </span>
-                    </div>
-                  )} */}
+                  
                 </div>
-                {/* <div>
-                  <h1 className="   mt-2 text-xs  font-bold text-white">
-                    Bio:
-                  </h1>
-                  <input
-                    className="mt-3 w-[75vw] rounded-md bg-[#4b4b4b] px-[33px] py-[6px] text-lg font-semibold text-[#D9D9D999] md:w-[25vw] md:py-[6px] 2xl:py-[10px] md:text-2xl"
-                    id="github"
-                    type="text"
-                    name="github"
-                    onChange={formik.handleChange}
-                    onBlur={formik.handleBlur}
-                    value={formik.values.bio}
-                    placeholder="Bio"
-                  />
-                  {formik.touched.bio && formik.errors.bio && (
-                    <div className="mx-auto w-[80%] lg:w-[98%]">
-                      <span className="text-sm text-red-500">
-                        {formik.errors.bio}
-                      </span>
-                    </div>
-                  )}
-                </div> */}
+                
                 <div>
                   <h1 className="   mt-2 text-xs  font-bold text-white">
                     date_of_birth:
@@ -410,59 +396,9 @@ const Profile = () => {
                     value={formik.values.date_of_birth ?? date_of_birth}
                     placeholder="date_of_birth"
                   />
-                  {/* {formik.touched.date_of_birth && formik.errors.date_of_birth && (
-                    <div className="mx-auto w-[80%] lg:w-[98%]">
-                      <span className="text-sm text-red-500">
-                        {formik.errors.date_of_birth}
-                      </span>
-                    </div>
-                  )} */}
+                  
                 </div>
-                {/* <div>
-                  <h1 className="   mt-2 text-xs  font-bold text-white">
-                    Phone Number:
-                  </h1>
-                  <input
-                    className="mt-3 w-[75vw] rounded-md bg-[#4b4b4b] px-[33px] py-[6px] text-lg font-semibold text-[#D9D9D999] md:w-[25vw] md:py-[6px] 2xl:py-[10px] md:text-2xl"
-                    id="phone"
-                    type="text"
-                    name="phone_number"
-                    onChange={formik.handleChange}
-                    onBlur={formik.handleBlur}
-                    value={formik.values.phone_number}
-                    placeholder="Phone"
-                  />
-                  {formik.touched.phone_number && formik.errors.phone_number && (
-                    <div className="mx-auto w-[80%] lg:w-[98%]">
-                      <span className="text-sm text-red-500">
-                        {formik.errors.phone_number}
-                      </span>
-                    </div>
-                  )}
-                </div> */}
-                {/* <div>
-                  <h1 className="   mt-2 text-xs  font-bold text-white">
-                    Re-Enter New Password
-                  </h1>
-                  <input
-                    className="mt-3 w-[75vw] rounded-md bg-[#4b4b4b] px-[33px] py-[6px] text-lg font-semibold text-[#D9D9D999] md:w-[25vw] md:py-[6px] 2xl:py-[10px] md:text-2xl"
-                    id="password"
-                    type="text"
-                    name="reEnterPassword"
-                    onChange={formik.handleChange}
-                    onBlur={formik.handleBlur}
-                    value={formik.values.reEnterPassword}
-                    placeholder="Re-Enter Password"
-                  />
-                  {formik.touched.reEnterPassword &&
-                    formik.errors.reEnterPassword && (
-                      <div className="mx-auto w-[80%] lg:w-[98%]">
-                        <span className="text-sm text-red-500">
-                          {formik.errors.reEnterPassword}
-                        </span>
-                      </div>
-                    )}
-                </div> */}
+                
                 <div>
                   <h1 className="   mt-2 text-xs  font-bold text-white">
                     Bio:
@@ -478,7 +414,7 @@ const Profile = () => {
                   />
                 </div>
               </div>
-              <div className="flex items-center justify-center">
+              <div className={`flex items-center justify-center `}>
                 <button
                   type="submit"
                   className="text-md mb-2 mt-3 flex h-[5vh] w-[55vw] items-center justify-center rounded-md bg-[#FF7A00] px-[33px] py-[10px] text-center font-semibold text-white md:h-[7vh] md:w-[20vw] md:py-[12px] md:text-2xl"
@@ -490,7 +426,11 @@ const Profile = () => {
                   <span>{!changeInnerText ? "Save Changes" : "Saving..."}</span>
                 </button>
               </div>
-              <div className="flex flex-col items-center justify-end md:flex-row">
+              </>
+              
+              }
+              
+              <div className={`flex flex-col items-center justify-end px-[33px] py-[6px] md:flex-row md:w-[60vw] ${!editPass?"hidden":""}`}>
                 <input
                   className="mt-3 w-[75vw] rounded-md bg-[#4b4b4b] px-[33px] py-[6px] text-lg font-semibold text-[#D9D9D999] md:w-[25vw] md:py-[6px] md:text-2xl 2xl:py-[10px]"
                   id="pass"
@@ -512,7 +452,7 @@ const Profile = () => {
                   placeholder="newPassword"
                 />
               </div>
-              <div className="flex items-center justify-center">
+              <div className={`flex items-center justify-center ${!editPass?"hidden":""}`}>
                 <button
                   type="submit"
                   className="text-md mb-2 mt-3 flex h-[5vh] w-[55vw] items-center justify-center rounded-md bg-[#FF7A00] px-[33px] py-[10px] text-center font-semibold text-white md:h-[7vh] md:w-[20vw] md:py-[12px] md:text-2xl"
