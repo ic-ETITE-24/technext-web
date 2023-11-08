@@ -11,6 +11,7 @@ import axios from "axios";
 import { Toaster, toast } from "sonner";
 import React from "react";
 
+
 interface ApiResponse {
   message: string;
 }
@@ -190,7 +191,8 @@ const Verify = () => {
                 </button>
               </div>
             )}
-            {getOtpLoader && <span className="text-lg">Sending Otp...</span>}
+            {isOtp?getOtpLoader && <span className="text-lg">Verifying...</span>:getOtpLoader && <span className="text-lg">Sending Otp...</span>}
+            {/* getOtpLoader && <span className="text-lg">Sending Otp...</span> */}
           </form>
         </div>
       </div>
