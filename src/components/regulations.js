@@ -43,7 +43,7 @@ function Regulations() {
               <li>
                 For Round 2, participants shall have to transport their
                 prototypes to the Vellore Campus of Vellore Institute of
-                Technology and demonstrate their work on the 22rd of February,
+                Technology and demonstrate their work on the 22nd of February,
                 2024.
               </li>
             </ul>
