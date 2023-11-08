@@ -48,6 +48,7 @@ const Dashboard = () => {
   const [modalName, setmodalName] = useState(true);
   const [teamCode, setTeamCode] = useState<string | undefined>("");
   const [name, setName] = useState<string | undefined>("");
+  const [Loader, setLoader] = useState(false);
 
   useEffect(() => {
     async function getDashboard(): Promise<void> {
@@ -82,6 +83,7 @@ const Dashboard = () => {
   async function handleTeamAction(): Promise<void> {
     if (modalName) {
       if (joinRef.current?.value) {
+        setLoader(true)
         try {
           const access_token: string | null =
             localStorage.getItem("access_token");
@@ -97,10 +99,12 @@ const Dashboard = () => {
               },
             }
           );
+          setLoader(false)
           if (response.data.status === true) {
             void router.push("/portal/teamInfo");
           }
         } catch (err) {
+          setLoader(false)
           if (axios.isAxiosError(err)) {
             const error = err as AxiosError;
             if (error.response?.data === 400) {
@@ -342,16 +346,29 @@ const Dashboard = () => {
           >
             {modalName ? (
               <>
+              {!Loader? 
                 <span className="bdcn flex items-center">
                   Continue &nbsp;
                   <MdLogin />
+                </span>:
+              <span className="bdcn flex items-center">
+                  Loading... &nbsp;
+                  <MdLogin />
                 </span>
+              
+              }
               </>
             ) : (
               <>
+              {Loader?
+                <span className="bdcn text-base lg:text-xl">
+                  Loading...
+                </span>:
                 <span className="bdcn text-base lg:text-xl">
                   GENERATE TEAM CODE
                 </span>
+              
+            }
                 {teamCodeModalIsOpen && codeModal && (
                   <Modal
                     isOpen={modalIsOpen}
