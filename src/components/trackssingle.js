@@ -12,7 +12,7 @@ function Trackssingle() {
           TRACKS
         </div>
         <div className="flex flex-col gap-y-12">
-          <div className="py-12 lg:py-0 mx-auto my-auto h-[80%] w-[80%] lg:w-[80%] xl:w-[60%] sm:w-[60%] rounded-md pb-3 backdrop-blur-md backdrop-brightness-125 flex flex-col lg:flex-row lg:justify-center">
+          <div className="py-12 lg:py-0 mx-auto my-auto h-[80%] w-[80%] lg:w-[80%] xl:w-[70%] 2xl:w-[60%] sm:w-[60%] rounded-md pb-3 backdrop-blur-md backdrop-brightness-125 flex flex-col lg:flex-row lg:justify-center">
             <div className="my-auto mx-12 lg:mx-24 text-center">
               <h1 className="text-[#FF7A00] text-4xl lg:text-6xl">
                 AR/VR AND MIXED REALITY
@@ -42,7 +42,7 @@ function Trackssingle() {
               education to entertainment.
             </div>
           </div>
-          <div className="py-12 lg:py-0 mx-auto my-auto h-[80%] w-[80%] lg:w-[80%] xl:w-[60%] sm:w-[60%] rounded-md pb-3 backdrop-blur-md backdrop-brightness-125 flex flex-col lg:flex-row lg:justify-center ">
+          <div className="py-12 lg:py-0 mx-auto my-auto h-[80%] w-[80%] lg:w-[80%] xl:w-[70%] 2xl:w-[60%] sm:w-[60%] rounded-md pb-3 backdrop-blur-md backdrop-brightness-125 flex flex-col lg:flex-row lg:justify-center ">
             <div className="my-auto mx-0.5 lg:mx-12 text-center">
               <h1 className="text-[#FF7A00] text-4xl lg:text-6xl">
                 RENEWABLE ENERGY AND SUSTAINABILITY
@@ -72,7 +72,7 @@ function Trackssingle() {
               challenges, reflecting our commitment to a greener future.
             </div>
           </div>
-          <div className="py-12 lg:py-0 lg:pr-8 mx-auto my-auto h-[80%] w-[80%] lg:w-[80%] xl:w-[60%] sm:w-[60%] rounded-md pb-3 backdrop-blur-md backdrop-brightness-125 flex flex-col lg:flex-row lg:justify-center ">
+          <div className="py-12 lg:py-0 lg:pr-8 mx-auto my-auto h-[80%] w-[80%] lg:w-[80%] xl:w-[70%] 2xl:w-[60%] sm:w-[60%] rounded-md pb-3 backdrop-blur-md backdrop-brightness-125 flex flex-col lg:flex-row lg:justify-center ">
             <div className="my-auto mx-2 md:mx-8 lg:mx-24 text-center">
               <h1 className="text-[#FF7A00] text-4xl lg:text-6xl">
                 EMBEDDED SYSTEMS AND IoT
@@ -102,7 +102,7 @@ function Trackssingle() {
               of daily life.
             </div>
           </div>
-          <div className="py-12 lg:py-0 lg:pr-8 mx-auto my-auto h-[80%] w-[80%] lg:w-[80%] xl:w-[60%] sm:w-[60%] rounded-md pb-3 backdrop-blur-md backdrop-brightness-125 flex flex-col lg:flex-row lg:justify-center ">
+          <div className="py-12 lg:py-0 lg:pr-8 mx-auto my-auto h-[80%] w-[80%] lg:w-[80%] xl:w-[70%] 2xl:w-[60%] sm:w-[60%] rounded-md pb-3 backdrop-blur-md backdrop-brightness-125 flex flex-col lg:flex-row lg:justify-center ">
             <div className="my-auto mx-2 md:mx-8 lg:mx-24 text-center">
               <h1 className="text-[#FF7A00] text-4xl lg:text-6xl">
                 ROBOTICS AND AUTOMATION
@@ -131,7 +131,7 @@ function Trackssingle() {
               processes, and entertain with cutting-edge sophistication.
             </div>
           </div>
-          <div className="py-12 lg:py-0 lg:pr-8 mx-auto my-auto h-[80%] w-[80%] lg:w-[80%] xl:w-[60%] sm:w-[60%] rounded-md pb-3 backdrop-blur-md backdrop-brightness-125 flex flex-col lg:flex-row lg:justify-center ">
+          <div className="py-12 lg:py-0 lg:pr-8 mx-auto my-auto h-[80%] w-[80%] lg:w-[80%] xl:w-[70%] 2xl:w-[60%] sm:w-[60%] rounded-md pb-3 backdrop-blur-md backdrop-brightness-125 flex flex-col lg:flex-row lg:justify-center ">
             <div className="my-auto mx-2 md:mx-8 lg:mx-24 text-center">
               <h1 className="text-[#FF7A00] text-4xl lg:text-6xl">AI AND ML</h1>
             </div>
@@ -159,7 +159,7 @@ function Trackssingle() {
               applications across industries.
             </div>
           </div>
-          <div className="py-12 lg:py-0 mx-auto my-auto h-[80%] w-[80%] lg:w-[80%] xl:w-[60%] sm:w-[60%] rounded-md pb-3 backdrop-blur-md backdrop-brightness-125 flex flex-col lg:flex-row lg:justify-center ">
+          <div className="py-12 lg:py-0 mx-auto my-auto h-[80%] w-[80%] lg:w-[80%] xl:w-[70%] 2xl:w-[60%] sm:w-[60%] rounded-md pb-3 backdrop-blur-md backdrop-brightness-125 flex flex-col lg:flex-row lg:justify-center ">
             <div className="my-auto mx-0.5 lg:mx-12 text-center">
               <h1 className="text-[#FF7A00] text-4xl lg:text-6xl">
                 CYBERSECURITY AND SOFTWARE ENGINEERING PRACTICES
@@ -190,7 +190,7 @@ function Trackssingle() {
               development skills
             </div>
           </div>
-          <div className="py-12 lg:py-0 lg:pr-8 mx-auto my-auto h-[80%] w-[80%] lg:w-[80%] xl:w-[60%] sm:w-[60%] rounded-md pb-3 backdrop-blur-md backdrop-brightness-125 flex flex-col lg:flex-row lg:justify-center ">
+          <div className="py-12 lg:py-0 lg:pr-8 mx-auto my-auto h-[80%] w-[80%] lg:w-[80%] xl:w-[70%] 2xl:w-[60%] sm:w-[60%] rounded-md pb-3 backdrop-blur-md backdrop-brightness-125 flex flex-col lg:flex-row lg:justify-center ">
             <div className="my-auto mx-2 md:mx-8 lg:mx-24 text-center">
               <h1 className="text-[#FF7A00] text-4xl lg:text-6xl">
                 OPEN INNOVATION

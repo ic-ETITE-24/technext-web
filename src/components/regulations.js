@@ -7,7 +7,7 @@ function Regulations() {
   return (
     <>
       <div className={css.bg}>
-        <div className="mx-10 md:mx-20 text-lg sm:text-4xl text-white font-[600] py-10">
+        <div className="mx-10 md:mx-20 text-lg sm:text-4xl text-white font-[600] py-10 xl:py-0">
           Regulations
         </div>
         <div className="flex lg:flex-nowrap flex-wrap justify-around items-center lg:h-[600px]">
@@ -23,7 +23,7 @@ function Regulations() {
           </div>
 
           <div className="sm:pt-4 pt-6 sm:pl-24 w-[500px] md:w-[700px] md:pl-6 sm:leading-relaxed">
-            <ul className="list-disc text-white sm:text-xl md:text-xl md:w-full 2xl:text-2xl 2xl:pt-16 px-14 lg:text-left">
+            <ul className="list-disc text-white sm:text-xl md:text-xl md:w-full 2xl:text-2xl xl:pt-16 px-14 lg:text-left">
               <li>
                 Participants are required to pay the required registration fee
               </li>
@@ -56,7 +56,7 @@ function Regulations() {
             </div>
           </div>
         </div>
-        <div className="flex flex-col items-center md:flex-row sm:pt-56 pt-10 justify-center md:pt-20 lg:pt-0 2xl:pt-20 lg:w-full">
+        <div className="flex flex-col items-center md:flex-row sm:pt-56 pt-10 justify-center md:pt-20 lg:pt-0 xl:pt-10 2xl:pt-20 lg:w-full">
           <div className="flex justify-center text-white pt-9 md:pl-8 md:pr-8 lg:pl-4 lg:pr-48 2xl:pl-0 xl:pr-80 md:text-lg text-xs opacity-30 py-4 sm:py-0 md:w-full">
             * 3 MEMBERS CAN ALSO FORM A TEAM
           </div>
