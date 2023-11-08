@@ -2,26 +2,35 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
 .register {
   background-image: url(./../assets/background1.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   min-height: 100vh;
+}
+
+.Registers {
+  background-image: url(./../../public/regbackground.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+}
+.teamInfo {
+  height: 100vh;
+  width: 100%;
+  background: url(../assets/portal/grid-bg.png), url(../assets/portal/main-bg.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  backdrop-filter: blur(8px);
+  overflow-y: auto;
+}
+
+.scrollable-form {
+  max-height: 80vh;
+  overflow-y: auto;
 }
 
 body {
@@ -40,10 +49,18 @@ body {
   src: url('./../../public/FuturaMediumBT.ttf');
 }
 
+@font-face {
+  font-family: "Futura Condensed Extra";
+  src: url(./../../public/Futura\ Condensed\ Extra\ Bold.otf);
+}
+@font-face {
+  font-family: "Futura XBlkCnIt BT";
+  src: url(./../../public/FuturaExtraBlackCondensedItalicBT.ttf);
+}
+
 body, span, .left {
   font-family: 'futura Md BT';
   font-weight: 400;
-  
 }
 
 p {
@@ -54,6 +71,41 @@ p {
   
 }
 
+.selected {
+  font-family: "Futura Condensed Extra";
+}
+.unselected {
+  font-family: "Futura XBlkCnIt BT";
+}
+input{
+  font-family: "futura BdCn BT";
+}
+.box {
+  font-family: "futura BdCn BT";
+  bottom: 100%;
+  top: auto;
+}
+.ham {
+  font-family: "futura Md BT";
+}
+button,
+.bdcn {
+  font-family: "futura BdCn BT";
+}
+
+@keyframes text-growth {
+  0% {
+    font-size: 2rem;
+  }
+  100% {
+    font-size: 4rem;
+    color: white;
+  }
+}
+
+.animate-text-growth {
+  animation: text-growth 0.35s ease-in-out forwards;
+}
 
 h1,h2,h3,h4,h5,h6,button,label, .four, .price {
   font-family: 'futura BdCn BT';
