@@ -44,7 +44,7 @@ const Idea = () => {
           localStorage.getItem("access_token");
         await RefreshToken();
         const response = await axios.get<ideaData>(
-          "https://icetite.vit.ac.in/bolt/idea/get",
+          "https://bolt.vit.ac.in/api/idea/get",
           {
             headers: {
               Authorization: `Bearer ${access_token}`,

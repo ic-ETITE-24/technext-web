@@ -51,7 +51,7 @@ const Main = () => {
           localStorage.getItem("access_token");
         await RefreshToken();
         const response = await axios.get<UserData>(
-          "https://icetite.vit.ac.in/bolt/teams",
+          "https://bolt.vit.ac.in/api/teams",
           {
             headers: {
               Authorization: `Bearer ${access_token}`,
@@ -89,7 +89,7 @@ const Main = () => {
       const access_token: string | null = localStorage.getItem("access_token");
       await RefreshToken();
       const response = await axios.get<leaveResponse>(
-        "https://icetite.vit.ac.in/bolt/teams/leave",
+        "https://bolt.vit.ac.in/api/teams/leave",
         {
           headers: {
             Authorization: `Bearer ${access_token}`,

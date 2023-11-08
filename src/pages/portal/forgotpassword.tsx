@@ -67,7 +67,7 @@ const ForgotPassword = () => {
       try {
         if (!isOtp || resendOtp) {
           const response = await axios.post(
-            "https://icetite.vit.ac.in/bolt/users/forgot",
+            "https://bolt.vit.ac.in/api/users/forgot",
             val
           );
           setGetOtpLoader(false);
@@ -76,7 +76,7 @@ const ForgotPassword = () => {
           setChangeLoader(true);
           setGetOtpLoader(false);
           const response = await axios.patch(
-            "https://icetite.vit.ac.in/bolt/users/forgot",
+            "https://bolt.vit.ac.in/api/users/forgot",
             val
           );
 
