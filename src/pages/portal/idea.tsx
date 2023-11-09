@@ -314,9 +314,9 @@ const Idea = () => {
                   void handleSubmit();
                 }}
                 disabled={isSubmitted}
-                className="mx-auto w-[30%] rounded-md bg-[#FF7A00] py-1.5 text-2xl text-white disabled:cursor-not-allowed disabled:bg-[#FF7A00] disabled:text-[#ffffff4d]"
+                className="mx-auto w-[30%] rounded-md bg-[#FF7A00] hover:scale-105 hover:transition-transform active:scale-100 disabled:bg-orange-400 py-1.5 text-2xl text-white disabled:cursor-not-allowed disabled:bg-[#FF7A00] disabled:text-[#ffffff4d]"
               >
-                Submit
+                {!isSubmitted ? "Submit" : "Submitting..."}
               </button>
             </div>
           </div>
