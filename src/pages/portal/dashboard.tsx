@@ -28,7 +28,7 @@ interface createResponse {
 
 interface UserData {
   status: boolean;
-  user: {
+  user?: {
     first_name: string;
     team: {
       ID: number;
@@ -68,13 +68,26 @@ const Dashboard = () => {
           void router.push("/portal/teamInfo");
         }
         if (response.data.status) {
+          console.log(response.data.status);
           setName(response.data.user.first_name.toUpperCase());
         } else {
           localStorage.removeItem("access_token");
           localStorage.removeItem("refresh_token");
           void router.push("/portal");
         }
-      } catch (err) {}
+      } catch (err) {
+        if (axios.isAxiosError(err)) {
+          const error = err as AxiosError;
+          if (error.response?.data === 400) {
+            void router.push("/portal/teamInfo");
+          } else if (error.response?.status === 401) {
+            toast.error("User has not paid yet");
+            void router.push("/portal/payments");
+          } else if (error.response?.status === 502) {
+            toast.error("Server error... Please try again later");
+          }
+        }
+      }
     }
 
     void getDashboard();

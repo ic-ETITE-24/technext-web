@@ -172,7 +172,7 @@ export default function Home() {
               </button>
               <Link href="/forgotpassword">
                 <div className="text-white underline text-center mt-7 lg:mt-5">
-                  Trouble in logging in?
+                  Forgot password?
                 </div>
               </Link>
             </div>
