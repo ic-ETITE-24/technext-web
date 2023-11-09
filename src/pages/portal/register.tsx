@@ -178,7 +178,7 @@ function Register() {
           <form onSubmit={handleSubmit}>
             <div className="flex flex-col justify-center">
               <div className="flex flex-col lg:w-[100%] lg:flex-row lg:justify-center">
-                <div className="mt-11 lg:w-[40%]">
+                <div className="mt-11 lg:w-[39.5%]">
                   <div>
                     <input
                       type="text"
@@ -331,7 +331,7 @@ function Register() {
                         placeholder="Select Country"
                         searchable
                         searchPlaceholder="Search countries"
-                        className={`box mx-auto h-full w-[80%] rounded-md bg-[rgba(255,255,255,0.36)] lg:w-[19vw] text-black
+                        className={`mx-auto h-full w-[80%] rounded-md bg-[rgba(255,255,255,0.36)] lg:w-[19vw] text-black
                       ${
                         touched.country && errors.country
                           ? "ring-2 ring-inset ring-red-500"
@@ -425,7 +425,7 @@ function Register() {
                     onBlur={handleBlur}
                     placeholder="Bio"
                     rows={3}
-                    className={`ham mx-auto block w-[80%] resize-none rounded-md border-0 bg-[rgba(255,255,255,0.36)] px-4 py-3 placeholder:text-[#00000036]
+                    className={`bdcn mx-auto block w-[79.5%] resize-none rounded-md border-0 bg-[rgba(255,255,255,0.36)] px-4 py-3 placeholder:text-[#00000036]
                       ${
                         touched.bio && errors.bio
                           ? "ring-2 ring-inset ring-red-500"
@@ -475,7 +475,7 @@ function Register() {
                       void formik.setFieldValue("is_vitian", isVitian);
                     }}
                     onBlur={handleBlur}
-                    className={`box mx-auto block w-[80%] rounded-md border-0 bg-[rgba(255,255,255,0.36)] px-4 py-4 text-[#00000036]
+                    className={`box mx-auto block w-[79.5%] rounded-md border-0 bg-[rgba(255,255,255,0.36)] px-4 py-4 text-[#00000036]
                        `}
                   >
                     <option
@@ -508,7 +508,8 @@ function Register() {
               {/* </div> */}
               <button
                 type="submit"
-                className="mx-auto mt-6 w-[30%] rounded-full bg-[#FF7A00] py-1.5 text-2xl text-white"
+                disabled={changeText}
+                className="mx-auto mt-6 w-[30%] rounded-full bg-[#FF7A00] py-1.5 text-2xl text-white hover:scale-105 hover:transition-transform active:scale-100 disabled:bg-orange-400"
               >
                 {!changeText ? "REGISTER" : "Loading..."}
               </button>

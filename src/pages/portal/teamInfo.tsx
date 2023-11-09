@@ -78,6 +78,9 @@ const Main = () => {
             void Router.push("/portal/dashboard");
           } else if (error.response?.status === 400) {
             void Router.push("/portal");
+          } else if (error.response?.status === 401) {
+            void Router.push("/portal/payments");
+            toast.error("User has not paid yet!");
           }
         }
       }

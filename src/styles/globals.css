@@ -58,9 +58,13 @@ body {
   src: url(./../../public/FuturaExtraBlackCondensedItalicBT.ttf);
 }
 
-body, span, .left {
+body, .left {
   font-family: 'futura Md BT';
   font-weight: 400;
+}
+
+span{
+  font-family: 'futura BdCn BT';
 }
 
 p {
@@ -85,6 +89,8 @@ input{
   bottom: 100%;
   top: auto;
 }
+
+
 .ham {
   font-family: "futura Md BT";
 }

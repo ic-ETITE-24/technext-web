@@ -104,7 +104,7 @@ function Timeline() {
           </VerticalTimelineElement>
           <VerticalTimelineElement
             className="vertical-timeline-element--work pb-20 text-white  pr-4"
-            date="23 February 2024"
+            date="22 February 2024"
             dateClassName="xl:text-white text-orange-500"
             iconStyle={{
               backgroundColor: "white",

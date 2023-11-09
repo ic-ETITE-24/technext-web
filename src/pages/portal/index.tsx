@@ -166,13 +166,14 @@ export default function Home() {
 
               <button
                 type="submit"
-                className="mx-auto mt-6 w-[30%] rounded-full bg-[#FF7A00] py-1.5 text-2xl text-white lg:mt-16"
+                disabled={changeText}
+                className="mx-auto mt-6 w-[30%] hover:scale-105 hover:transition-transform active:scale-100 rounded-full bg-[#FF7A00] py-1.5 text-2xl text-white lg:mt-16 disabled:bg-orange-400"
               >
                 {!changeText ? "LOGIN" : "Logging In..."}
               </button>
               <Link href="/forgotpassword">
                 <div className="text-white underline text-center mt-7 lg:mt-5">
-                  Trouble in logging in?
+                  Forgot password?
                 </div>
               </Link>
             </div>
