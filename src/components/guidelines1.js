@@ -16,7 +16,7 @@ function Guidelines1() {
         {/* <div className="text-orange-500 text-5xl price">Student Groups</div> */}
         <div className="py-2 lg:py-0 mx-auto my-auto h-[100%] w-[90%] lg:w-[90%] rounded-md backdrop-blur-md backdrop-brightness-125 flex flex-col lg:flex-row lg:justify-center">
           <div className="my-auto mx-12 lg:mx-24 text-center">
-            <h1 className="text-[#FF7A00] text-3xl lg:text-5xl">
+            <h1 className="mt-4 md:mt-0 text-[#FF7A00] text-3xl lg:text-5xl">
               Student Groups
             </h1>
           </div>
@@ -36,7 +36,7 @@ function Guidelines1() {
             alt="line"
           />
 
-          <h1 className="text-justify my-auto mx-12 lg:mx-24 lg:text-3xl pb-10 lg:pb-0">
+          <h1 className="text-justify my-auto mx-12 lg:mx-24 lg:text-3xl pb-10 lg:pb-0 text-white">
             This competition is open to both Indian nationals and Foreign
             citizens. Participants must be currently enrolled in an academic
             institution at the time of the competition
@@ -68,7 +68,7 @@ function Guidelines1() {
             alt="line"
           />
 
-          <h1 className="text-justify my-auto mx-12 lg:mx-24 lg:text-3xl pb-10 lg:pb-0">
+          <h1 className="text-justify my-auto mx-12 lg:mx-24 lg:text-3xl text-white pb-10 lg:pb-0">
           The startup must be in its early stages, defined as having been
             founded within the last three years. The startup must have a
             technology-based product or service as its core offering. The
