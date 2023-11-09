@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Image from "next/image";
 import axios, { type AxiosError } from "axios";
 import { Toaster, toast } from "sonner";
 import RefreshToken from "@/utils/refreshToken";
@@ -78,10 +77,10 @@ export default function Payment() {
 
   return (
     <>
-      {/* <Head>
-        <title>Bolt 2.0 | Home</title>
+      <Head>
+        <title>Technext | Payments</title>
         <link rel="icon" type="image/x-icon" href="/favicon.ico"></link>
-      </Head> */}
+      </Head>
       <div className="flex items-center justify-center Registers">
       <Toaster richColors closeButton position="top-right" theme="light" />
         <div className="flex flex-col gap-5  text-white ">

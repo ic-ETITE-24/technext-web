@@ -10,6 +10,7 @@ import { useState, useEffect } from "react";
 import { BsArrowLeftSquare } from "react-icons/bs";
 import Link from "next/link";
 import { z } from "zod";
+import Head from "next/head";
 import { useFormik } from "formik";
 import { toFormikValidationSchema } from "zod-formik-adapter";
 import RefreshToken from "@/utils/refreshToken";
@@ -185,10 +186,10 @@ const Profile = () => {
 
   return (
     <>
-      {/* <Spinner label="Default" color="default" labelColor="foreground"/> */}
-      {/* <Spinner label="Primary" color="primary" labelColor="primary"/> */}
-      {/* <Spinner label="Secondary" color="secondary" labelColor="secondary"/> */}
-      {/* <Spinner label="Success" color="success" labelColor="success"/> */}
+      <Head>
+        <title>Technext | Profile</title>
+        <link rel="icon" type="image/x-icon" href="/favicon.ico"></link>
+      </Head>
 
       <div className="teamInfo relative text-white">
         <div className="flex w-full items-center justify-between pt-6">
