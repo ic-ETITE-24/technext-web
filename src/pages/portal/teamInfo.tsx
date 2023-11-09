@@ -10,6 +10,7 @@ import { useState, useEffect } from "react";
 import { BsArrowLeftSquare } from "react-icons/bs";
 import { FaRegCopy } from "react-icons/fa";
 import Link from "next/link";
+import Head from "next/head";
 import RefreshToken from "@/utils/refreshToken";
 import axios, { AxiosError } from "axios";
 import Router from "next/router";
@@ -120,6 +121,10 @@ const Main = () => {
   };
   return (
     <>
+      <Head>
+        <title>Technext | Team Details</title>
+        <link rel="icon" type="image/x-icon" href="/favicon.ico"></link>
+      </Head>
       <div className="teamInfo text-white">
         <Toaster richColors closeButton position="top-right" theme="light" />
         <div className="flex w-full items-center justify-between pt-6">

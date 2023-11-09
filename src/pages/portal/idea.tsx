@@ -4,6 +4,7 @@ import { MdOutlineAccountCircle } from "react-icons/md";
 import { PiBellSimpleBold } from "react-icons/pi";
 import { BsFillSquareFill } from "react-icons/bs";
 import Hamburger from "hamburger-react";
+import Head from "next/head";
 import { useRef } from "react";
 import { useState, useEffect } from "react";
 import { Toaster, toast } from "sonner";
@@ -138,6 +139,10 @@ const Idea = () => {
   }
   return (
     <>
+    <Head>
+        <title>Technext | Idea Submission</title>
+        <link rel="icon" type="image/x-icon" href="/favicon.ico"></link>
+      </Head>
       <div className="teamInfo text-white">
         <Toaster richColors closeButton position="top-right" theme="light" />
         <div className="flex w-full items-center justify-between pt-6">

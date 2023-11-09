@@ -28,7 +28,7 @@ function Investors() {
               <h1 className="self-center text-center text-white/50 lg:text-2xl">
                 EAGLEWINGS VENTURE SERVICES PVT. LTD.
               </h1>
-              <div className="self-center flex justify-center gap-x-4 py-4">
+              <div className="self-center flex justify-center gap-x-4 py-4 text-white">
                 <Link href="https://www.linkedin.com/company/eagle-wings-ventures/about/">
                   <FaLinkedin className="stroke-white/25" size={25} />
                 </Link>
@@ -51,7 +51,7 @@ function Investors() {
               <h1 className="self-center text-white/50 lg:text-2xl">
                 SEED VC INNOVATION LTD.
               </h1>
-              <div className="self-center flex justify-center gap-x-4 py-3.5">
+              <div className="self-center flex justify-center gap-x-4 py-3.5 text-white">
                 <Link href="https://www.linkedin.com/company/seedvc-innovationcapital-fund/">
                   <FaLinkedin className="stroke-white/25" size={25} />
                 </Link>

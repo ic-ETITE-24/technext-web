@@ -21,7 +21,7 @@ function Guidelines2() {
               fontWeight: 100,
               fontSize: "15px"
             }}>
-          <ul className="list-disc">
+          <ul className="list-disc text-white">
 
             <li>
               Registration for the competition is open to eligible teams. Each
