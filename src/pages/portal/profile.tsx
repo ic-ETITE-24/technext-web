@@ -10,6 +10,7 @@ import { useState, useEffect } from "react";
 import { BsArrowLeftSquare } from "react-icons/bs";
 import Link from "next/link";
 import { z } from "zod";
+import Head from "next/head";
 import { useFormik } from "formik";
 import { toFormikValidationSchema } from "zod-formik-adapter";
 import RefreshToken from "@/utils/refreshToken";
@@ -185,10 +186,10 @@ const Profile = () => {
 
   return (
     <>
-      {/* <Spinner label="Default" color="default" labelColor="foreground"/> */}
-      {/* <Spinner label="Primary" color="primary" labelColor="primary"/> */}
-      {/* <Spinner label="Secondary" color="secondary" labelColor="secondary"/> */}
-      {/* <Spinner label="Success" color="success" labelColor="success"/> */}
+      <Head>
+        <title>Technext | Profile</title>
+        <link rel="icon" type="image/x-icon" href="/favicon.ico"></link>
+      </Head>
 
       <div className="teamInfo relative text-white">
         <div className="flex w-full items-center justify-between pt-6">
@@ -268,7 +269,7 @@ const Profile = () => {
           <div className="relative flex h-[72vh] w-[50%] flex-col items-center justify-evenly rounded-3xl text-white md:w-[65%] md:items-center">
             <div className={`flex items-center flex-col md:flex-row justify-center px-[33px] `}>
                 <div
-                  className={`text-md mb-2 mt-3 flex h-[5vh] w-[40vw] items-center justify-center cursor-pointer rounded-md  px-[33px] py-[10px] text-center font-semibold text-xl text-white lg:text-3xl md:h-[7vh] md:w-[20vw] md:py-[12px] md:text-2xl ${!editDetails?"opacity-50":""}`}
+                  className={`text-md mb-4 md:mb-2 mt-3 flex h-[5vh] w-[40vw] items-center justify-center cursor-pointer rounded-md  px-[33px] py-[10px] text-center font-semibold text-xl text-white lg:text-3xl md:h-[7vh] md:w-[20vw] md:py-[12px] md:text-2xl ${!editDetails?"opacity-50":""}`}
                   onClick={() => {
                     setEditDetails(!editDetails);setEditPass(!editPass)
                     
@@ -341,7 +342,7 @@ const Profile = () => {
                     Gender:
                   </h1>
                   <select
-                    className="mt-3 w-[75vw] rounded-md bg-[#4b4b4b] px-[33px] py-[6px] text-lg font-semibold text-[#D9D9D999] md:w-[25vw] md:py-[6px] md:text-2xl 2xl:py-[10px]"
+                    className="mt-3 w-[75vw] rounded-md bg-[#4b4b4b] px-[33px] py-[6px] text-lg font-semibold text-[#D9D9D999] md:w-[25vw] md:py-[6px] md:text-xl 2xl:py-[10px]"
                     id="gender"
                     name="gender"
                     onChange={formik.handleChange}
@@ -369,7 +370,7 @@ const Profile = () => {
                     Phone No:
                   </h1>
                   <input
-                    className="mt-3 w-[75vw] rounded-md bg-[#4b4b4b] px-[33px] py-[6px] text-lg font-semibold text-[#D9D9D999] md:w-[25vw] md:py-[6px] md:text-2xl 2xl:py-[10px]"
+                    className="mt-3 w-[75vw] rounded-md bg-[#4b4b4b] px-[33px] py-[6px] text-lg font-semibold text-[#D9D9D999] md:w-[25vw] md:py-[6px] md:text-xl 2xl:py-[10px]"
                     id="phone_number"
                     type="text"
                     name="phone_number"
@@ -383,18 +384,18 @@ const Profile = () => {
                 
                 <div>
                   <h1 className="   mt-2 text-xs  font-bold text-white">
-                    date_of_birth:
+                    Date_Of_Birth:
                   </h1>
 
                   <input
-                    className="mt-3 w-[75vw] rounded-md bg-[#4b4b4b] px-[33px] py-[6px] text-lg font-semibold text-[#D9D9D999] md:w-[25vw] md:py-[6px] md:text-2xl 2xl:py-[10px]"
+                    className="mt-3 w-[75vw] rounded-md bg-[#4b4b4b] px-[33px] py-[6px] text-lg font-semibold text-[#D9D9D999] md:w-[25vw] md:py-[6px] md:text-xl 2xl:py-[10px]"
                     id="date_of_birth"
                     type="text"
                     name="date_of_birth"
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
                     value={formik.values.date_of_birth ?? date_of_birth}
-                    placeholder="date_of_birth"
+                    placeholder="Date_Of_Birth"
                   />
                   
                 </div>
@@ -404,7 +405,7 @@ const Profile = () => {
                     Bio:
                   </h1>
                   <textarea
-                    className="mt-3 h-[15vh] w-[75vw] resize-none rounded-md bg-[#4b4b4b] px-[33px] py-[6px] text-lg font-semibold text-[#D9D9D999] md:w-[25vw] md:py-[10px] md:text-2xl"
+                    className="mt-3 h-[15vh] w-[75vw] resize-none rounded-md bg-[#4b4b4b] px-[33px] py-[6px] text-lg font-semibold text-[#D9D9D999] md:w-[25vw] md:py-[10px] md:text-xl"
                     id="bio"
                     rows={3}
                     placeholder="BIO"
@@ -417,7 +418,8 @@ const Profile = () => {
               <div className={`flex items-center justify-center `}>
                 <button
                   type="submit"
-                  className="text-md mb-2 mt-3 flex h-[5vh] w-[55vw] items-center justify-center rounded-md bg-[#FF7A00] px-[33px] py-[10px] text-center font-semibold text-white md:h-[7vh] md:w-[20vw] md:py-[12px] md:text-2xl"
+                  disabled={changeInnerText}
+                  className="text-md mb-2 mt-3 flex h-[5vh] w-[55vw] items-center justify-center rounded-md bg-[#FF7A00] px-[33px] py-[10px] text-center font-semibold text-white md:h-[7vh] md:w-[20vw] md:py-[12px] md:text-2xl hover:scale-105 hover:transition-transform active:scale-100 disabled:bg-orange-400"
                   onClick={() => {
                     setEditName(false);
                     setChangePasswordMode(false);
@@ -432,30 +434,31 @@ const Profile = () => {
               
               <div className={`flex flex-col items-center justify-end px-[33px] py-[6px] md:flex-row md:w-[60vw] ${!editPass?"hidden":""}`}>
                 <input
-                  className="mt-3 w-[75vw] rounded-md bg-[#4b4b4b] px-[33px] py-[6px] text-lg font-semibold text-[#D9D9D999] md:w-[25vw] md:py-[6px] md:text-2xl 2xl:py-[10px]"
+                  className="mt-3 w-[75vw] rounded-md bg-[#4b4b4b] px-[33px] py-[6px] text-lg font-semibold text-[#D9D9D999] md:w-[25vw] md:py-[6px] md:text-xl 2xl:py-[10px]"
                   id="pass"
                   type="text"
                   name="oldPassword"
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
                   value={formik.values.oldPassword}
-                  placeholder="oldPassword"
+                  placeholder="Old Password"
                 />
                 <input
-                  className="mt-3 w-[75vw] rounded-md bg-[#4b4b4b] px-[33px] py-[6px] text-lg font-semibold text-[#D9D9D999] md:ml-6 md:w-[25vw] md:py-[6px] md:text-2xl 2xl:py-[10px]"
+                  className="mt-3 w-[75vw] rounded-md bg-[#4b4b4b] px-[33px] py-[6px] text-lg font-semibold text-[#D9D9D999] md:ml-6 md:w-[25vw] md:py-[6px] md:text-xl 2xl:py-[10px]"
                   id="pass"
                   type="text"
                   name="newPassword"
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
                   value={formik.values.newPassword}
-                  placeholder="newPassword"
+                  placeholder="New Password"
                 />
               </div>
               <div className={`flex items-center justify-center ${!editPass?"hidden":""}`}>
                 <button
                   type="submit"
-                  className="text-md mb-2 mt-3 flex h-[5vh] w-[55vw] items-center justify-center rounded-md bg-[#FF7A00] px-[33px] py-[10px] text-center font-semibold text-white md:h-[7vh] md:w-[20vw] md:py-[12px] md:text-2xl"
+                  disabled={changeInnerTextPass}
+                  className="text-md mb-2 mt-3 flex h-[5vh] w-[55vw] items-center justify-center rounded-md bg-[#FF7A00] px-[33px] py-[10px] text-center font-semibold text-white md:h-[7vh] md:w-[20vw] md:py-[12px] md:text-2xl hover:scale-105 hover:transition-transform active:scale-100 disabled:bg-orange-400"
                   onClick={() => {
                     setEditName(false), setChangePasswordMode(true);
                   }}

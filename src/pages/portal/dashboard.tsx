@@ -8,6 +8,7 @@ import { PiBellSimpleBold } from "react-icons/pi";
 import { BiExit } from "react-icons/bi";
 import Modal from "react-modal";
 import Link from "next/link";
+import Head from "next/head";
 import { useRef } from "react";
 import { useRouter } from "next/router";
 import axios, { type AxiosError } from "axios";
@@ -28,7 +29,7 @@ interface createResponse {
 
 interface UserData {
   status: boolean;
-  user: {
+  user?: {
     first_name: string;
     team: {
       ID: number;
@@ -64,17 +65,30 @@ const Dashboard = () => {
             },
           }
         );
-        if (response.data.user.team.ID != 0) {
+        if (response.data.user?.team.ID != 0) {
           void router.push("/portal/teamInfo");
         }
         if (response.data.status) {
-          setName(response.data.user.first_name.toUpperCase());
+          console.log(response.data.status);
+          setName(response.data.user?.first_name.toUpperCase());
         } else {
           localStorage.removeItem("access_token");
           localStorage.removeItem("refresh_token");
           void router.push("/portal");
         }
-      } catch (err) {}
+      } catch (err) {
+        if (axios.isAxiosError(err)) {
+          const error = err as AxiosError;
+          if (error.response?.data === 400) {
+            void router.push("/portal/teamInfo");
+          } else if (error.response?.status === 401) {
+            toast.error("User has not paid yet");
+            void router.push("/portal/payments");
+          } else if (error.response?.status === 502) {
+            toast.error("Server error... Please try again later");
+          }
+        }
+      }
     }
 
     void getDashboard();
@@ -83,7 +97,7 @@ const Dashboard = () => {
   async function handleTeamAction(): Promise<void> {
     if (modalName) {
       if (joinRef.current?.value) {
-        setLoader(true)
+        setLoader(true);
         try {
           const access_token: string | null =
             localStorage.getItem("access_token");
@@ -99,12 +113,12 @@ const Dashboard = () => {
               },
             }
           );
-          setLoader(false)
+          setLoader(false);
           if (response.data.status === true) {
             void router.push("/portal/teamInfo");
           }
         } catch (err) {
-          setLoader(false)
+          setLoader(false);
           if (axios.isAxiosError(err)) {
             const error = err as AxiosError;
             if (error.response?.data === 400) {
@@ -179,6 +193,10 @@ const Dashboard = () => {
 
   return (
     <>
+      <Head>
+        <title>Technext | Dashboard</title>
+        <link rel="icon" type="image/x-icon" href="/favicon.ico"></link>
+      </Head>
       <div className={`teamInfo text-white`}>
         <Toaster richColors closeButton position="top-right" theme="light" />
         <div className="flex w-full items-center justify-between pt-6">
@@ -346,29 +364,27 @@ const Dashboard = () => {
           >
             {modalName ? (
               <>
-              {!Loader? 
-                <span className="bdcn flex items-center">
-                  Continue &nbsp;
-                  <MdLogin />
-                </span>:
-              <span className="bdcn flex items-center">
-                  Loading... &nbsp;
-                  <MdLogin />
-                </span>
-              
-              }
+                {!Loader ? (
+                  <span className="bdcn flex items-center">
+                    Continue &nbsp;
+                    <MdLogin />
+                  </span>
+                ) : (
+                  <span className="bdcn flex items-center">
+                    Loading... &nbsp;
+                    <MdLogin />
+                  </span>
+                )}
               </>
             ) : (
               <>
-              {Loader?
-                <span className="bdcn text-base lg:text-xl">
-                  Loading...
-                </span>:
-                <span className="bdcn text-base lg:text-xl">
-                  GENERATE TEAM CODE
-                </span>
-              
-            }
+                {Loader ? (
+                  <span className="bdcn text-base lg:text-xl">Loading...</span>
+                ) : (
+                  <span className="bdcn text-base lg:text-xl">
+                    GENERATE TEAM CODE
+                  </span>
+                )}
                 {teamCodeModalIsOpen && codeModal && (
                   <Modal
                     isOpen={modalIsOpen}

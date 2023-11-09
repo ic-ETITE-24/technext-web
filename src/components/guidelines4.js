@@ -17,7 +17,7 @@ function Guidelines4() {
           Submission rule
         </div>
         <div
-          className="ml-12 mr-4 text-xl px-8"
+          className="ml-12 mr-4 text-xl px-8 text-white"
           style={{
             fontFamily: "Futura Md BT",
             fontStyle: "normal",

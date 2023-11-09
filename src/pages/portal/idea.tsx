@@ -4,6 +4,7 @@ import { MdOutlineAccountCircle } from "react-icons/md";
 import { PiBellSimpleBold } from "react-icons/pi";
 import { BsFillSquareFill } from "react-icons/bs";
 import Hamburger from "hamburger-react";
+import Head from "next/head";
 import { useRef } from "react";
 import { useState, useEffect } from "react";
 import { Toaster, toast } from "sonner";
@@ -138,6 +139,10 @@ const Idea = () => {
   }
   return (
     <>
+    <Head>
+        <title>Technext | Idea Submission</title>
+        <link rel="icon" type="image/x-icon" href="/favicon.ico"></link>
+      </Head>
       <div className="teamInfo text-white">
         <Toaster richColors closeButton position="top-right" theme="light" />
         <div className="flex w-full items-center justify-between pt-6">
@@ -314,9 +319,9 @@ const Idea = () => {
                   void handleSubmit();
                 }}
                 disabled={isSubmitted}
-                className="mx-auto w-[30%] rounded-md bg-[#FF7A00] py-1.5 text-2xl text-white disabled:cursor-not-allowed disabled:bg-[#FF7A00] disabled:text-[#ffffff4d]"
+                className="mx-auto w-[30%] rounded-md bg-[#FF7A00] hover:scale-105 hover:transition-transform active:scale-100 disabled:bg-orange-400 py-1.5 text-2xl text-white disabled:cursor-not-allowed disabled:bg-[#FF7A00] disabled:text-[#ffffff4d]"
               >
-                Submit
+                {!isSubmitted ? "Submit" : "Submitting..."}
               </button>
             </div>
           </div>

@@ -8,6 +8,7 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import logo from "@/assets/portal/logo.svg";
 import axios from "axios";
+import Head from "next/head";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { Toaster, toast } from "sonner";
@@ -162,284 +163,289 @@ function Register() {
     return "";
   };
   return (
-    <div className="Registers flex justify-center overflow-hidden">
-      <Toaster richColors closeButton position="top-right" theme="light" />
-      <div className="hidden items-center justify-center lg:flex lg:w-[50%]">
-        <Image src={logo as HTMLImageElement} alt="Icetite-logo" />
-      </div>
-      <div className="mx-8 my-auto h-fit w-[100%] rounded-md py-6 backdrop-blur-md backdrop-brightness-125 lg:w-[50%]">
-        <div className="flex justify-center overflow-auto whitespace-pre pt-2 text-4xl text-white lg:text-5xl">
-          <Link href="/portal">
-            <div className="unselected text-white/50">LOGIN </div>
-          </Link>
-          <div className="selected">| REGISTER</div>
+    <>
+      <Head>
+        <title>Technext | Registration</title>
+        <link rel="icon" type="image/x-icon" href="/favicon.ico"></link>
+      </Head>
+      <div className="Registers flex justify-center overflow-hidden">
+        <Toaster richColors closeButton position="top-right" theme="light" />
+        <div className="hidden items-center justify-center lg:flex lg:w-[50%]">
+          <Image src={logo as HTMLImageElement} alt="Icetite-logo" />
         </div>
-        <div className="scrollable-form">
-          <form onSubmit={handleSubmit}>
-            <div className="flex flex-col justify-center">
-              <div className="flex flex-col lg:w-[100%] lg:flex-row lg:justify-center">
-                <div className="mt-11 lg:w-[40%]">
-                  <div>
-                    <input
-                      type="text"
-                      name="firstName"
-                      id="firstName"
-                      autoComplete="firstName"
-                      value={values.firstName}
-                      onChange={handleChange}
-                      onBlur={handleBlur}
-                      placeholder="First Name"
-                      className={`mx-auto block w-[80%] rounded-md border-0 bg-[rgba(255,255,255,0.36)] px-4 py-3 placeholder:text-[#00000036] lg:mx-0 lg:w-[99%]
+        <div className="mx-8 my-auto h-fit w-[100%] rounded-md py-6 backdrop-blur-md backdrop-brightness-125 lg:w-[50%]">
+          <div className="flex justify-center overflow-auto whitespace-pre pt-2 text-4xl text-white lg:text-5xl">
+            <Link href="/portal">
+              <div className="unselected text-white/50">LOGIN </div>
+            </Link>
+            <div className="selected">| REGISTER</div>
+          </div>
+          <div className="scrollable-form">
+            <form onSubmit={handleSubmit}>
+              <div className="flex flex-col justify-center">
+                <div className="flex flex-col lg:w-[100%] lg:flex-row lg:justify-center">
+                  <div className="mt-11 lg:w-[39.5%]">
+                    <div>
+                      <input
+                        type="text"
+                        name="firstName"
+                        id="firstName"
+                        autoComplete="firstName"
+                        value={values.firstName}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        placeholder="First Name"
+                        className={`mx-auto block w-[80%] rounded-md border-0 bg-[rgba(255,255,255,0.36)] px-4 py-3 placeholder:text-[#00000036] lg:mx-0 lg:w-[99%]
                       ${touched.firstName && errors.firstName ? "" : ""}`}
-                    />
-                    <div className="mx-auto w-[80%] lg:w-[98%]">
-                      <span className="text-xs text-red-500 md:text-sm">
-                        {errors.firstName}
-                      </span>
+                      />
+                      <div className="mx-auto w-[80%] lg:w-[98%]">
+                        <span className="text-xs text-red-500 md:text-sm">
+                          {errors.firstName}
+                        </span>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div className="lg:w-[40%]">
-                  <div className="mt-3 lg:mt-11">
-                    <input
-                      type="text"
-                      name="lastName"
-                      id="lastName"
-                      autoComplete="lastName"
-                      value={values.lastName}
-                      onChange={handleChange}
-                      onBlur={handleBlur}
-                      placeholder="Last Name"
-                      className={`mx-auto block w-[80%] rounded-md border-0 bg-[rgba(255,255,255,0.36)] px-4 py-3 placeholder:text-[#00000036] lg:mx-0 lg:w-[99%]
+                  <div className="lg:w-[40%]">
+                    <div className="mt-3 lg:mt-11">
+                      <input
+                        type="text"
+                        name="lastName"
+                        id="lastName"
+                        autoComplete="lastName"
+                        value={values.lastName}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        placeholder="Last Name"
+                        className={`mx-auto block w-[80%] rounded-md border-0 bg-[rgba(255,255,255,0.36)] px-4 py-3 placeholder:text-[#00000036] lg:mx-0 lg:w-[99%]
                       ${touched.lastName && errors.lastName ? "" : ""}`}
-                    />
-                    <div className="mx-auto w-[80%] lg:w-[98%]">
-                      <span className="text-xs text-red-500 md:text-sm">
-                        {touched.lastName && errors.lastName}
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div>
-                <div className="mt-3 lg:mt-2">
-                  <input
-                    type="email"
-                    name="email"
-                    id="email"
-                    autoComplete="email"
-                    value={values.email}
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    placeholder="Email"
-                    className={`mx-auto block w-[79.5%] rounded-md border-0 bg-[rgba(255,255,255,0.36)] px-4 py-3 placeholder:text-[#00000036]
-                      ${touched.email && errors.email ? "" : ""}`}
-                  />
-                  <div className="mx-auto w-[80%]">
-                    <span className="text-xs text-red-500 md:text-sm">
-                      {touched.email && errors.email}
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div className="flex flex-col pr-0.5 lg:w-[100%] lg:flex-row lg:justify-center">
-                <div className="lg:w-[40%]">
-                  <div className="mt-3 lg:mt-2">
-                    <input
-                      type="password"
-                      name="password"
-                      id="password"
-                      autoComplete="password"
-                      value={values.password}
-                      onChange={handleChange}
-                      onBlur={handleBlur}
-                      placeholder="Password"
-                      className={`mx-auto block w-[80%] rounded-md border-0 bg-[rgba(255,255,255,0.36)] px-4 py-3 placeholder:text-[#00000036] lg:w-[18.7vw] ${
-                        touched.password && errors.password
-                          ? "ring-2 ring-inset ring-red-500"
-                          : ""
-                      } `}
-                    />
-                    <div className="mx-auto w-[80%]">
-                      <span className="text-xs text-red-500 md:text-sm">
-                        {touched.password && errors.password}
-                      </span>
+                      />
+                      <div className="mx-auto w-[80%] lg:w-[98%]">
+                        <span className="text-xs text-red-500 md:text-sm">
+                          {touched.lastName && errors.lastName}
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </div>
                 <div>
+                  <div className="mt-3 lg:mt-2">
+                    <input
+                      type="email"
+                      name="email"
+                      id="email"
+                      autoComplete="email"
+                      value={values.email}
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      placeholder="Email"
+                      className={`mx-auto block w-[79.5%] rounded-md border-0 bg-[rgba(255,255,255,0.36)] px-4 py-3 placeholder:text-[#00000036]
+                      ${touched.email && errors.email ? "" : ""}`}
+                    />
+                    <div className="mx-auto w-[80%]">
+                      <span className="text-xs text-red-500 md:text-sm">
+                        {touched.email && errors.email}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div className="flex flex-col pr-0.5 lg:w-[100%] lg:flex-row lg:justify-center">
                   <div className="lg:w-[40%]">
                     <div className="mt-3 lg:mt-2">
                       <input
                         type="password"
-                        name="confirmPassword"
-                        id="confirmPassword"
-                        value={values.confirmPassword}
+                        name="password"
+                        id="password"
+                        autoComplete="password"
+                        value={values.password}
                         onChange={handleChange}
                         onBlur={handleBlur}
-                        placeholder="Confirm Password"
-                        className={`mx-auto block w-[80%] rounded-md border-0 bg-[rgba(255,255,255,0.36)] px-4 py-3 placeholder:text-[#00000036] lg:w-[19vw]
+                        placeholder="Password"
+                        className={`mx-auto block w-[80%] rounded-md border-0 bg-[rgba(255,255,255,0.36)] px-4 py-3 placeholder:text-[#00000036] lg:w-[18.7vw] ${
+                          touched.password && errors.password
+                            ? "ring-2 ring-inset ring-red-500"
+                            : ""
+                        } `}
+                      />
+                      <div className="mx-auto w-[80%]">
+                        <span className="text-xs text-red-500 md:text-sm">
+                          {touched.password && errors.password}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <div className="lg:w-[40%]">
+                      <div className="mt-3 lg:mt-2">
+                        <input
+                          type="password"
+                          name="confirmPassword"
+                          id="confirmPassword"
+                          value={values.confirmPassword}
+                          onChange={handleChange}
+                          onBlur={handleBlur}
+                          placeholder="Confirm Password"
+                          className={`mx-auto block w-[80%] rounded-md border-0 bg-[rgba(255,255,255,0.36)] px-4 py-3 placeholder:text-[#00000036] lg:w-[19vw]
                       ${
                         touched.confirmPassword && errors.confirmPassword
                           ? "ring-2 ring-inset ring-red-500"
                           : ""
                       }`}
-                      />
-                      <div className="mx-auto w-[80%]">
-                        <span className="text-xs text-red-500 md:text-sm">
-                          {touched.confirmPassword && errors.confirmPassword}
-                        </span>
+                        />
+                        <div className="mx-auto w-[80%]">
+                          <span className="text-xs text-red-500 md:text-sm">
+                            {touched.confirmPassword && errors.confirmPassword}
+                          </span>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div className="flex flex-col pr-0.5 lg:w-[100%] lg:flex-row lg:justify-center">
-                <div className="lg:w-[40%]">
-                  <div className="mt-3 lg:mt-2">
-                    <input
-                      type="text"
-                      name="phoneNo"
-                      id="phoneNo"
-                      value={values.phoneNo}
-                      onChange={handleChange}
-                      onBlur={handleBlur}
-                      placeholder="Phone Number"
-                      className={`mx-auto block w-[80%] rounded-md border-0 bg-[rgba(255,255,255,0.36)] px-4 py-3 placeholder:text-[#00000036] lg:w-[18.7vw] ${
-                        touched.phoneNo && errors.phoneNo
-                          ? "ring-2 ring-inset ring-red-500"
-                          : ""
-                      } `}
-                    />
-                    <div className="mx-auto w-[80%]">
-                      <span className="text-xs text-red-500 md:text-sm">
-                        {touched.phoneNo && errors.phoneNo}
-                      </span>
-                    </div>
-                  </div>
-                </div>
-                <div>
+                <div className="flex flex-col pr-0.5 lg:w-[100%] lg:flex-row lg:justify-center">
                   <div className="lg:w-[40%]">
                     <div className="mt-3 lg:mt-2">
-                      <ReactFlagsSelect
-                        selected={country}
-                        onSelect={(countryCode) => {
-                          setCountry(countryCode);
-                          formik.handleChange("country")(countryCode);
-                          formik.handleBlur("country");
-                        }}
-                        placeholder="Select Country"
-                        searchable
-                        searchPlaceholder="Search countries"
-                        className={`box mx-auto h-full w-[80%] rounded-md bg-[rgba(255,255,255,0.36)] lg:w-[19vw] text-black
+                      <input
+                        type="text"
+                        name="phoneNo"
+                        id="phoneNo"
+                        value={values.phoneNo}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        placeholder="Phone Number"
+                        className={`mx-auto block w-[80%] rounded-md border-0 bg-[rgba(255,255,255,0.36)] px-4 py-3 placeholder:text-[#00000036] lg:w-[18.7vw] ${
+                          touched.phoneNo && errors.phoneNo
+                            ? "ring-2 ring-inset ring-red-500"
+                            : ""
+                        } `}
+                      />
+                      <div className="mx-auto w-[80%]">
+                        <span className="text-xs text-red-500 md:text-sm">
+                          {touched.phoneNo && errors.phoneNo}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <div className="lg:w-[40%]">
+                      <div className="mt-3 lg:mt-2">
+                        <ReactFlagsSelect
+                          selected={country}
+                          onSelect={(countryCode) => {
+                            setCountry(countryCode);
+                            formik.handleChange("country")(countryCode);
+                            formik.handleBlur("country");
+                          }}
+                          placeholder="Select Country"
+                          searchable
+                          searchPlaceholder="Search countries"
+                          className={`mx-auto h-full w-[80%] rounded-md bg-[rgba(255,255,255,0.36)] lg:w-[19vw] text-black
                       ${
                         touched.country && errors.country
                           ? "ring-2 ring-inset ring-red-500"
                           : ""
                       }`}
-                      />
-                      <div className="mx-auto w-[80%]">
-                        <span className="text-xs text-red-500 md:text-sm">
-                          {touched.country && errors.country}
-                        </span>
+                        />
+                        <div className="mx-auto w-[80%]">
+                          <span className="text-xs text-red-500 md:text-sm">
+                            {touched.country && errors.country}
+                          </span>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div className="flex flex-col pr-0.5 lg:w-[100%] lg:flex-row lg:justify-center">
-                <div className="lg:w-[40%]">
-                  <div className="mt-3 lg:mt-2">
-                    <input
-                      name="date_of_birth"
-                      type={inputType}
-                      onMouseEnter={handleFocus}
-                      value={values.date_of_birth}
-                      placeholder="Date of Birth"
-                      onChange={(event) =>
-                        void formik.setFieldValue(
-                          "date_of_birth",
-                          event.target.value
-                        )
-                      }
-                      onBlur={handleblur}
-                      className={`mx-auto block w-[80%] rounded-md border-0 bg-[rgba(255,255,255,0.36)] px-4 py-3 placeholder:text-[#00000036] text-black lg:w-[18.7vw] ${
-                        touched.date_of_birth && errors.date_of_birth
-                          ? "ring-2 ring-inset ring-red-500"
-                          : ""
-                      } `}
-                    />
-                    <div className="mx-auto w-[80%]">
-                      <span className="text-xs text-red-500 md:text-sm">
-                        {touched.date_of_birth && errors.date_of_birth}
-                      </span>
-                    </div>
-                  </div>
-                </div>
-                <div>
+                <div className="flex flex-col pr-0.5 lg:w-[100%] lg:flex-row lg:justify-center">
                   <div className="lg:w-[40%]">
                     <div className="mt-3 lg:mt-2">
-                      <select
-                        name="gender"
-                        id="gender"
-                        value={values.gender}
-                        onChange={handleChange}
-                        onBlur={handleBlur}
-                        className={`box mx-auto block w-[80%] rounded-md border-0 bg-[rgba(255,255,255,0.36)] px-4 py-3.5 text-[#00000036] lg:w-[19vw]
+                      <input
+                        name="date_of_birth"
+                        type={inputType}
+                        onMouseEnter={handleFocus}
+                        value={values.date_of_birth}
+                        placeholder="Date of Birth"
+                        onChange={(event) =>
+                          void formik.setFieldValue(
+                            "date_of_birth",
+                            event.target.value
+                          )
+                        }
+                        onBlur={handleblur}
+                        className={`mx-auto block w-[80%] rounded-md border-0 bg-[rgba(255,255,255,0.36)] px-4 py-3 placeholder:text-[#00000036] text-black lg:w-[18.7vw] ${
+                          touched.date_of_birth && errors.date_of_birth
+                            ? "ring-2 ring-inset ring-red-500"
+                            : ""
+                        } `}
+                      />
+                      <div className="mx-auto w-[80%]">
+                        <span className="text-xs text-red-500 md:text-sm">
+                          {touched.date_of_birth && errors.date_of_birth}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <div className="lg:w-[40%]">
+                      <div className="mt-3 lg:mt-2">
+                        <select
+                          name="gender"
+                          id="gender"
+                          value={values.gender}
+                          onChange={handleChange}
+                          onBlur={handleBlur}
+                          className={`box mx-auto block w-[80%] rounded-md border-0 bg-[rgba(255,255,255,0.36)] px-4 py-3.5 text-[#00000036] lg:w-[19vw]
                       ${
                         touched.gender && errors.gender
                           ? "ring-2 ring-inset ring-red-500"
                           : ""
                       }`}
-                      >
-                        <option value="" disabled className="ham text-black">
-                          Select Gender
-                        </option>
-                        <option value="male" className="ham text-black">
-                          Male
-                        </option>
-                        <option value="female" className="ham text-black">
-                          Female
-                        </option>
-                        <option value="other" className="ham text-black">
-                          Other
-                        </option>
-                      </select>
-                      <div className="mx-auto w-[80%]">
-                        <span className="text-xs text-red-500 md:text-sm">
-                          {touched.gender && errors.gender}
-                        </span>
+                        >
+                          <option value="" disabled className="ham text-black">
+                            Select Gender
+                          </option>
+                          <option value="male" className="ham text-black">
+                            Male
+                          </option>
+                          <option value="female" className="ham text-black">
+                            Female
+                          </option>
+                          <option value="other" className="ham text-black">
+                            Other
+                          </option>
+                        </select>
+                        <div className="mx-auto w-[80%]">
+                          <span className="text-xs text-red-500 md:text-sm">
+                            {touched.gender && errors.gender}
+                          </span>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
 
-              <div>
-                <div className="mt-3 lg:mt-2">
-                  <textarea
-                    name="bio"
-                    id="bio"
-                    value={values.bio}
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    placeholder="Bio"
-                    rows={3}
-                    className={`ham mx-auto block w-[80%] resize-none rounded-md border-0 bg-[rgba(255,255,255,0.36)] px-4 py-3 placeholder:text-[#00000036]
+                <div>
+                  <div className="mt-3 lg:mt-2">
+                    <textarea
+                      name="bio"
+                      id="bio"
+                      value={values.bio}
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      placeholder="Bio"
+                      rows={3}
+                      className={`bdcn mx-auto block w-[79.5%] resize-none rounded-md border-0 bg-[rgba(255,255,255,0.36)] px-4 py-3 placeholder:text-[#00000036]
                       ${
                         touched.bio && errors.bio
                           ? "ring-2 ring-inset ring-red-500"
                           : ""
                       }`}
-                  />
-                  <div className="mx-auto w-[80%]">
-                    <span className="text-xs text-red-500 md:text-sm">
-                      {touched.bio && errors.bio}
-                    </span>
+                    />
+                    <div className="mx-auto w-[80%]">
+                      <span className="text-xs text-red-500 md:text-sm">
+                        {touched.bio && errors.bio}
+                      </span>
+                    </div>
                   </div>
                 </div>
-              </div>
-              {/* <div>
+                {/* <div>
                 <div className="mt-3 lg:mt-2">
                   <ReactFlagsSelect
                     selected={country}
@@ -460,63 +466,65 @@ function Register() {
                   </div>
                 </div>
               </div> */}
-              <div>
-                {/* <div className="lg:w-[40%]"> */}
-                <div className="mt-3 lg:mt-2">
-                  <select
-                    id="college"
-                    name="college"
-                    required
-                    // value={values.college}
-                    onChange={(e) => {
-                      const selectedCollege = e.target.value;
-                      const isVitian = selectedCollege === "VIT Vellore";
+                <div>
+                  {/* <div className="lg:w-[40%]"> */}
+                  <div className="mt-3 lg:mt-2">
+                    <select
+                      id="college"
+                      name="college"
+                      required
+                      // value={values.college}
+                      onChange={(e) => {
+                        const selectedCollege = e.target.value;
+                        const isVitian = selectedCollege === "VIT Vellore";
 
-                      void formik.setFieldValue("is_vitian", isVitian);
-                    }}
-                    onBlur={handleBlur}
-                    className={`box mx-auto block w-[80%] rounded-md border-0 bg-[rgba(255,255,255,0.36)] px-4 py-4 text-[#00000036]
+                        void formik.setFieldValue("is_vitian", isVitian);
+                      }}
+                      onBlur={handleBlur}
+                      className={`box mx-auto block w-[79.5%] rounded-md border-0 bg-[rgba(255,255,255,0.36)] px-4 py-4 text-[#00000036]
                        `}
-                  >
-                    <option
-                      className="text-[#00000036]"
-                      value=""
-                      label="Choose your university"
-                    />
-                    <option
-                      value="VIT Vellore"
-                      label="VIT Vellore"
-                      className="text-black"
-                    />
-                    <option
-                      value="Others"
-                      label="Other"
-                      className="text-black"
-                    />
-                  </select>
-                  {/* <span className="text-sm text-red-500">
+                    >
+                      <option
+                        className="text-[#00000036]"
+                        value=""
+                        label="Choose your university"
+                      />
+                      <option
+                        value="VIT Vellore"
+                        label="VIT Vellore"
+                        className="text-black"
+                      />
+                      <option
+                        value="Others"
+                        label="Other"
+                        className="text-black"
+                      />
+                    </select>
+                    {/* <span className="text-sm text-red-500">
                       {touched.college && errors.college}
                     </span> */}
 
-                  {/* <div className="mx-auto w-[80%]">
+                    {/* <div className="mx-auto w-[80%]">
                       <span className="text-xs text-red-500 md:text-sm">
                         {touched.gender && errors.gender}
                       </span>
                     </div> */}
+                  </div>
                 </div>
+                {/* </div> */}
+                <button
+                  type="submit"
+                  disabled={changeText}
+                  className="mx-auto mt-6 w-[30%] rounded-full bg-[#FF7A00] py-1.5 text-2xl text-white hover:scale-105 hover:transition-transform active:scale-100 disabled:bg-orange-400"
+                >
+                  {!changeText ? "REGISTER" : "Loading..."}
+                </button>
               </div>
-              {/* </div> */}
-              <button
-                type="submit"
-                className="mx-auto mt-6 w-[30%] rounded-full bg-[#FF7A00] py-1.5 text-2xl text-white"
-              >
-                {!changeText ? "REGISTER" : "Loading..."}
-              </button>
-            </div>
-          </form>
+            </form>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 
