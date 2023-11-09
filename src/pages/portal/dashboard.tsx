@@ -64,12 +64,12 @@ const Dashboard = () => {
             },
           }
         );
-        if (response.data.user.team.ID != 0) {
+        if (response.data.user?.team.ID != 0) {
           void router.push("/portal/teamInfo");
         }
         if (response.data.status) {
           console.log(response.data.status);
-          setName(response.data.user.first_name.toUpperCase());
+          setName(response.data.user?.first_name.toUpperCase());
         } else {
           localStorage.removeItem("access_token");
           localStorage.removeItem("refresh_token");
