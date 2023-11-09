@@ -508,7 +508,8 @@ function Register() {
               {/* </div> */}
               <button
                 type="submit"
-                className="mx-auto mt-6 w-[30%] rounded-full bg-[#FF7A00] py-1.5 text-2xl text-white"
+                disabled={changeText}
+                className="mx-auto mt-6 w-[30%] rounded-full bg-[#FF7A00] py-1.5 text-2xl text-white hover:scale-105 hover:transition-transform active:scale-100 disabled:bg-orange-400"
               >
                 {!changeText ? "REGISTER" : "Loading..."}
               </button>
