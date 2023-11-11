@@ -90,7 +90,7 @@ export default function Home() {
           if (error.response?.status === 401) {
             toast.error("Invalid email or password");
           } else if (error.response?.status === 409) {
-            toast.error("Invalid password");
+            toast.error("Wrong password");
           } else if (error.response?.status === 404) {
             toast.error("User not found");
           } else if (error.response?.status === 502) {

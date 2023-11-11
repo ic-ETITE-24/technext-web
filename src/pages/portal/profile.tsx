@@ -20,6 +20,7 @@ import DatePicker from "react-datepicker";
 import { Toaster, toast } from "sonner";
 import { Spinner } from "@nextui-org/react";
 import React from "react";
+import Logout from "@/utils/logout";
 
 interface ApiResponse {
   message: string;
@@ -212,10 +213,13 @@ const Profile = () => {
                 &nbsp;Announcements
               </div>
             </div>
-            <span className="bdcn mx-[15px] my-1 hidden items-center rounded-md bg-[#FF7A00] px-2 py-1 text-[10px] uppercase hover:bg-[#ff9837] hover:font-[400] hover:text-white active:bg-[#FF7A00] sm:mx-[30px] sm:rounded-lg sm:px-5 sm:py-2 sm:text-xl md:flex">
+            <button className="bdcn mx-[15px] my-1 hidden items-center rounded-md bg-[#FF7A00] px-2 py-1 text-[10px] uppercase hover:bg-[#ff9837] hover:font-[400] hover:text-white active:bg-[#FF7A00] sm:mx-[30px] sm:rounded-lg sm:px-5 sm:py-2 sm:text-xl md:flex"
+              onClick={() => {
+                void Logout();
+              }}>
               <MdOutlineAccountCircle />
               &nbsp;Log out
-            </span>
+            </button>
             <span className="bdcn flex items-center rounded-md uppercase hover:font-[400] hover:text-white active:bg-white active:text-[#ff9837] sm:mx-[30px] sm:rounded-lg md:hidden">
               <Hamburger toggled={isOpen} toggle={setOpen} size={18} />
             </span>
