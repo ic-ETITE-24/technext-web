@@ -165,7 +165,7 @@ const Main = () => {
           </div>
         </div>
         <div
-          className={`ham absolute right-2 z-30 flex flex-col bg-[#FF7A00] bg-opacity-90 px-10 py-8 text-center font-bold md:hidden ${
+          className={`ham absolute right-2 z-30 flex flex-col bg-[#FF7A00] px-10 py-8 text-center font-bold md:hidden ${
             isOpen ? "" : "hidden"
           } rounded-2xl`}
         >
@@ -195,7 +195,7 @@ const Main = () => {
             <span>PROJECT</span>
           </Link> */}
 
-          <span
+          <button
             className="mb-1 flex items-center rounded-sm px-5 py-4 text-2xl text-[#f6f3f3ca] active:border-b-4 active:text-white"
             onClick={() => {
               void Logout();
@@ -203,7 +203,7 @@ const Main = () => {
           >
             <BsArrowLeftSquare />
             &nbsp;LOG OUT
-          </span>
+          </button>
         </div>
         {loader && (
           <div className="absolute left-[50%] top-4 flex justify-center items-center text-[#d6a453] text-lg">

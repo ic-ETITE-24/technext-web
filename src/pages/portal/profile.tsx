@@ -234,7 +234,7 @@ const Profile = () => {
 
         <Toaster richColors closeButton position="top-right" theme="light" />
         <div
-          className={`ham absolute right-2 z-30 flex flex-col bg-[#FF7A00] bg-opacity-90 px-10 py-8 text-center font-bold md:hidden ${
+          className={`ham absolute right-2 z-30 flex flex-col bg-[#FF7A00] px-10 py-8 text-center font-bold md:hidden ${
             isOpen ? "" : "hidden"
           } rounded-2xl`}
         >
@@ -261,10 +261,13 @@ const Profile = () => {
             href=""
             className="mb-1 rounded-sm px-5 py-4 text-2xl text-[#f6f3f3ca] active:border-b-4 active:text-white"
           >
-            <span className="flex items-center">
+            <button className="flex items-center"
+              onClick={() => {
+                void Logout();
+              }}>
               <BsArrowLeftSquare />
               &nbsp;LOG OUT
-            </span>
+            </button>
           </Link>
         </div>
 
