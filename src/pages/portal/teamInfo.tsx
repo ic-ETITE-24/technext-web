@@ -64,7 +64,9 @@ const Main = () => {
         if (response.data.status) {
           for (const i of response.data.team.Users) {
             const member = i?.first_name + " " + i?.last_name;
-            members.push(member);
+            if (!members.includes(member)) {
+              members.push(member);
+            }
           }
 
           setName(response.data.team.Name.toUpperCase());
