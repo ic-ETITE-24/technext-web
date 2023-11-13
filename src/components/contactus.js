@@ -85,8 +85,6 @@ function ContactUs() {
       query: enteredQuery,
     };
 
-    console.log(queryData);
-
     // axios
     //   .post(`/api/hello`, queryData, {
     //     headers: {

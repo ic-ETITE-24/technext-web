@@ -176,7 +176,7 @@ export default function Home() {
                 >
                   {!changeText ? "LOGIN" : "Logging In..."}
                 </button>
-                <Link href="/forgotpassword">
+                <Link href="/portal/forgotpassword">
                   <div className="text-white underline text-center mt-7 lg:mt-5">
                     Forgot password?
                   </div>

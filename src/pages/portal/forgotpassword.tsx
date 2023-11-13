@@ -139,7 +139,7 @@ const ForgotPassword = () => {
           </div>
         </div>
         <div>
-          <div className="bdcn flex flex-col justify-center py-[30%] sm:py-[30%] text-center sm:items-center md:py-[30px] lg:py-[35px] 2xl:py-[100px]">
+          <div className="bdcn flex flex-col justify-center py-[30%] sm:py-[30%] text-center sm:items-center md:py-[30px] lg:py-[70px] 2xl:py-[100px]">
             <h1 className="text-2xl sm:text-4xl font-semibold md:text-6xl ">
               FORGOT PASSWORD
             </h1>
