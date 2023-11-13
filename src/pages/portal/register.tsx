@@ -152,7 +152,7 @@ function Register() {
           `${process.env.NEXT_PUBLIC_BASE_URL}/users/signup`,
           send
         );
-        await router.push("/portal/verify");
+        await router.push(`/portal/${values.email}/verify`);
       } catch (error) {
         setChangeText(false);
         if (axios.isAxiosError(error)) {
