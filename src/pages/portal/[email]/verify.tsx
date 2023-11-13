@@ -3,7 +3,7 @@ import logo from "@/assets/portal/logo-icon.svg";
 import { MdOutlineAccountCircle } from "react-icons/md";
 import { PiBellSimpleBold } from "react-icons/pi";
 import { z } from "zod";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useFormik } from "formik";
 import { toFormikValidationSchema } from "zod-formik-adapter";
 import Head from "next/head";
@@ -18,49 +18,55 @@ interface ApiResponse {
 
 const Verify = () => {
   const [getOtpLoader, setGetOtpLoader] = useState(false);
-  const [isOtp, setIsOtp] = useState(false);
+  const [toresend, setToResend] = useState(false)
   const [resendOtp, setResendOtp] = useState(false);
+  const [sendingOtp, setSendingOtp] = useState(false);
   const router = useRouter();
+
+  useEffect(() => {
+    const { email } = router.query;
+    console.log(`Verifying email: ${email}`);
+  }, [router.query]);
+
+  const { email } = router.query;
+  const mail = email;
+
   const formVal =
-    !isOtp || resendOtp
+    resendOtp
       ? z.object({
-          email: z.string({
-            required_error: "Required",
-          }),
+          email: z.string(),
         })
       : z.object({
-          email: z.string({
-            required_error: "Required",
-          }),
+          email: z.string(),
           otp: z.string({
             required_error: "Required",
           }),
         });
   const formik = useFormik({
     initialValues: {
-      email: "",
+      email: mail,
       otp: "",
     },
     validationSchema: toFormikValidationSchema(formVal),
     validateOnChange: true,
     onSubmit: async (values) => {
       const val =
-        !isOtp || resendOtp
+         resendOtp
           ? {
-              email: values.email,
+              email: mail,
             }
           : {
-              email: values.email,
+              email: mail,
               otp: Number(values.otp),
             };
       try {
-        if (!isOtp || resendOtp) {
+        if (resendOtp) {
           const response = await axios.post(
             `${process.env.NEXT_PUBLIC_BASE_URL}/users/verify`,
             val
           );
           setGetOtpLoader(false);
-          setIsOtp(true);
+         setSendingOtp(false)
         } else {
           const response = await axios.patch(
             `${process.env.NEXT_PUBLIC_BASE_URL}/users/verify`,
@@ -73,6 +79,7 @@ const Verify = () => {
         // await router.push("/dashboard");
       } catch (error) {
         setGetOtpLoader(false);
+        setSendingOtp(false)
         if (axios.isAxiosError(error)) {
           const response = error.response;
           if (response) {
@@ -135,26 +142,27 @@ const Verify = () => {
             </h1>
             <form className="mt-8" onSubmit={formik.handleSubmit}>
               <div className="bdcn flex flex-col items-center justify-center text-left  md:items-start ">
-                <h1 className="mt-2 text-lg font-bold text-white">Email:</h1>
-                <input
-                  className="mt-3 w-[75vw] rounded-md bg-[#4b4b4b] px-[33px] py-[6px] text-lg font-semibold text-[#D9D9D999] md:w-[25vw] md:py-[6px] md:text-2xl 2xl:py-[10px]"
-                  id="email"
-                  type="text"
-                  name="email"
-                  onChange={formik.handleChange}
-                  onBlur={formik.handleBlur}
-                  value={formik.values.email}
-                  placeholder="Enter Email"
-                />
-                {formik.touched.email && formik.errors.email && (
-                  <div className="mx-auto w-[80%] lg:w-[98%]">
-                    <span className="text-sm text-red-500">
-                      {formik.errors.email}
-                    </span>
-                  </div>
-                )}
-                {isOtp && (
+                
                   <div>
+                   {toresend && <><h1 className="mt-2 text-lg font-bold text-white">Email:</h1>
+                    <input
+                      className="mt-3 w-[75vw] rounded-md bg-[#4b4b4b] px-[33px] py-[6px] text-lg font-semibold text-[#D9D9D999] md:w-[25vw] md:py-[6px] md:text-2xl 2xl:py-[10px]"
+                      id="email"
+                      type="text"
+                      name="email"
+                      onChange={formik.handleChange}
+                      onBlur={formik.handleBlur}
+                      value={mail}
+                      placeholder="Enter Email"
+                    />
+                    {formik.touched.email && formik.errors.email && (
+                      <div className="mx-auto w-[80%] lg:w-[98%]">
+                        <span className="text-sm text-red-500">
+                          {formik.errors.email}
+                        </span>
+                      </div>
+                    )} </>}
+                    {!toresend && <>
                     <h1 className="mt-2 text-lg font-bold text-white">OTP:</h1>
 
                     <input
@@ -166,9 +174,9 @@ const Verify = () => {
                       onBlur={formik.handleBlur}
                       value={formik.values.otp}
                       placeholder="Enter Otp"
-                    />
+                    /></>}
                   </div>
-                )}
+                
                 {formik.touched.otp && formik.errors.otp && (
                   <div className="mx-auto w-[80%] lg:w-[98%]">
                     <span className="text-sm text-red-500">
@@ -177,6 +185,7 @@ const Verify = () => {
                   </div>
                 )}
               </div>
+              {!toresend   && <>
               <div className="flex items-center justify-center">
                 <button
                   type="submit"
@@ -186,28 +195,29 @@ const Verify = () => {
                     setGetOtpLoader(true);
                   }}
                 >
-                  <span>{isOtp ? "VERIFY" : "GET OTP"}</span>
+                  <span>VERIFY</span>
                 </button>
               </div>
-              {isOtp && (
-                <div className="flex items-center justify-center">
+             <span onClick={()=>setToResend(true)}>Resend otp?</span></>
+}
+                {toresend           && <div className="flex items-center justify-center">
                   <button
                     type="submit"
                     className="text-md mb-2 mt-2 flex h-[5vh] w-[55vw] items-center justify-center rounded-md bg-[#FF7A00] px-[33px] py-[10px] text-center font-semibold text-white md:h-[7vh] md:w-[20vw] md:py-[12px] md:text-2xl"
                     onClick={() => {
                       setResendOtp(true);
                       setGetOtpLoader(true);
+                      setSendingOtp(true)
                     }}
-                  >
+                    >
                     <span>Resend OTP</span>
                   </button>
-                </div>
-              )}
-              {isOtp
-                ? getOtpLoader && <span className="text-lg">Verifying...</span>
-                : getOtpLoader && (
-                    <span className="text-lg">Sending Otp...</span>
-                  )}
+                </div>}
+             
+              
+                {getOtpLoader  &&(!resendOtp? <span className="text-lg">Verifying...</span>:<span className="text-lg">Resending...</span>)}
+               
+                    {toresend &&<span onClick={()=>setToResend(false)}>Verify otp?</span>}
               {/* getOtpLoader && <span className="text-lg">Sending Otp...</span> */}
             </form>
           </div>
