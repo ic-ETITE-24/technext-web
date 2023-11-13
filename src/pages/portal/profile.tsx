@@ -128,12 +128,12 @@ const Profile = () => {
     onSubmit: async (values) => {
       const val = !changePasswordMode
         ? {
-            first_name: values.first_name ?? first_name,
-            last_Name: values.last_Name ?? last_Name,
-            phone_number: values.phone_number ?? phone_number,
+            first_name: values.first_name.trim() ?? first_name,
+            last_Name: values.last_Name.trim() ?? last_Name,
+            phone_number: values.phone_number.trim() ?? phone_number,
             bio: values.bio ?? bio,
             gender: values.gender ?? gender,
-            date_of_birth: values.date_of_birth ?? date_of_birth,
+            date_of_birth: values.date_of_birth.trim() ?? date_of_birth,
           }
         : {
             old_Password: values.oldPassword,
