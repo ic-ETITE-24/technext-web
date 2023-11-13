@@ -174,7 +174,7 @@ function Register() {
           <Image src={logo as HTMLImageElement} alt="Icetite-logo" />
         </div>
         <div className="mx-8 my-auto h-fit w-[100%] rounded-md py-6 backdrop-blur-md backdrop-brightness-125 lg:w-[50%]">
-          <div className="flex justify-center overflow-auto whitespace-pre pt-2 text-4xl text-white lg:text-5xl">
+          <div className="flex justify-center overflow-hidden whitespace-pre pt-2 text-4xl text-white lg:text-5xl">
             <Link href="/portal">
               <div className="unselected text-white/50">LOGIN </div>
             </Link>
@@ -184,7 +184,7 @@ function Register() {
             <form onSubmit={handleSubmit}>
               <div className="flex flex-col justify-center">
                 <div className="flex flex-col lg:w-[100%] lg:flex-row lg:justify-center">
-                  <div className="mt-11 lg:w-[39.5%]">
+                  <div className="mt-9 lg:w-[39.5%]">
                     <div>
                       <input
                         type="text"
@@ -206,7 +206,7 @@ function Register() {
                     </div>
                   </div>
                   <div className="lg:w-[40%]">
-                    <div className="mt-3 lg:mt-11">
+                    <div className="mt-3 lg:mt-9">
                       <input
                         type="text"
                         name="lastName"
@@ -325,7 +325,7 @@ function Register() {
                     </div>
                   </div>
                   <div>
-                    <div className="lg:w-[40%]">
+                    <div className="country lg:w-[40%]">
                       <div className="mt-3 lg:mt-2">
                         <ReactFlagsSelect
                           selected={country}
@@ -337,7 +337,7 @@ function Register() {
                           placeholder="Select Country"
                           searchable
                           searchPlaceholder="Search countries"
-                          className={`mx-auto h-full w-[80%] rounded-md bg-[rgba(255,255,255,0.36)] lg:w-[19vw] text-black
+                          className={`mx-auto h-full w-[80%] rounded-md bg-[rgba(255,255,255,0.36)] lg:w-[19vw]
                       ${
                         touched.country && errors.country
                           ? "ring-2 ring-inset ring-red-500"
@@ -356,24 +356,32 @@ function Register() {
                 <div className="flex flex-col pr-0.5 lg:w-[100%] lg:flex-row lg:justify-center">
                   <div className="lg:w-[40%]">
                     <div className="mt-3 lg:mt-2">
-                      <input
-                        name="date_of_birth"
-                        type={inputType}
-                        onMouseEnter={handleFocus}
-                        value={values.date_of_birth}
-                        placeholder="Date of Birth"
-                        onChange={(event) =>
+                      <DatePicker
+                        wrapperClassName="w-full"
+                        selected={
+                          formik.values.date_of_birth
+                            ? new Date(formik.values.date_of_birth)
+                            : null
+                        }
+                        onChange={(date) => {
+                          const formattedDate = date && formatDate(date);
                           void formik.setFieldValue(
                             "date_of_birth",
-                            event.target.value
-                          )
-                        }
-                        onBlur={handleblur}
+                            formattedDate
+                          );
+                        }}
+                        onBlur={formik.handleBlur}
+                        dateFormat="yyyy-MM-dd"
+                        placeholderText="Select Date of Birth"
                         className={`mx-auto block w-[80%] rounded-md border-0 bg-[rgba(255,255,255,0.36)] px-4 py-3 placeholder:text-[#00000036] text-black lg:w-[18.7vw] ${
                           touched.date_of_birth && errors.date_of_birth
                             ? "ring-2 ring-inset ring-red-500"
                             : ""
                         } `}
+                        showMonthDropdown
+                        showYearDropdown
+                        dropdownMode="select"
+                        maxDate={new Date(2006, 1, 22)}
                       />
                       <div className="mx-auto w-[80%]">
                         <span className="text-xs text-red-500 md:text-sm">
@@ -391,20 +399,20 @@ function Register() {
                           value={values.gender}
                           onChange={handleChange}
                           onBlur={handleBlur}
-                          className={`box mx-auto block w-[80%] rounded-md border-0 bg-[rgba(255,255,255,0.36)] px-4 py-3.5 text-[#00000036] lg:w-[19vw]
+                          className={`box mx-auto block w-[80%] rounded-md border-0 bg-[rgba(255,255,255,0.36)] px-4 py-3.5 lg:w-[19vw] text-[#00000036]
                       ${
                         touched.gender && errors.gender
                           ? "ring-2 ring-inset ring-red-500"
                           : ""
                       }`}
                         >
-                          <option value="" disabled className="ham text-black">
+                          <option hidden selected className="ham">
                             Select Gender
                           </option>
-                          <option value="male" className="ham text-black">
+                          <option value="male" className="ham">
                             Male
                           </option>
-                          <option value="female" className="ham text-black">
+                          <option value="female" className="ham">
                             Female
                           </option>
                           <option value="other" className="ham text-black">
