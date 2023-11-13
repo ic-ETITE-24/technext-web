@@ -3,7 +3,7 @@ import { useFormik } from "formik";
 import { date, z } from "zod";
 import { toFormikValidationSchema } from "zod-formik-adapter";
 import ReactFlagsSelect from "react-flags-select";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import logo from "@/assets/portal/logo.svg";
@@ -22,6 +22,8 @@ function Register() {
   const router = useRouter();
   const [country, setCountry] = useState<string>("");
   const [inputType, setInputType] = useState("text");
+  const [isOtherCollege, setIsOtherCollege] = useState(false);
+  const [isVITian, setIsVITian] = useState(true);
   const handleFocus = () => {
     setInputType("date");
   };
@@ -67,6 +69,7 @@ function Register() {
       gender: z.string({
         required_error: "Required",
       }),
+      college: z.enum(["Vellore Institute of Technology", "Other"]),
       bio: z.string({
         required_error: "Required",
       }),
@@ -81,13 +84,24 @@ function Register() {
       date_of_birth: z.string({
         required_error: "Required",
       }),
+      
       is_vitian: z.boolean({
         required_error: "Required",
       }),
+      OtherCollege: z
+        .string()
+        .min(2, "Other college should have a minimum of 2 characters")
+        .max(50, "Other college should have a maximum of 50 characters")
+        .optional(),
     })
     .refine((data) => data.password === data.confirmPassword, {
       message: "Passwords do not match",
       path: ["confirmPassword"],
+    }).refine((data) => {
+      if (data.college === "Other") {
+        return data.OtherCollege != null && data.OtherCollege !== "";
+      }
+      return true;
     });
   const formik = useFormik({
     initialValues: {
@@ -102,6 +116,7 @@ function Register() {
       gender: "",
       bio: "",
       college: "",
+      OtherCollege: "",
       is_vitian: false,
     },
     validationSchema: toFormikValidationSchema(userSchema),
@@ -119,9 +134,18 @@ function Register() {
         phone_number: values.phoneNo,
         github: "fsinbshn",
         country: values.country,
-        college: "a",
+        college: values.college,
         is_vitian: values.is_vitian,
       };
+      console.log(send);
+      if (values.college === "Other") send.college = values.OtherCollege;
+      else {
+        if (!send.email.includes("vitstudent.ac.in")) {
+          toast.error("Use VIT email!");
+          return;
+        }
+        send.college = values.college;
+      }
       try {
         setChangeText(true);
         const response = await axios.post(
@@ -162,6 +186,22 @@ function Register() {
     }
     return "";
   };
+  useEffect(() => {
+    if (formik.values.college === "Vellore Institute of Technology") {
+      void formik.setValues({ ...formik.values, is_vitian: true });
+      setIsVITian(true);
+      setIsOtherCollege(false);
+    } else if (formik.values.college === "Other") {
+      void formik.setValues({ ...formik.values, is_vitian: false });
+      setIsVITian(false);
+      setIsOtherCollege(true);
+      //void formik.setFieldValue("mode", "online");
+    }
+
+    // console.log(formik.values);
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [formik.values.college]);
   return (
     <>
       <Head>
@@ -482,12 +522,7 @@ function Register() {
                       name="college"
                       required
                       // value={values.college}
-                      onChange={(e) => {
-                        const selectedCollege = e.target.value;
-                        const isVitian = selectedCollege === "VIT Vellore";
-
-                        void formik.setFieldValue("is_vitian", isVitian);
-                      }}
+                      onChange={formik.handleChange}
                       onBlur={handleBlur}
                       className={`box mx-auto block w-[79.5%] rounded-md border-0 bg-[rgba(255,255,255,0.36)] px-4 py-4 text-[#00000036]
                        `}
@@ -503,7 +538,7 @@ function Register() {
                         className="text-black"
                       />
                       <option
-                        value="Others"
+                        value="Other"
                         label="Other"
                         className="text-black"
                       />
@@ -519,6 +554,40 @@ function Register() {
                     </div> */}
                   </div>
                 </div>
+                {formik.values.college === "Other" && (
+                      <div className=" mt-3 lg:mt-3">
+                        <input
+                          type="text"
+                          name="OtherCollege"
+                          id="OtherCollege"
+                          required
+                          value={formik.values.OtherCollege}
+                          onChange={formik.handleChange}
+                          onBlur={formik.handleBlur}
+                          placeholder="Enter College Name"
+                          className={`mx-auto block w-[79.5%] rounded-md border-0 bg-[rgba(255,255,255,0.36)] px-4 py-3 placeholder:text-[#00000036]  ${
+                            formik.touched.OtherCollege &&
+                            formik.errors.OtherCollege
+                              ? ""
+                              : ""
+                          }`}
+                        />
+                        {formik.touched.OtherCollege &&
+                          formik.errors.OtherCollege && (
+                            <div className="mx-auto w-[80%] ">
+                              {formik.touched.OtherCollege &&
+                                formik.errors.OtherCollege && (
+                                  <span className="text-sm text-red-500">
+                                    {formik.errors.OtherCollege}
+                                  </span>
+                                )}
+                            </div>
+                            // <span className="text-sm text-red-500">
+                            //   {formik.errors.OtherCollege}
+                            // </span>
+                          )}
+                      </div>
+                    )}
                 {/* </div> */}
                 <button
                   type="submit"
