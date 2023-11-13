@@ -79,7 +79,12 @@ const Verify = () => {
             const errorMessage =
               (response.data as ApiResponse).message ||
               "An unknown error occurred.";
-            toast.error(`Error: ${errorMessage}`);
+              if (errorMessage === "User already verified") {
+                toast.error(`Error: ${errorMessage}. You will be rerouted shortly.`);
+                setTimeout(() => {
+                  void router.push("/portal");
+                }, 2000);
+              }
           } else {
             toast.error("Network error or other issue occurred.");
           }

@@ -69,7 +69,6 @@ const Dashboard = () => {
           void router.push("/portal/teamInfo");
         }
         if (response.data.status) {
-          console.log(response.data.status);
           setName(response.data.user?.first_name.toUpperCase());
         } else {
           localStorage.removeItem("access_token");

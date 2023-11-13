@@ -90,7 +90,7 @@ export default function Home() {
           if (error.response?.status === 401) {
             toast.error("Invalid email or password");
           } else if (error.response?.status === 409) {
-            toast.error("Invalid password");
+            toast.error("Wrong password");
           } else if (error.response?.status === 404) {
             toast.error("User not found");
           } else if (error.response?.status === 502) {
@@ -176,7 +176,7 @@ export default function Home() {
                 >
                   {!changeText ? "LOGIN" : "Logging In..."}
                 </button>
-                <Link href="/forgotpassword">
+                <Link href="/portal/forgotpassword">
                   <div className="text-white underline text-center mt-7 lg:mt-5">
                     Forgot password?
                   </div>

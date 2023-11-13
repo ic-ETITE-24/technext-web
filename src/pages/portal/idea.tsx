@@ -58,7 +58,7 @@ const Idea = () => {
         if (response.data.status) {
           setIsSubmitted(true);
           setTitle(response.data.data.title);
-          setTrack(response.data.data.tracK);
+          setTrack(response.data.data.track);
           setDesc(response.data.data.desc);
         } else {
           setIsSubmitted(false);
@@ -214,7 +214,7 @@ const Idea = () => {
             href=""
             className="mb-1 rounded-sm px-5 py-4 text-2xl text-[#f6f3f3ca] active:border-b-4 active:text-white"
           >
-            <span
+            <button
               className="flex items-center"
               onClick={() => {
                 void Logout();
@@ -222,7 +222,7 @@ const Idea = () => {
             >
               <BsArrowLeftSquare />
               &nbsp;LOG OUT
-            </span>
+            </button>
           </Link>
         </div>
         {loader && (
@@ -321,7 +321,7 @@ const Idea = () => {
                 disabled={isSubmitted}
                 className="mx-auto w-[30%] rounded-md bg-[#FF7A00] hover:scale-105 hover:transition-transform active:scale-100 disabled:bg-orange-400 py-1.5 text-2xl text-white disabled:cursor-not-allowed disabled:bg-[#FF7A00] disabled:text-[#ffffff4d]"
               >
-                {!isSubmitted ? "Submit" : "Submitting..."}
+                Submit
               </button>
             </div>
           </div>
