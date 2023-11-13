@@ -84,9 +84,9 @@ const Idea = () => {
       descRef.current?.value
     ) {
       const obj = {
-        title: titleRef.current.value,
+        title: titleRef.current.value.trim(),
         track: trackRef.current.value,
-        desc: descRef.current.value,
+        desc: descRef.current.value.trim(),
       };
 
       try {

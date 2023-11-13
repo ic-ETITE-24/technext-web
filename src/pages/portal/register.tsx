@@ -65,7 +65,7 @@ function Register() {
         ),
       phoneNo: z.string({
         required_error: "Required",
-      }),
+      }).max(11, "First name must have max 11 chars"),
       gender: z.string({
         required_error: "Required",
       }),
@@ -123,18 +123,18 @@ function Register() {
     validateOnChange: true,
     onSubmit: async (values) => {
       const send = {
-        first_Name: values.firstName,
-        last_Name: values.lastName,
-        email: values.email,
+        first_Name: values.firstName.trim(),
+        last_Name: values.lastName.trim(),
+        email: values.email.trim(),
         password: values.password,
         gender: values.gender,
         date_of_birth: formatDate(new Date(values.date_of_birth)),
 
-        bio: values.bio,
-        phone_number: values.phoneNo,
+        bio: values.bio.trim(),
+        phone_number: values.phoneNo.trim(),
         github: "fsinbshn",
         country: values.country,
-        college: values.college,
+        college: values.college.trim(),
         is_vitian: values.is_vitian,
       };
       

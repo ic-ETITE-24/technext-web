@@ -104,7 +104,7 @@ const Dashboard = () => {
           const response = await axios.post<joinResponse>(
             `${process.env.NEXT_PUBLIC_BASE_URL}/teams/join`,
             {
-              code: joinRef.current.value,
+              code: joinRef.current.value.trim(),
             },
             {
               headers: {
@@ -146,7 +146,7 @@ const Dashboard = () => {
           const response = await axios.post<createResponse>(
             `${process.env.NEXT_PUBLIC_BASE_URL}/teams`,
             {
-              name: createRef.current.value,
+              name: createRef.current.value.trim(),
             },
             {
               headers: {
@@ -212,7 +212,6 @@ const Dashboard = () => {
             </span>
           </div>
           <div className="mr-4 flex flex-wrap items-center justify-end text-center">
-            
             <button
               className="bdcn mx-[15px] my-1 flex items-center rounded-md bg-[#FF7A00] px-2 py-1 text-[10px] uppercase hover:bg-[#ff9837] hover:font-[400] hover:text-white active:bg-[#FF7A00] sm:mx-[30px] sm:rounded-lg sm:px-5 sm:py-2 sm:text-xl"
               onClick={() => {
@@ -266,11 +265,11 @@ const Dashboard = () => {
         shouldCloseOnOverlayClick={true}
         style={{
           overlay: {
-            backgroundColor: "rgba(255, 122, 0, 0.10)",
-            backdropFilter: "blur(18.5px)",
+            backgroundColor: "rgba(255, 255, 255, 0.2)",
+            backdropFilter: "blur(10px)",
           },
           content: {
-            backgroundColor: "rgba(0, 0, 0, 0.41)",
+            backgroundColor: "rgba(0, 0, 0, 0.8)",
             width: "60%",
             height: "50vh",
             margin: "auto",
@@ -386,11 +385,11 @@ const Dashboard = () => {
                     shouldCloseOnOverlayClick={false}
                     style={{
                       overlay: {
-                        backgroundColor: "rgba(255, 122, 0, 0.10)",
-                        backdropFilter: "blur(18.5px)",
+                        backgroundColor: "rgba(255, 255, 255, 0.2)",
+                        backdropFilter: "blur(10px)",
                       },
                       content: {
-                        backgroundColor: "rgba(0, 0, 0, 0.41)",
+                        backgroundColor: "rgba(0, 0, 0, 0.6)",
                         width: "60%",
                         height: "60vh",
                         margin: "auto",

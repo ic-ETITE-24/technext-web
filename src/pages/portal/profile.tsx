@@ -112,6 +112,7 @@ const Profile = () => {
   //     }),
   //   })
 
+
   const formik = useFormik({
     initialValues: {
       first_name: first_name,
@@ -140,6 +141,13 @@ const Profile = () => {
             new_Password: values.newPassword,
           };
       try {
+        if (
+          val.phone_number !== undefined &&
+          val.phone_number?.length > 11
+        ) {
+          toast.error("Phone number should not be more than 11 digits.");
+          return;
+        }
         changePasswordMode
           ? setChangeInnerTextPass(true)
           : setChangeInnerText(true);
@@ -175,6 +183,7 @@ const Profile = () => {
               (response.data as ApiResponse).message ||
               "An unknown error occurred.";
             toast.error(`Error: ${errorMessage}`);
+            setChangeInnerTextPass(false);
           } else {
             toast.error("Network error or other issue occurred.");
           }
@@ -213,10 +222,12 @@ const Profile = () => {
                 &nbsp;Announcements
               </div>
             </div> */}
-            <button className="bdcn mx-[15px] my-1 hidden items-center rounded-md bg-[#FF7A00] px-2 py-1 text-[10px] uppercase hover:bg-[#ff9837] hover:font-[400] hover:text-white active:bg-[#FF7A00] sm:mx-[30px] sm:rounded-lg sm:px-5 sm:py-2 sm:text-xl md:flex"
+            <button
+              className="bdcn mx-[15px] my-1 hidden items-center rounded-md bg-[#FF7A00] px-2 py-1 text-[10px] uppercase hover:bg-[#ff9837] hover:font-[400] hover:text-white active:bg-[#FF7A00] sm:mx-[30px] sm:rounded-lg sm:px-5 sm:py-2 sm:text-xl md:flex"
               onClick={() => {
                 void Logout();
-              }}>
+              }}
+            >
               <MdOutlineAccountCircle />
               &nbsp;Log out
             </button>
@@ -261,38 +272,56 @@ const Profile = () => {
             href=""
             className="mb-1 rounded-sm px-5 py-4 text-2xl text-[#f6f3f3ca] active:border-b-4 active:text-white"
           >
-            <button className="flex items-center"
+            <button
+              className="flex items-center"
               onClick={() => {
                 void Logout();
-              }}>
+              }}
+            >
               <BsArrowLeftSquare />
               &nbsp;LOG OUT
             </button>
           </Link>
         </div>
 
-
         <div className="mt-16 flex flex-col items-center uppercase md:mt-0 md:flex-row md:items-start md:justify-start md:py-[40px]">
           <div className="relative flex h-[72vh] w-[50%] flex-col items-center justify-evenly rounded-3xl text-white md:w-[65%] md:items-center">
-            <div className={`flex items-center flex-col md:flex-row justify-center px-[33px] ${editDetails ? 'mt-32 md:mt-0' : ''}`}>
+            <div
+              className={`flex items-center flex-col md:flex-row justify-center px-[33px] ${
+                editDetails ? "mt-32 md:mt-0" : ""
+              }`}
+            >
               <div
-                className={`text-md mb-4 md:mb-2 mt-3 flex h-[5vh] w-[40vw] items-center justify-center cursor-pointer rounded-md  px-[33px] py-[10px] text-center font-semibold text-xl text-white lg:text-3xl md:h-[7vh] md:w-[20vw] md:py-[12px] md:text-2xl ${!editDetails?"opacity-50":""}`}
+                className={`text-md mb-4 md:mb-2 mt-3 flex h-[5vh] w-[40vw] items-center justify-center cursor-pointer rounded-md  px-[33px] py-[10px] text-center font-semibold text-xl text-white lg:text-3xl md:h-[7vh] md:w-[20vw] md:py-[12px] md:text-2xl ${
+                  !editDetails ? "opacity-50" : ""
+                }`}
                 onClick={() => {
-                  setEditDetails(!editDetails);setEditPass(!editPass)
-                    
+                  setEditDetails(!editDetails);
+                  setEditPass(!editPass);
                 }}
               >
-                <span className={`${editDetails?"border-[#FF7A00] border-b-[3px]":""}`}>
+                <span
+                  className={`${
+                    editDetails ? "border-[#FF7A00] border-b-[3px]" : ""
+                  }`}
+                >
                   Edit profile
                 </span>
               </div>
               <div
-                className={`text-md mb-2 mt-3 md:ml-6 ml-0 flex h-[5vh]  w-[40vw] items-center justify-center cursor-pointer rounded-md  px-[33px] py-[10px] text-center font-semibold  text-xl text-white lg:text-3xl md:h-[7vh] md:w-[20vw] md:py-[12px]  ${!editPass?"opacity-50":""}`}
+                className={`text-md mb-2 mt-3 md:ml-6 ml-0 flex h-[5vh]  w-[40vw] items-center justify-center cursor-pointer rounded-md  px-[33px] py-[10px] text-center font-semibold  text-xl text-white lg:text-3xl md:h-[7vh] md:w-[20vw] md:py-[12px]  ${
+                  !editPass ? "opacity-50" : ""
+                }`}
                 onClick={() => {
-                  setEditPass(!editPass);setEditDetails(!editDetails)
+                  setEditPass(!editPass);
+                  setEditDetails(!editDetails);
                 }}
               >
-                <span className={`${editPass?"border-[#FF7A00] border-b-[3px]":""}`}>
+                <span
+                  className={`${
+                    editPass ? "border-[#FF7A00] border-b-[3px]" : ""
+                  }`}
+                >
                   Edit Password
                 </span>
               </div>
@@ -301,7 +330,7 @@ const Profile = () => {
               className="flex flex-col md:mt-4"
               onSubmit={formik.handleSubmit}
             >
-              {editDetails &&
+              {editDetails && (
                 <>
                   {editName ? (
                     <>
@@ -438,10 +467,13 @@ const Profile = () => {
                     </button>
                   </div>
                 </>
-              
-              }
+              )}
 
-              <div className={`flex flex-col items-center justify-end px-[33px] py-[6px] md:w-[70vw] ${!editPass?"hidden":""}`}>
+              <div
+                className={`flex flex-col items-center justify-end px-[33px] py-[6px] md:w-[70vw] ${
+                  !editPass ? "hidden" : ""
+                }`}
+              >
                 <input
                   className="mt-3 w-[75vw] rounded-md bg-[#4b4b4b] px-[33px] py-[6px] my-2 text-lg font-semibold text-[#D9D9D999] md:w-[25vw] md:py-[6px] md:text-xl 2xl:py-[10px]"
                   id="pass"
@@ -463,7 +495,11 @@ const Profile = () => {
                   placeholder="New Password"
                 />
               </div>
-              <div className={`flex items-center justify-center ${!editPass?"hidden":""}`}>
+              <div
+                className={`flex items-center justify-center ${
+                  !editPass ? "hidden" : ""
+                }`}
+              >
                 <button
                   type="submit"
                   disabled={changeInnerTextPass}
