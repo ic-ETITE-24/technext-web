@@ -105,14 +105,12 @@ export default function Home() {
 
   async function resendOtp(): Promise<void> {
     try {
-      console.log("resendOtp");
       const response = await axios.post(
         `${process.env.NEXT_PUBLIC_BASE_URL}/users/verify`,
         {
           email: formik.values.email,
         }
       );
-      console.log("Response:", response.data);
       if (response.data.status == true) {
         toast.success("Verification email has been sent. You will be rerouted shortly!");
         setTimeout(() => {

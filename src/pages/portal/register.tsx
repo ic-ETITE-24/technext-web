@@ -137,7 +137,7 @@ function Register() {
         college: values.college,
         is_vitian: values.is_vitian,
       };
-      console.log(send);
+      
       if (values.college === "Other") send.college = values.OtherCollege;
       else {
         if (!send.email.includes("vitstudent.ac.in")) {

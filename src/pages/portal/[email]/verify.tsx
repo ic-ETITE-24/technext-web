@@ -25,7 +25,6 @@ const Verify = () => {
 
   useEffect(() => {
     const { email } = router.query;
-    console.log(`Verifying email: ${email}`);
   }, [router.query]);
 
   const { email } = router.query;
@@ -112,7 +111,6 @@ const Verify = () => {
           email: email,
         }
       );
-      console.log("Response:", response.data);
       if (response.data.status == true) {
         toast.success("Verification email has been re-sent.");
       }
