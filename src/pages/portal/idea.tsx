@@ -159,12 +159,12 @@ const Idea = () => {
             </span>
           </div>
           <div className="mr-4 flex items-center justify-end text-center max-[380px]:flex-wrap">
-            <div className="mx-[10px] flex">
+            {/* <div className="mx-[10px] flex">
               <div className="bdcn flex items-center px-2 text-[10px] uppercase hover:text-gray-300 active:text-white sm:text-xl">
                 <PiBellSimpleBold />
                 &nbsp;Announcements
               </div>
-            </div>
+            </div> */}
             <button
               className="bdcn mx-[15px] my-1 hidden items-center rounded-md bg-[#FF7A00] px-2 py-1 text-[10px] uppercase hover:bg-[#ff9837] hover:font-[400] hover:text-white active:bg-[#FF7A00] sm:mx-[30px] sm:rounded-lg sm:px-5 sm:py-2 sm:text-xl lg:flex"
               onClick={() => {
