@@ -69,7 +69,9 @@ function Register() {
       gender: z.string({
         required_error: "Required",
       }),
-      college: z.enum(["Vellore Institute of Technology", "Other"]),
+      college: z.string({
+        required_error: "Required",
+      }),
       bio: z.string({
         required_error: "Required",
       }),
