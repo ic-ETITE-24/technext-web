@@ -74,7 +74,16 @@ function Registration() {
                 className="bg-orange-500 rounded text-white text-2xl sm:text-5xl md:text-2xl 2xl:text-3xl w-fit px-3 py-2"
                 disabled
               >
-                <Link href="/portal/register">REGISTER NOW</Link>
+                <Link href="/portal/register" className="flex flex-row items-center">
+                  REGISTER NOW
+                  <span>
+                    <Image
+                      className="sm:w-[20px] w-[15px]"
+                      src={checkout}
+                      alt="register"
+                    />
+                  </span>
+                </Link>
               </button>
 
               <button
