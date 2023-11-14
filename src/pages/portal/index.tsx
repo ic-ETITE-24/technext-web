@@ -25,6 +25,7 @@ interface LoginResponse {
 
 export default function Home() {
   const [changeText, setChangeText] = useState(false);
+  const [userVerified, setUserVerified] = useState(false);
   const storeAccessToken = (access_token: string) => {
     localStorage.setItem("access_token", access_token);
   };
@@ -88,7 +89,8 @@ export default function Home() {
         if (axios.isAxiosError(err)) {
           const error = err as AxiosError;
           if (error.response?.status === 401) {
-            toast.error("Invalid email or password");
+            toast.error("User has not been verified");
+            setUserVerified(true);
           } else if (error.response?.status === 409) {
             toast.error("Wrong password");
           } else if (error.response?.status === 404) {
@@ -100,6 +102,36 @@ export default function Home() {
       }
     },
   });
+
+  async function resendOtp(): Promise<void> {
+    try {
+      const response = await axios.post(
+        `${process.env.NEXT_PUBLIC_BASE_URL}/users/verify`,
+        {
+          email: formik.values.email,
+        }
+      );
+      if (response.data.status == true) {
+        toast.success("Verification email has been sent. You will be rerouted shortly!");
+        setTimeout(() => {
+          void router.push(`/portal/${formik.values.email}/verify`);
+        }, 2000);
+      }
+    } catch (error) {
+      if (axios.isAxiosError(error)) {
+        const aerror = error as AxiosError;
+        if (aerror.response?.status === 409) {
+          toast.error("User already verified");
+        } else if (aerror.response?.status === 404) {
+          toast.error("User not found");
+        } else {
+          toast.error("Server error. Please try again later");
+        }
+      } else {
+        toast.error("Server error. Please try again later");
+      }
+    }
+  }
   const { values, errors, touched, handleBlur, handleChange, handleSubmit } =
     formik;
   return (
@@ -122,7 +154,7 @@ export default function Home() {
           </div>
           <div>
             <form onSubmit={handleSubmit}>
-              <div className="flex flex-col justify-center py-12 lg:py-16">
+              <div className="flex flex-col justify-center pt-12 lg:pt-16">
                 <div>
                   <div className="mt-6 lg:mt-5">
                     <input
@@ -176,13 +208,25 @@ export default function Home() {
                 >
                   {!changeText ? "LOGIN" : "Logging In..."}
                 </button>
+
                 <Link href="/portal/forgotpassword">
-                  <div className="text-white underline text-center mt-7 lg:mt-5">
+                  <div className="text-white underline text-center mt-7 lg:mt-5 hover:scale-105 hover:transition-transform active:scale-100">
                     Forgot password?
                   </div>
                 </Link>
               </div>
             </form>
+            {userVerified && (
+              <button
+              type="submit"
+                className="underline ham mx-auto pt-3 w-[30%] hover:scale-105 hover:transition-transform active:scale-100 rounded-full text-md text-white flex justify-center items-start"
+                onClick={() => {
+                  void resendOtp();
+                }}
+              >
+                Resend OTP
+              </button>
+            )}
           </div>
         </div>
       </div>
