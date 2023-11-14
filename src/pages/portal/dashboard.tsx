@@ -128,6 +128,9 @@ const Dashboard = () => {
             } else if (error.response?.status === 401) {
               closeModal();
               toast.error("User has not paid yet");
+            } else if (error.response?.status === 409) {
+              closeModal();
+              toast.error("Team limit exceeded!");
             } else if (error.response?.status === 502) {
               closeModal();
               toast.error("Server error... Please try again later");
@@ -167,6 +170,9 @@ const Dashboard = () => {
             } else if (error.response?.status === 401) {
               closeModal();
               toast.error("User has not paid yet");
+            } else if (error.response?.status === 409) {
+              closeModal();
+              toast.error("Team name already exists. Use another name.");
             } else if (error.response?.status === 502) {
               toast.error("Server error... Please try again later");
             }
