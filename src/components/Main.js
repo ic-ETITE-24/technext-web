@@ -24,14 +24,13 @@ const Main = () => {
           </div>
           <div className="text-center flex flex-wrap justify-end items-center mr-4">
             <div className="flex mx-[10px]">
-              <div
-                // href="/input_page"
-                // target="_blank"
-                // rel="noopener noreferrer"
-                className="uppercase p-2 sm:text-xl text-[10px] hover:text-gray-300 active:text-white"
-              >
-                Registrations Open Soon
-              </div>
+              <Link href='/portal/register'>
+                <div
+                  className="uppercase p-2 sm:text-xl text-[10px] hover:text-gray-300 active:text-white"
+                >
+                  Register Now
+                </div>
+              </Link>
               {/* <Image
                 className="sm:w-[20px] w-[15px]"
                 src={register}
