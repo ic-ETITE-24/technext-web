@@ -5,7 +5,6 @@ import Modal from "react-modal";
 import expo from "../assets/expo-mark.png";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import Link from "next/link";
 
 function Registration() {
   const [conutryName, setCountryName] = useState("");
@@ -74,9 +73,9 @@ function Registration() {
                 className="bg-orange-500 rounded text-white text-2xl sm:text-5xl md:text-2xl 2xl:text-3xl w-fit px-3 py-2"
                 disabled
               >
-                <Link href="/portal/register">REGISTER NOW</Link>
+                REGISTRATIONS OPEN SOON
+                {/* <Image src={checkout} alt="checkout" className="inline pb-2" /> */}
               </button>
-
               <button
                 className="md:ml-10 2xl:ml-16 rounded text-white border-[3px] sm:mt-10 md:mt-0 md:text-2xl sm:text-5xl border-white text-2xl 2xl:text-4xl w-fit px-4 py-1 hover:bg-orange-500 hover:border-orange-500 hover:text-white"
                 onClick={openModal}
