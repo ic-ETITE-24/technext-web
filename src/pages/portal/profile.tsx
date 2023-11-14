@@ -88,29 +88,27 @@ const Profile = () => {
     void getDashboard();
   }, []);
 
-  // const formVal = z
-  //   .object({
-  //     // first_name: z.string({
-  //     //   required_error: "Required",
-  //     // }),
-  //     // last_Name: z
-  //     //   .string({
-  //     //     required_error: "Required",
-  //     //   }),
-
-  //     phone_number: z.string({
-  //       // required_error: "Required",
-  //     }),
-  //     bio: z.string({
-  //       // required_error: "Required",
-  //     }),
-  //     gender: z.string({
-  //       // required_error: "Required",
-  //     }),
-  //     date_of_birth: z.string({
-  //       // required_error: "Required",
-  //     }),
-  //   })
+  const formVal = z
+    .object({
+      oldPassword:z
+        .string({
+          required_error: "Required",
+          invalid_type_error: "Password must be a string",
+        })
+        .regex(
+          /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/,
+          "Password should contain atleast 8 characters, 1 uppercase, 1 lowercase, 1 number and 1 special character"
+        ),
+        newPassword:z
+        .string({
+          required_error: "Required",
+          invalid_type_error: "Password must be a string",
+        })
+        .regex(
+          /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/,
+          "Password should contain atleast 8 characters, 1 uppercase, 1 lowercase, 1 number and 1 special character"
+        ),
+    })
 
 
   const formik = useFormik({
@@ -124,7 +122,7 @@ const Profile = () => {
       oldPassword: "",
       newPassword: "",
     },
-    // validationSchema: toFormikValidationSchema(formVal),
+    validationSchema: toFormikValidationSchema(formVal),
     // validateOnChange: true,
     onSubmit: async (values) => {
       const val = !changePasswordMode
@@ -473,10 +471,10 @@ const Profile = () => {
                 className={`flex flex-col items-center justify-end px-[33px] py-[6px] md:w-[70vw] ${
                   !editPass ? "hidden" : ""
                 }`}
-              >
+              ><div className="flex flex-col justify-center items-center">
                 <input
                   className="mt-3 w-[75vw] rounded-md bg-[#4b4b4b] px-[33px] py-[6px] my-2 text-lg font-semibold text-[#D9D9D999] md:w-[25vw] md:py-[6px] md:text-xl 2xl:py-[10px]"
-                  id="pass"
+                  id="old_pass"
                   type="password"
                   name="oldPassword"
                   onChange={formik.handleChange}
@@ -484,9 +482,16 @@ const Profile = () => {
                   value={formik.values.oldPassword}
                   placeholder="Old Password"
                 />
+                <div className="mx-auto w-[80%]">
+                      <span className="text-xs text-red-500 md:text-xs">
+                        {formik.touched.oldPassword && formik.errors.newPassword}
+                      </span>
+                    </div>
+                 </div> 
+                 <div className="flex flex-col justify-center items-center">
                 <input
                   className="mt-3 w-[75vw] rounded-md bg-[#4b4b4b] px-[33px] py-[6px] my-2 text-lg font-semibold text-[#D9D9D999] md:w-[25vw] md:py-[6px] md:text-xl 2xl:py-[10px]"
-                  id="pass"
+                  id="new_pass"
                   type="password"
                   name="newPassword"
                   onChange={formik.handleChange}
@@ -494,6 +499,12 @@ const Profile = () => {
                   value={formik.values.newPassword}
                   placeholder="New Password"
                 />
+                <div className="mx-auto w-[80%]">
+                      <span className="text-xs text-red-500 md:text-xs">
+                        {formik.touched.oldPassword && formik.errors.newPassword}
+                      </span>
+                    </div>
+              </div>
               </div>
               <div
                 className={`flex items-center justify-center ${
