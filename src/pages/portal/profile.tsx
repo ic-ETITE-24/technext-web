@@ -427,7 +427,7 @@ const Profile = () => {
                       <input
                         className="mt-3 w-[75vw] rounded-md bg-[#4b4b4b] px-[33px] py-[6px] text-lg font-semibold text-[#D9D9D999] md:w-[25vw] md:py-[6px] md:text-xl 2xl:py-[10px]"
                         id="date_of_birth"
-                        type="text"
+                        type="date"
                         name="date_of_birth"
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
