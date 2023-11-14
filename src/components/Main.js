@@ -23,19 +23,17 @@ const Main = () => {
             </span>
           </div>
           <div className="text-center flex flex-wrap justify-end items-center mr-4">
-            <div className="flex mx-[10px]">
-              <Link href='/portal/register'>
-                <div
-                  className="uppercase p-2 sm:text-xl text-[10px] hover:text-gray-300 active:text-white"
-                >
+            <div className="mx-[10px]">
+              <Link href="/portal/register" className="flex flex-row">
+                <div className="uppercase p-2 sm:text-xl text-[10px] hover:text-gray-300 active:text-white">
                   Register Now
                 </div>
+                <Image
+                  className="sm:w-[20px] w-[15px]"
+                  src={register}
+                  alt="register"
+                />
               </Link>
-              {/* <Image
-                className="sm:w-[20px] w-[15px]"
-                src={register}
-                alt="register"
-              /> */}
             </div>
             <Link
               href="https://drive.google.com/file/d/1XP9x3H4hHvw87s9_bXkKb68TWE_zXpgr/view?usp=sharing"
