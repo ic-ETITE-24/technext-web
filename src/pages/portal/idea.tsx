@@ -273,23 +273,23 @@ const Idea = () => {
                     className="mx-3 block rounded-md border-2 bg-inherit px-4 py-2.5 lg:w-[93%]"
                   >
                     <option value="">Select a Track</option>
-                    <option value="AR/VR and Mixed reality">
+                    <option value="AR/VR and Mixed reality" className="text-black">
                       AR/VR and Mixed reality
                     </option>
-                    <option value="Renewable energy and sustainability">
+                    <option value="Renewable energy and sustainability" className="text-black">
                       Renewable energy and sustainability
                     </option>
-                    <option value="Embedded systems and IoT">
+                    <option value="Embedded systems and IoT" className="text-black">
                       Embedded systems and IoT
                     </option>
-                    <option value="Robotics and Automation">
+                    <option value="Robotics and Automation" className="text-black">
                       Robotics and Automation
                     </option>
-                    <option value="AI and ML">AI and ML</option>
-                    <option value="Cybersecurity and Software Engineering Practices">
+                    <option value="AI and ML" className="text-black">AI and ML</option>
+                    <option value="Cybersecurity and Software Engineering Practices" className="text-black">
                       Cybersecurity and Software Engineering Practices
                     </option>
-                    <option value="Open Innovation">Open Innovation</option>
+                    <option value="Open Innovation" className="text-black">Open Innovation</option>
                   </select>
                 </div>
               </div>
