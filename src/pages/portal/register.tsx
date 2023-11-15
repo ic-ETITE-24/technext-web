@@ -226,7 +226,7 @@ function Register() {
             <form onSubmit={handleSubmit}>
               <div className="flex flex-col justify-center">
                 <div className="flex flex-col lg:w-[100%] lg:flex-row lg:justify-center">
-                  <div className="mt-9 lg:w-[39.5%]">
+                  <div className="mt-9 lg:w-[39.2%]">
                     <div>
                       <input
                         type="text"
@@ -237,7 +237,7 @@ function Register() {
                         onChange={handleChange}
                         onBlur={handleBlur}
                         placeholder="First Name"
-                        className={`mx-auto block w-[80%] rounded-md border-0 bg-[rgba(255,255,255,0.36)] px-4 py-3 placeholder:text-[#00000036] lg:mx-0 lg:w-[99%]
+                        className={`mx-auto block w-[80%] rounded-md border-0 bg-[rgba(255,255,255,0.36)] px-4 py-3 placeholder:text-[#00000036] lg:mx-0 lg:w-[98.1%]
                       ${touched.firstName && errors.firstName ? "" : ""}`}
                       />
                       <div className="mx-auto w-[80%] lg:w-[98%]">
@@ -258,7 +258,7 @@ function Register() {
                         onChange={handleChange}
                         onBlur={handleBlur}
                         placeholder="Last Name"
-                        className={`mx-auto block w-[80%] rounded-md border-0 bg-[rgba(255,255,255,0.36)] px-4 py-3 placeholder:text-[#00000036] lg:mx-0 lg:w-[99%]
+                        className={`mx-auto block w-[80%] rounded-md border-0 bg-[rgba(255,255,255,0.36)] px-4 py-3 placeholder:text-[#00000036] lg:mx-0 lg:w-[19vw]
                       ${touched.lastName && errors.lastName ? "" : ""}`}
                       />
                       <div className="mx-auto w-[80%] lg:w-[98%]">
@@ -280,7 +280,7 @@ function Register() {
                       onChange={handleChange}
                       onBlur={handleBlur}
                       placeholder="Email"
-                      className={`mx-auto block w-[79.5%] rounded-md border-0 bg-[rgba(255,255,255,0.36)] px-4 py-3 placeholder:text-[#00000036]
+                      className={`mx-auto block w-[79.1%] rounded-md border-0 bg-[rgba(255,255,255,0.36)] px-4 py-3 placeholder:text-[#00000036]
                       ${touched.email && errors.email ? "" : ""}`}
                     />
                     <div className="mx-auto w-[80%]">
@@ -290,7 +290,7 @@ function Register() {
                     </div>
                   </div>
                 </div>
-                <div className="flex flex-col pr-0.5 lg:w-[100%] lg:flex-row lg:justify-center">
+                <div className="flex flex-col  lg:w-[100%] lg:flex-row lg:justify-center">
                   <div className="lg:w-[40%]">
                     <div className="mt-3 lg:mt-2">
                       <input
@@ -302,7 +302,7 @@ function Register() {
                         onChange={handleChange}
                         onBlur={handleBlur}
                         placeholder="Password"
-                        className={`mx-auto block w-[80%] rounded-md border-0 bg-[rgba(255,255,255,0.36)] px-4 py-3 placeholder:text-[#00000036] lg:w-[18.7vw] ${
+                        className={`mx-auto block w-[80%] lg:mx-0 rounded-md border-0 bg-[rgba(255,255,255,0.36)] px-4 py-3 placeholder:text-[#00000036] lg:w-[98.1%] ${
                           touched.password && errors.password
                             ? "ring-2 ring-inset ring-red-500"
                             : ""
@@ -326,7 +326,7 @@ function Register() {
                           onChange={handleChange}
                           onBlur={handleBlur}
                           placeholder="Confirm Password"
-                          className={`mx-auto block w-[80%] rounded-md border-0 bg-[rgba(255,255,255,0.36)] px-4 py-3 placeholder:text-[#00000036] lg:w-[19vw]
+                          className={`mx-auto block w-[80%] rounded-md border-0 bg-[rgba(255,255,255,0.36)] px-4 py-3 placeholder:text-[#00000036] lg:mx-0 lg:w-[19vw]
                       ${
                         touched.confirmPassword && errors.confirmPassword
                           ? "ring-2 ring-inset ring-red-500"
@@ -353,7 +353,7 @@ function Register() {
                         onChange={handleChange}
                         onBlur={handleBlur}
                         placeholder="Phone Number"
-                        className={`mx-auto block w-[80%] rounded-md border-0 bg-[rgba(255,255,255,0.36)] px-4 py-3 placeholder:text-[#00000036] lg:w-[18.7vw] ${
+                        className={`mx-auto block w-[80%] lg:mx-0 rounded-md border-0 bg-[rgba(255,255,255,0.36)] px-4 py-3 placeholder:text-[#00000036] lg:w-[98.1%] ${
                           touched.phoneNo && errors.phoneNo
                             ? "ring-2 ring-inset ring-red-500"
                             : ""
@@ -379,7 +379,7 @@ function Register() {
                           placeholder="Select Country"
                           searchable
                           searchPlaceholder="Search countries"
-                          className={`mx-auto h-full w-[80%] rounded-md bg-[rgba(255,255,255,0.36)] lg:w-[19vw]
+                          className={`mx-auto h-full w-[80%] lg:mx-0 rounded-md bg-[rgba(255,255,255,0.36)] lg:w-[19vw]
                       ${
                         touched.country && errors.country
                           ? "ring-2 ring-inset ring-red-500"
@@ -415,7 +415,7 @@ function Register() {
                         onBlur={formik.handleBlur}
                         dateFormat="yyyy-MM-dd"
                         placeholderText="Select Date of Birth"
-                        className={`mx-auto block w-[80%] rounded-md border-0 bg-[rgba(255,255,255,0.36)] px-4 py-3 placeholder:text-[#00000036] text-black lg:w-[18.7vw] ${
+                        className={`mx-auto block w-[80%] lg:mx-0 rounded-md border-0 bg-[rgba(255,255,255,0.36)] px-4 py-3 placeholder:text-[#00000036] text-black lg:w-[98.1%] ${
                           touched.date_of_birth && errors.date_of_birth
                             ? "ring-2 ring-inset ring-red-500"
                             : ""
