@@ -25,13 +25,7 @@ const Main = () => {
               <span className="text-[#FF7A00]">TECHNEXT EXPO 2024</span>
             </span>
           </div>
-          <div className="hidden md:flex justify-center items-center mx-4 sm:ml-20 sm:w-[450px] w-[300px]">
-            <Image
-              className="felx sm:w-[250px] w-[100px]"
-              src={logo1}
-              alt="logo1"
-            />
-          </div>
+          
           <div className="text-center flex flex-wrap justify-end items-center mr-4">
             <div className="mx-[10px]">
               <Link
@@ -55,9 +49,9 @@ const Main = () => {
           </div>
         </div>
         <div className="flex flex-col justify-center items-center md:py-[100px] py-[180px]">
-        <div className="md:hidden flex justify-center items-center mx-4 sm:ml-20 sm:w-[450px] w-[300px]">
+        <div className="flex justify-center items-center sm:ml-20 lg:ml-0 sm:w-[450px] w-[300px]">
             <Image
-              className="felx sm:w-[250px] w-[100px]"
+              className="felx sm:w-[340px] w-[200px]"
               src={logo1}
               alt="logo1"
             />
