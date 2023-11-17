@@ -291,7 +291,7 @@ function Register() {
                   </div>
                 </div>
                 <div className="flex flex-col  lg:w-[100%] lg:flex-row lg:justify-center">
-                  <div className="lg:w-[40%]">
+                  <div className="lg:w-[39%]">
                     <div className="mt-3 lg:mt-2">
                       <input
                         type="password"
@@ -316,7 +316,7 @@ function Register() {
                     </div>
                   </div>
                   <div>
-                    <div className="lg:w-[40%]">
+                    <div className="lg:w-[39%]">
                       <div className="mt-3 lg:mt-2">
                         <input
                           type="password"
@@ -342,8 +342,8 @@ function Register() {
                     </div>
                   </div>
                 </div>
-                <div className="flex flex-col pr-0.5 lg:w-[100%] lg:flex-row lg:justify-center">
-                  <div className="lg:w-[40%]">
+                <div className="flex flex-col lg:w-[100%] lg:flex-row lg:justify-center">
+                  <div className="lg:w-[39%]">
                     <div className="mt-3 lg:mt-2">
                       <input
                         type="text"
@@ -367,7 +367,7 @@ function Register() {
                     </div>
                   </div>
                   <div>
-                    <div className="country lg:w-[40%]">
+                    <div className="country lg:w-[39%]">
                       <div className="mt-3 lg:mt-2">
                         <ReactFlagsSelect
                           selected={country}
@@ -395,8 +395,8 @@ function Register() {
                     </div>
                   </div>
                 </div>
-                <div className="flex flex-col pr-0.5 lg:w-[100%] lg:flex-row lg:justify-center">
-                  <div className="lg:w-[40%]">
+                <div className="flex flex-col lg:w-[100%] lg:flex-row lg:justify-center">
+                  <div className="lg:w-[39%]">
                     <div className="mt-3 lg:mt-2">
                       <DatePicker
                         wrapperClassName="w-full"
@@ -433,7 +433,7 @@ function Register() {
                     </div>
                   </div>
                   <div>
-                    <div className="lg:w-[40%]">
+                    <div className="lg:w-[39%]">
                       <div className="mt-3 lg:mt-2">
                         <select
                           name="gender"
@@ -481,7 +481,7 @@ function Register() {
                       onBlur={handleBlur}
                       placeholder="Bio"
                       rows={3}
-                      className={`bdcn mx-auto block w-[79.5%] resize-none rounded-md border-0 bg-[rgba(255,255,255,0.36)] px-4 py-3 placeholder:text-[#00000036]
+                      className={`bdcn mx-auto block w-[79.2%] resize-none rounded-md border-0 bg-[rgba(255,255,255,0.36)] px-4 py-3 placeholder:text-[#00000036]
                       ${
                         touched.bio && errors.bio
                           ? "ring-2 ring-inset ring-red-500"
@@ -526,7 +526,7 @@ function Register() {
                       // value={values.college}
                       onChange={formik.handleChange}
                       onBlur={handleBlur}
-                      className={`box mx-auto block w-[79.5%] rounded-md border-0 bg-[rgba(255,255,255,0.36)] px-4 py-4 text-[#00000036]
+                      className={`box mx-auto block w-[79.2%] rounded-md border-0 bg-[rgba(255,255,255,0.36)] px-4 py-4 text-[#00000036]
                        `}
                     >
                       <option
