@@ -1,4 +1,3 @@
-
 import Image from "next/image";
 import logo from "../assets/logo-icon.svg";
 import logo1 from "../assets/startup_india_new.svg";
@@ -26,7 +25,7 @@ const Main = () => {
               <span className="text-[#FF7A00]">TECHNEXT EXPO 2024</span>
             </span>
           </div>
-          <div className="flex justify-center items-center felx mx-4 sm:ml-20 sm:w-[450px] w-[300px]">
+          <div className="hidden md:flex justify-center items-center mx-4 sm:ml-20 sm:w-[450px] w-[300px]">
             <Image
               className="felx sm:w-[250px] w-[100px]"
               src={logo1}
@@ -35,11 +34,13 @@ const Main = () => {
           </div>
           <div className="text-center flex flex-wrap justify-end items-center mr-4">
             <div className="mx-[10px]">
-              <Link href="https://drive.google.com/file/d/1XP9x3H4hHvw87s9_bXkKb68TWE_zXpgr/view?usp=sharing" className="flex flex-row">
+              <Link
+                href="https://drive.google.com/file/d/1XP9x3H4hHvw87s9_bXkKb68TWE_zXpgr/view?usp=sharing"
+                className="flex flex-row"
+              >
                 <div className="uppercase p-2 sm:text-xl text-[10px] hover:text-gray-300 active:text-white">
-                Download Brochure
+                  Download Brochure
                 </div>
-                
               </Link>
             </div>
             <Link
@@ -53,7 +54,14 @@ const Main = () => {
             </Link>
           </div>
         </div>
-        <div className="flex justify-center sm:items-center items-start md:py-[100px] py-[180px]">
+        <div className="flex flex-col justify-center items-center md:py-[100px] py-[180px]">
+        <div className="md:hidden flex justify-center items-center mx-4 sm:ml-20 sm:w-[450px] w-[300px]">
+            <Image
+              className="felx sm:w-[250px] w-[100px]"
+              src={logo1}
+              alt="logo1"
+            />
+          </div>
           <Image
             className="flex mt-1 w-[90%] md:w-2/3 sm:w-[80%]"
             src={title}
@@ -62,21 +70,24 @@ const Main = () => {
           />
         </div>
         <div className="flex justify-center xl:hidden mb-4">
-        <button
-                className="bg-orange-500 rounded text-white text-sm sm:text-xl md:text-xl 2xl:text-3xl w-fit px-5 py-1"
-                disabled
-              >
-                <Link href="/portal/register" className="flex flex-row items-center">
-                  REGISTER NOW
-                  <span>
-                    <Image
-                      className="sm:w-[20px] w-[15px] ml-2"
-                      src={checkout}
-                      alt="register"
-                    />
-                  </span>
-                </Link>
-              </button>
+          <button
+            className="bg-orange-500 rounded text-white text-sm sm:text-xl md:text-xl 2xl:text-3xl w-fit px-5 py-1"
+            disabled
+          >
+            <Link
+              href="/portal/register"
+              className="flex flex-row items-center"
+            >
+              REGISTER NOW
+              <span>
+                <Image
+                  className="sm:w-[20px] w-[15px] ml-2"
+                  src={checkout}
+                  alt="register"
+                />
+              </span>
+            </Link>
+          </button>
         </div>
       </div>
     </>
