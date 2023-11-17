@@ -4,6 +4,7 @@ import register from "../assets/register-icon.svg";
 import title from "../assets/title-combine.png";
 import CSS from "./Main.module.css";
 import Link from "next/link";
+import { IoMdExit } from "react-icons/io";
 
 const Main = () => {
   return (
@@ -24,24 +25,21 @@ const Main = () => {
           </div>
           <div className="text-center flex flex-wrap justify-end items-center mr-4">
             <div className="mx-[10px]">
-              <Link href="/portal/register" className="flex flex-row">
+              <Link href="https://drive.google.com/file/d/1XP9x3H4hHvw87s9_bXkKb68TWE_zXpgr/view?usp=sharing" className="flex flex-row">
                 <div className="uppercase p-2 sm:text-xl text-[10px] hover:text-gray-300 active:text-white">
-                  Register Now
+                Download Brochure
                 </div>
-                <Image
-                  className="sm:w-[20px] w-[15px]"
-                  src={register}
-                  alt="register"
-                />
+                
               </Link>
             </div>
             <Link
-              href="https://drive.google.com/file/d/1XP9x3H4hHvw87s9_bXkKb68TWE_zXpgr/view?usp=sharing"
+              href="/portal/register"
               target="_blank"
               rel="noopener noreferrer"
-              className="uppercase mx-[15px] my-1 sm:mx-[30px] px-2 sm:px-5 py-1 sm:py-2 sm:text-xl text-[10px] bg-[#FF7A00] sm:rounded-lg rounded-md hover:bg-[#ff9837] hover:text-white hover:font-[400] active:bg-[#FF7A00] xl:block hidden"
+              className="uppercase mx-[15px] my-1 sm:mx-[30px] px-2 sm:px-5 py-1 sm:py-2 sm:text-xl text-[10px] bg-[#FF7A00] sm:rounded-lg rounded-md hover:bg-[#ff9837] hover:text-white hover:font-[400] active:bg-[#FF7A00] xl:flex hidden items-center gap-x-2"
             >
-              Download Brochure
+              <span className="ham">register now</span>
+              <IoMdExit />
             </Link>
           </div>
         </div>
