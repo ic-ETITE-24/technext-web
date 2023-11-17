@@ -1,7 +1,7 @@
 
 import Image from "next/image";
 import logo from "../assets/logo-icon.svg";
-import logo1 from "../assets/startup_india1.svg";
+import logo1 from "../assets/startup_india_new.svg";
 import register from "../assets/register-icon.svg";
 import title from "../assets/title-combine.png";
 import CSS from "./Main.module.css";
