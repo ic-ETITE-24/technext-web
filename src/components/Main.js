@@ -86,10 +86,10 @@ const Main = () => {
           </button>
         </div>
         <div className="flex w-full justify-between">
-          <div className="mb-3 md:mb-10 ml-8 flex w-[110px] md:w-[200px]">
+          <div className="mb-3 md:mb-10 ml-10 flex w-[110px] md:w-[200px]">
             <Image src={icetite} alt="title" quality={100} />
           </div>
-          <div className="mb-3 md:mb-10 mr-8 flex w-[110px] md:w-[200px]">
+          <div className="mb-3 md:mb-10 mr-10 flex w-[110px] md:w-[200px]">
             <Image src={vit} alt="title" quality={100} />
           </div>
         </div>
