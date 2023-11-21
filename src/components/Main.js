@@ -6,6 +6,8 @@ import title from "../assets/title-combine.png";
 import CSS from "./Main.module.css";
 import Link from "next/link";
 import { IoMdExit } from "react-icons/io";
+import icetite from "../assets/icetite-logo.svg";
+import vit from "../assets/VIT-logo.png";
 import checkout from "./../assets/checkout.png";
 
 const Main = () => {
@@ -25,7 +27,7 @@ const Main = () => {
               <span className="text-[#FF7A00]">TECHNEXT EXPO 2024</span>
             </span>
           </div>
-          
+
           <div className="text-center flex flex-wrap justify-end items-center mr-4">
             <div className="mx-[10px]">
               <Link
@@ -48,8 +50,8 @@ const Main = () => {
             </Link>
           </div>
         </div>
-        <div className="flex flex-col justify-center items-center md:py-[100px] py-[180px]">
-        <div className="flex justify-center items-center sm:ml-20 lg:ml-0 sm:w-[450px] w-[300px]">
+        <div className="flex flex-col justify-center items-center md:py-[70px] py-[180px]">
+          <div className="flex justify-center items-center sm:ml-20 lg:ml-0 sm:w-[450px] w-[300px]">
             <Image
               className="felx sm:w-[340px] w-[200px]"
               src={logo1}
@@ -82,6 +84,14 @@ const Main = () => {
               </span>
             </Link>
           </button>
+        </div>
+        <div className="flex w-full justify-between mt-10 md:mt-0">
+          <div className="mb-3 md:mb-10 ml-10 flex w-[110px] md:w-[200px]">
+            <Image src={icetite} alt="title" quality={100} />
+          </div>
+          <div className="mb-3 md:mb-10 mr-10 flex w-[110px] md:w-[200px]">
+            <Image src={vit} alt="title" quality={100} />
+          </div>
         </div>
       </div>
     </>
