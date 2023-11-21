@@ -87,10 +87,14 @@ const Main = () => {
         </div>
         <div className="flex w-full justify-between mt-10 md:mt-0">
           <div className="mb-3 md:mb-10 ml-10 flex w-[110px] md:w-[200px]">
+          <a href="https://icetite.vit.ac.in" target='_blank' rel="noopener noreferrer">
             <Image src={icetite} alt="title" quality={100} />
+            </a>
           </div>
           <div className="mb-3 md:mb-10 mr-10 flex w-[110px] md:w-[200px]">
+          <a href="https://vit.ac.in" target='_blank' rel="noopener noreferrer">
             <Image src={vit} alt="title" quality={100} />
+            </a>
           </div>
         </div>
       </div>
