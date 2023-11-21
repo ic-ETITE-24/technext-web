@@ -85,7 +85,7 @@ const Main = () => {
             </Link>
           </button>
         </div>
-        <div className="flex w-full justify-between">
+        <div className="flex w-full justify-between mt-10 md:mt-0">
           <div className="mb-3 md:mb-10 ml-10 flex w-[110px] md:w-[200px]">
             <Image src={icetite} alt="title" quality={100} />
           </div>
