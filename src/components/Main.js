@@ -31,7 +31,7 @@ const Main = () => {
           <div className="text-center flex flex-wrap justify-end items-center mr-4">
             <div className="mx-[10px]">
               <Link
-                href="https://drive.google.com/file/d/1XP9x3H4hHvw87s9_bXkKb68TWE_zXpgr/view?usp=sharing"
+                href="https://technext.vit.ac.in/TECHNEXT_EVENT_BROCHURE.pdf"
                 className="flex flex-row"
               >
                 <div className="uppercase p-2 sm:text-xl text-[10px] hover:text-gray-300 active:text-white">
