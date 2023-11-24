@@ -65,13 +65,13 @@ const Prizes = () => {
             </div>
           </div>
         </div>
-        <div className="flex flex-col items-center md:flex-row sm:pt-56 pt-10 justify-center md:pt-20 lg:pt-0 lg:w-full">
-          <div className="flex justify-center text-center md:text-left text-white pt-9 md:pl-12 lg:pl-10 xl:pl-14 2xl:pl-20 xl:pr-40 md:text-base text-xs opacity-30 py-4 sm:py-0 md:w-full">
+        <div className="flex flex-col items-center md:flex-row sm:pt-56 pt-10 justify-center md:pt-20 lg:pt-0 lg:w-full pb-6">
+          <div className="flex bdcn justify-center text-center md:text-left text-white pt-9 md:pl-12 lg:pl-10 xl:pl-14 2xl:pl-20 xl:pr-40 md:text-base text-xs opacity-30 py-4 sm:py-0 md:w-full">
             *offer benefits such as advisory, business development, corporate
             connections, access to industry experts, mentorship and/or
             investment for further development
           </div>
-          <div className="w-full flex justify-center md:justify-end md:px-10 2xl:pr-24">
+          <div className="w-full flex justify-center md:justify-end md:px-24 2xl:pr-24">
             <Image src={expo} alt="expo-mark" quality={100} />
           </div>
         </div>

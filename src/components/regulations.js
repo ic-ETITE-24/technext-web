@@ -7,7 +7,7 @@ function Regulations() {
   return (
     <>
       <div className={css.bg}>
-        <div className="mx-10 md:mx-20 text-lg sm:text-4xl text-white font-[600] py-10 xl:py-0">
+        <div className="mx-10 md:mx-20 text-lg sm:text-4xl text-white font-[600] py-10 xl:py-0 ham">
           Regulations
         </div>
         <div className="flex lg:flex-nowrap flex-wrap justify-around items-center lg:h-[600px]">
@@ -60,7 +60,7 @@ function Regulations() {
           <div className="flex justify-center text-white pt-9 md:pl-8 md:pr-8 lg:pl-4 lg:pr-48 2xl:pl-0 xl:pr-80 md:text-lg text-xs opacity-30 py-4 sm:py-0 md:w-full">
             * 3 MEMBERS CAN ALSO FORM A TEAM
           </div>
-          <div className="w-full flex justify-center md:justify-end md:px-10 2xl:pr-24">
+          <div className="w-full flex justify-center md:justify-end md:px-24 2xl:pr-24">
             <Image src={expo} alt="expo-mark" quality={100} />
           </div>
         </div>
