@@ -51,7 +51,10 @@ function Participate() {
           <div className="mx-auto lg:mx-0 lg:justify-self-start my-auto h-fit w-[80%] lg:w-[65%] sm:w-[60%] rounded-md backdrop-blur-xs backdrop-brightness-[1.3] border-[1px] border-[rgba(255,255,255,0.2)]">
             <div className="py-3">
               <h1 className="text-[#FF7A00] text-2xl lg:text-3xl text-center uppercase mt-3">
-                Market Testing and Customer Feedback
+                Market Testing and
+              </h1>
+              <h1 className="text-[#FF7A00] text-2xl lg:text-3xl text-center uppercase">
+                Customer Feedback
               </h1>
               <p className="text-justify text-white w-[90%] mx-auto mt-2">
                 Get an opportunity to know your customers, get feedback and
