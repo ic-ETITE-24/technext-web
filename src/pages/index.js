@@ -9,6 +9,7 @@ import Prizes from "@/components/Prizes";
 import Head from "next/head";
 import Investors from "@/components/investors";
 import Tracks from "@/components/tracks";
+import Participate from "@/components/participate";
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
     <main>
       <Main />
       <AboutEvent />
+      <Participate />
       <Regulations />
       <Registration />
       <Timeline />
