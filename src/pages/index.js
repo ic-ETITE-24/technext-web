@@ -27,8 +27,6 @@ export default function Home() {
       <Timeline />
       <Prizes />
       <Tracks />
-
-
       <Investors />
       <ContactUs />
       <Footer />
