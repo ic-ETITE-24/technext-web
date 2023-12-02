@@ -41,9 +41,9 @@ const Verify = () => {
       email: mail,
       otp: "",
     },
-    
+
     onSubmit: async (values) => {
-            const val = resendOtp
+      const val = resendOtp
         ? {
             email: mail,
           }
@@ -88,11 +88,9 @@ const Verify = () => {
               setTimeout(() => {
                 void router.push("/portal");
               }, 2000);
-            }
-            else if (errorMessage === "Please pass in an email and otp") {
-              toast.error("Please enter a valid OTP.")
-            }
-            else if (errorMessage === "Invalid OTP") {
+            } else if (errorMessage === "Please pass in an email and otp") {
+              toast.error("Please enter a valid OTP.");
+            } else if (errorMessage === "Invalid OTP") {
               toast.error("Invalid OTP");
             }
           } else {
@@ -203,26 +201,26 @@ const Verify = () => {
                   <div className="flex items-center justify-center">
                     <button
                       type="submit"
-                      className="text-md mb-2 mt-8 flex h-[5vh] w-[55vw] items-center justify-center rounded-md bg-[#FF7A00] px-[33px] py-[10px] text-center font-semibold text-white md:h-[7vh] md:w-[20vw] md:py-[12px] md:text-2xl"
+                      className="text-md mb-2 mt-8 flex h-[5vh] w-[55vw] items-center justify-center rounded-md bg-[#FF7A00] px-[33px] py-[10px] text-center font-semibold text-white md:h-[7vh] md:w-[20vw] md:py-[12px] md:text-2xl hover:scale-105 hover:transition-transform"
                       onClick={() => {
                         setResendOtp(false);
                         setGetOtpLoader(true);
                       }}
-                                          >
+                    >
                       <span>VERIFY</span>
                     </button>
                   </div>
-                  <button
-                    className="underline mt-1.5"
-                    onClick={() => {
-                      void resendOTP();
-                    }}
-                                      >
-                    Resend otp?
-                  </button>
                 </>
               )}
             </form>
+            <button
+              className="underline mt-1.5 hover:scale-105 hover:transition-transform"
+              onClick={() => {
+                void resendOTP();
+              }}
+            >
+              Resend otp?
+            </button>
           </div>
         </div>
       </div>
