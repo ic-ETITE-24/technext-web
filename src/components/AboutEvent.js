@@ -19,7 +19,8 @@ const AboutEvent = () => {
               quality={100}
             />
           </div>
-          <div className="text-white sm:w-[700px] md:mx-20 mx-10">
+          <div className="">
+          <div className="text-white sm:w-[700px] md:mx-20 mx-10 ">
             <div className="md:text-5xl sm:text-4xl text-2xl font-[700]">
               TECHNEXT <span className="text-[#FF7A00]"> EXPO 2024</span>
             </div>
@@ -52,6 +53,7 @@ const AboutEvent = () => {
               <p>2 rounds (one online, one offline)</p>
             </div>
           </div>
+        </div>
         </div>
         <div className="w-full flex justify-end px-24 pb-10">
           <Image src={expo} alt="expo-mark" quality={100} />
