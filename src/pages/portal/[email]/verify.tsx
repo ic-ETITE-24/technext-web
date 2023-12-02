@@ -1,7 +1,3 @@
-import Image from "next/image";
-import logo from "@/assets/portal/logo-icon.svg";
-import { MdOutlineAccountCircle } from "react-icons/md";
-import { PiBellSimpleBold } from "react-icons/pi";
 import { z } from "zod";
 import { useState, useEffect } from "react";
 import { useFormik } from "formik";
@@ -45,10 +41,9 @@ const Verify = () => {
       email: mail,
       otp: "",
     },
-    validationSchema: toFormikValidationSchema(formVal),
-    validateOnChange: true,
+    
     onSubmit: async (values) => {
-      const val = resendOtp
+            const val = resendOtp
         ? {
             email: mail,
           }
@@ -94,6 +89,12 @@ const Verify = () => {
                 void router.push("/portal");
               }, 2000);
             }
+            else if (errorMessage === "Please pass in an email and otp") {
+              toast.error("Please enter a valid OTP.")
+            }
+            else if (errorMessage === "Invalid OTP") {
+              toast.error("Invalid OTP");
+            }
           } else {
             toast.error("Network error or other issue occurred.");
           }
@@ -137,34 +138,8 @@ const Verify = () => {
       </Head>
       <div className="teamInfo text-white">
         <Toaster richColors closeButton position="top-right" theme="light" />
-        <div className="flex w-full items-center justify-between pt-6">
-          <div className="mx-4 ml-5 flex w-[300px] items-center justify-between sm:ml-12 sm:w-[350px] lg:ml-20">
-            <Image
-              className="flex w-[38px] sm:w-[52px]"
-              src={logo as HTMLImageElement}
-              alt="logo"
-            />
-            <span className="box mx-3 text-[8px] uppercase sm:mx-5 sm:text-sm">
-              Second International Conference on Emerging Trends in Information
-              Technology and Engineering{" "}
-              <span className="text-[#FF7A00]">TECHNEXT EXPO 2024</span>
-            </span>
-          </div>
-          <div className="mr-4 flex items-center justify-end text-center max-[380px]:flex-wrap">
-            <div className="mx-[10px] flex">
-              <div className="bdcn flex items-center px-2 text-[10px] uppercase hover:text-gray-300 active:text-white sm:text-xl">
-                <PiBellSimpleBold />
-                &nbsp;Announcements
-              </div>
-            </div>
-            <span className="bdcn mx-[15px] my-1 hidden items-center rounded-md bg-[#FF7A00] px-2 py-1 text-[10px] uppercase hover:bg-[#ff9837] hover:font-[400] hover:text-white active:bg-[#FF7A00] sm:mx-[30px] sm:rounded-lg sm:px-5 sm:py-2 sm:text-xl md:flex">
-              <MdOutlineAccountCircle />
-              &nbsp;Log out
-            </span>
-          </div>
-        </div>
         <div>
-          <div className="bdcn flex flex-col justify-center py-[30%] text-center sm:items-center md:py-[50px]">
+          <div className="bdcn flex flex-col justify-center py-[50%] text-center sm:items-center lg:py-[140px] 2xl:py-[190px]">
             <h1 className="text-5xl font-semibold md:text-7xl ">
               OTP REQUIRED
             </h1>
@@ -233,7 +208,7 @@ const Verify = () => {
                         setResendOtp(false);
                         setGetOtpLoader(true);
                       }}
-                    >
+                                          >
                       <span>VERIFY</span>
                     </button>
                   </div>
@@ -242,7 +217,7 @@ const Verify = () => {
                     onClick={() => {
                       void resendOTP();
                     }}
-                  >
+                                      >
                     Resend otp?
                   </button>
                 </>
