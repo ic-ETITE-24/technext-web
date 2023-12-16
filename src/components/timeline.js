@@ -78,7 +78,7 @@ function Timeline() {
           </VerticalTimelineElement>
           <VerticalTimelineElement
             className="vertical-timeline-element--work pb-20 text-white  pr-4"
-            date="17 - 22 December 2023"
+            date="3 - 10 January 2023"
             dateClassName="xl:text-white text-orange-500"
             iconStyle={{
               backgroundColor: "white",
@@ -94,7 +94,7 @@ function Timeline() {
             contentStyle={{ background: "rgb(249 115 22)" }}
             iconStyle={{ background: "rgb(249 115 22)", color: "#fff" }}
             contentArrowStyle={{ borderRight: "7px solid  rgb(249 115 22)" }}
-            date="27 December 2023"
+            date="13 January 2023"
 
             // icon={<WorkIcon />}
           >
