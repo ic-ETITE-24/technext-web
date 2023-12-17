@@ -37,6 +37,6 @@ jobs:
           port: 22
           script: |
             cd technext-landing/
-            git pull origin main 
+            echo "${{ secrets.SSH_KEY }}" | sudo -S git pull origin main 
             echo "${{ secrets.SSH_KEY }}" | sudo -S docker compose down
             echo "${{ secrets.SSH_KEY }}" | sudo -S docker compose up -d --build

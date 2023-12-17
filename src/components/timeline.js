@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import css from "./timeline.module.css";
 import icon from "./../assets/Top-right-logo.png";
 import expo from "../assets/expo-mark.png";
+import DownArrow from '../assets/downarrow.svg'
 
 import {
   VerticalTimeline,
@@ -12,6 +13,7 @@ import "react-vertical-timeline-component/style.min.css";
 
 function Timeline() {
   const [isMobile, setIsMobile] = useState(false);
+  const [showScrollToTop, setShowScrollToTop] = useState(false);
 
   useEffect(() => {
     const checkWindowWidth = () => {
@@ -25,12 +27,44 @@ function Timeline() {
       window.removeEventListener("resize", checkWindowWidth);
     };
   }, []);
+
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 200) {
+        setShowScrollToTop(true);
+      } else {
+        setShowScrollToTop(false);
+      }
+    };
+
+    // Call handleResize initially and add event listener for window resize
+    window.addEventListener("scroll", handleScroll);
+
+    // Clean up the event listener on component unmount
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <>
       <div className={css.bg}>
         <div className="text-white mx-10 md:mx-20 text-lg sm:text-4xl font-[600] py-10">
           Timeline
         </div>
+        <a
+          className="fixed text-3xl cursor-pointer bottom-5 right-5 h-14 w-14 border-4 bg-transparent border-[#9f9f9f] py-2 px-3 rounded-full scrollbutton flex flex-col items-center justify-center"
+          onClick={scrollToTop}
+        >
+          <Image src={DownArrow} alt="eqrdqwe" className="rotate-180" />
+        </a>
         <Image
           src={icon}
           alt="ieee logo"
@@ -68,7 +102,7 @@ function Timeline() {
             contentStyle={{ background: "rgb(249 115 22)" }}
             iconStyle={{ background: "rgb(249 115 22)", color: "#fff" }}
             contentArrowStyle={{ borderRight: "7px solid  rgb(249 115 22)" }}
-            date="3 December 2023"
+            date="31 December 2023"
 
             // icon={<WorkIcon />}
           >
@@ -78,7 +112,7 @@ function Timeline() {
           </VerticalTimelineElement>
           <VerticalTimelineElement
             className="vertical-timeline-element--work pb-20 text-white  pr-4"
-            date="10 - 17 December 2023"
+            date="3 - 10 January 2023"
             dateClassName="xl:text-white text-orange-500"
             iconStyle={{
               backgroundColor: "white",
@@ -94,7 +128,7 @@ function Timeline() {
             contentStyle={{ background: "rgb(249 115 22)" }}
             iconStyle={{ background: "rgb(249 115 22)", color: "#fff" }}
             contentArrowStyle={{ borderRight: "7px solid  rgb(249 115 22)" }}
-            date="24 December 2023"
+            date="13 January 2023"
 
             // icon={<WorkIcon />}
           >
