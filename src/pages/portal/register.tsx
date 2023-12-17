@@ -64,8 +64,8 @@ function Register() {
           "Password should contain atleast 8 characters, 1 uppercase, 1 lowercase, 1 number and 1 special character"
         ),
       phoneNo: z.string({
-        required_error: "Required",
-      }).max(11, "First name must have max 11 chars"),
+          required_error: "Required",
+        }).max(11, "First name must have max 11 chars"),
       gender: z.string({
         required_error: "Required",
       }),
@@ -86,7 +86,10 @@ function Register() {
       date_of_birth: z.string({
         required_error: "Required",
       }),
-      
+      github: z.string({
+        required_error: "Github link is required",
+        invalid_type_error: "Github link must be a string",
+      }),
       is_vitian: z.boolean({
         required_error: "Required",
       }),
@@ -114,6 +117,7 @@ function Register() {
       confirmPassword: "",
       country: country,
       date_of_birth: "",
+      github: "",
       phoneNo: "",
       gender: "",
       bio: "",
@@ -134,12 +138,12 @@ function Register() {
 
         bio: values.bio.trim(),
         phone_number: values.phoneNo.trim(),
-        github: "fsinbshn",
+        github: values.github.trim(),
         country: values.country,
         college: values.college.trim(),
         is_vitian: values.is_vitian,
       };
-      
+
       if (values.college === "Other") send.college = values.OtherCollege;
       else {
         if (!send.email.includes("vitstudent.ac.in")) {
@@ -189,7 +193,7 @@ function Register() {
     return "";
   };
   useEffect(() => {
-    if (formik.values.college === "Vellore Institute of Technology") {
+    if (formik.values.college === "VIT Vellore") {
       void formik.setValues({ ...formik.values, is_vitian: true });
       setIsVITian(true);
       setIsOtherCollege(false);
@@ -232,7 +236,6 @@ function Register() {
                         type="text"
                         name="firstName"
                         id="firstName"
-                        autoComplete="firstName"
                         value={values.firstName}
                         onChange={handleChange}
                         onBlur={handleBlur}
@@ -253,7 +256,6 @@ function Register() {
                         type="text"
                         name="lastName"
                         id="lastName"
-                        autoComplete="lastName"
                         value={values.lastName}
                         onChange={handleChange}
                         onBlur={handleBlur}
@@ -297,7 +299,6 @@ function Register() {
                         type="password"
                         name="password"
                         id="password"
-                        autoComplete="password"
                         value={values.password}
                         onChange={handleChange}
                         onBlur={handleBlur}
@@ -370,6 +371,7 @@ function Register() {
                     <div className="country lg:w-[39%]">
                       <div className="mt-3 lg:mt-2">
                         <ReactFlagsSelect
+                          id="countryCode"
                           selected={country}
                           onSelect={(countryCode) => {
                             setCountry(countryCode);
@@ -399,6 +401,7 @@ function Register() {
                   <div className="lg:w-[39%]">
                     <div className="mt-3 lg:mt-2">
                       <DatePicker
+                        id="date_of_birth"
                         wrapperClassName="w-full"
                         selected={
                           formik.values.date_of_birth
@@ -438,6 +441,7 @@ function Register() {
                         <select
                           name="gender"
                           id="gender"
+                          title="Gender"
                           value={values.gender}
                           onChange={handleChange}
                           onBlur={handleBlur}
@@ -470,7 +474,26 @@ function Register() {
                     </div>
                   </div>
                 </div>
-
+                <div>
+                  <div className="mt-3 lg:mt-2">
+                    <input
+                      type="text"
+                      name="github"
+                      id="github"
+                      value={values.github}
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      placeholder="Github Link"
+                      className={`mx-auto block w-[79.1%] rounded-md border-0 bg-[rgba(255,255,255,0.36)] px-4 py-3 placeholder:text-[#00000036]
+                      ${touched.github && errors.github ? "" : ""}`}
+                    />
+                    <div className="mx-auto w-[80%]">
+                      <span className="text-xs text-red-500 md:text-sm">
+                        {touched.github && errors.github}
+                      </span>
+                    </div>
+                  </div>
+                </div>
                 <div>
                   <div className="mt-3 lg:mt-2">
                     <textarea
@@ -523,6 +546,7 @@ function Register() {
                       id="college"
                       name="college"
                       required
+                      title="Choose your university"
                       // value={values.college}
                       onChange={formik.handleChange}
                       onBlur={handleBlur}
@@ -557,39 +581,39 @@ function Register() {
                   </div>
                 </div>
                 {formik.values.college === "Other" && (
-                      <div className=" mt-3 lg:mt-3">
-                        <input
-                          type="text"
-                          name="OtherCollege"
-                          id="OtherCollege"
-                          required
-                          value={formik.values.OtherCollege}
-                          onChange={formik.handleChange}
-                          onBlur={formik.handleBlur}
-                          placeholder="Enter College Name"
-                          className={`mx-auto block w-[79.5%] rounded-md border-0 bg-[rgba(255,255,255,0.36)] px-4 py-3 placeholder:text-[#00000036]  ${
-                            formik.touched.OtherCollege &&
-                            formik.errors.OtherCollege
-                              ? ""
-                              : ""
-                          }`}
-                        />
-                        {formik.touched.OtherCollege &&
-                          formik.errors.OtherCollege && (
-                            <div className="mx-auto w-[80%] ">
-                              {formik.touched.OtherCollege &&
-                                formik.errors.OtherCollege && (
-                                  <span className="text-sm text-red-500">
-                                    {formik.errors.OtherCollege}
-                                  </span>
-                                )}
-                            </div>
-                            // <span className="text-sm text-red-500">
-                            //   {formik.errors.OtherCollege}
-                            // </span>
-                          )}
-                      </div>
-                    )}
+                  <div className=" mt-3 lg:mt-3">
+                    <input
+                      type="text"
+                      name="OtherCollege"
+                      id="OtherCollege"
+                      required
+                      value={formik.values.OtherCollege}
+                      onChange={formik.handleChange}
+                      onBlur={formik.handleBlur}
+                      placeholder="Enter College Name"
+                      className={`mx-auto block w-[79.5%] rounded-md border-0 bg-[rgba(255,255,255,0.36)] px-4 py-3 placeholder:text-[#00000036]  ${
+                        formik.touched.OtherCollege &&
+                        formik.errors.OtherCollege
+                          ? ""
+                          : ""
+                      }`}
+                    />
+                    {formik.touched.OtherCollege &&
+                      formik.errors.OtherCollege && (
+                        <div className="mx-auto w-[80%] ">
+                          {formik.touched.OtherCollege &&
+                            formik.errors.OtherCollege && (
+                              <span className="text-sm text-red-500">
+                                {formik.errors.OtherCollege}
+                              </span>
+                            )}
+                        </div>
+                        // <span className="text-sm text-red-500">
+                        //   {formik.errors.OtherCollege}
+                        // </span>
+                      )}
+                  </div>
+                )}
                 {/* </div> */}
                 <button
                   type="submit"

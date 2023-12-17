@@ -106,7 +106,7 @@ const Footer = () => {
           <div className="col-span-2 md:col-span-1">
             <h2 className=" text-sm md:text-base lg:text-xl">OTHER EVENTS</h2>
             <ul className=" text-xs md:text-sm lg:text-base mt-5 text-[#ffffff80]">
-              <Link href="" target="_blank" rel="noreferrer noopener">
+              <Link href="https://bolt.vit.ac.in/" target="_blank" rel="noreferrer noopener">
                 <li className="mt-2">BOLT HACKATHON</li>
               </Link>
               <Link
