@@ -3,7 +3,7 @@ import { useFormik } from "formik";
 import { date, z } from "zod";
 import { toFormikValidationSchema } from "zod-formik-adapter";
 import ReactFlagsSelect from "react-flags-select";
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import logo from "@/assets/portal/logo.svg";
@@ -63,9 +63,12 @@ function Register() {
           /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/,
           "Password should contain atleast 8 characters, 1 uppercase, 1 lowercase, 1 number and 1 special character"
         ),
-      phoneNo: z.string({
+      phoneNo: z
+        .string({
           required_error: "Required",
-        }).max(11, "First name must have max 11 chars"),
+        })
+        .max(11, "mobile number must have max 11 characters")
+        .min(10, "mobile number must have a min of 10 characters"),
       gender: z.string({
         required_error: "Required",
       }),
@@ -102,7 +105,8 @@ function Register() {
     .refine((data) => data.password === data.confirmPassword, {
       message: "Passwords do not match",
       path: ["confirmPassword"],
-    }).refine((data) => {
+    })
+    .refine((data) => {
       if (data.college === "Other") {
         return data.OtherCollege != null && data.OtherCollege !== "";
       }
