@@ -9,3 +9,7 @@
     background-image: linear-gradient(rgba(255, 255, 255, 0.00001), rgba(255, 255, 255, 0.00001)), url(../assets/grid-bg.png), url(../assets/main-bg.png);
 
 }
+
+.border-fade {
+    mask-image: linear-gradient(to top, transparent 50%, black 80%, transparent 100%);
+  }
