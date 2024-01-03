@@ -204,12 +204,12 @@ const Idea = () => {
             IDEA
           </span>
 
-          {/* <Link
-            href="/project"
+          <Link
+            href="/portal/project"
             className="mb-1 rounded-sm px-5 py-4 text-2xl text-[#f6f3f3ca] active:border-b-4 active:text-white"
           >
             <span>PROJECT</span>
-          </Link> */}
+          </Link>
           <Link
             href=""
             className="mb-1 rounded-sm px-5 py-4 text-2xl text-[#f6f3f3ca] active:border-b-4 active:text-white"
@@ -346,12 +346,12 @@ const Idea = () => {
               <BsFillSquareFill className="mb-3 ml-12 rotate-45 self-center text-lg text-[#FF7A00]" />
             </div>
 
-            {/* <Link href="/project">
+            <Link href="/portal/project">
               <div className="mb-8 flex justify-around">
                 <div className="mb-3 text-2xl text-[#ffffff4d]">PROJECT</div>
                 <BsFillSquareFill className="mb-3 self-center text-xs text-[#FF7A00]" />
               </div>
-            </Link> */}
+            </Link>
           </div>
         </div>
       </div>
