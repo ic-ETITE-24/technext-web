@@ -93,6 +93,14 @@ const Project = () => {
   }
 
   async function handleSubmit(): Promise<void> {
+    const topContainer = document.querySelector(".topContainer");
+
+    if (topContainer) {
+      topContainer.scrollIntoView({
+        behavior: "smooth", // or 'auto' for immediate scroll
+        block: "start", // Scroll to the top of the element
+      });
+    }
     if (
       nameRef.current?.value &&
       trackRef.current?.value &&
@@ -127,7 +135,6 @@ const Project = () => {
             }
           );
           if (response.data.status) {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
             toast.success("Project updated successfully");
             setIsSubmitted(true);
             setIsEditted(false);
@@ -147,7 +154,6 @@ const Project = () => {
             }
           );
           if (response.data.status) {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
             toast.success("Project submitted successfully");
             setIsSubmitted(true);
             setIsEditted(false);
@@ -173,7 +179,7 @@ const Project = () => {
         <div className="flex w-full items-center justify-between pt-6">
           <div className="mx-4 ml-5 flex w-[300px] items-center justify-between sm:ml-12 sm:w-[350px] lg:ml-20">
             <Image
-              className="flex w-[38px] sm:w-[52px]"
+              className="flex w-[38px] sm:w-[52px] topContainer"
               src={logo as HTMLImageElement}
               alt="logo"
             />
