@@ -58,7 +58,7 @@ const Prizes = () => {
               </div>
             </div>
             <div className="uppercase xl:text-5xl lg:text-3xl md:text-xl sm:text-md md:text-right font-medium xl:w-[700px] md:w-[500px]">
-              Amazing CASH PRIZE POOL, PLUS{" "}
+              Amazing CASH PRIZE POOL OF OVER <span className="text-[#FF7A00] xl:text-7xl lg:text-5xl md:text-3xl sm:text-2xl">₹1 LAKH</span>, PLUS{" "}
               <span className="text-[#FF7A00]">
                 Selection* from partnering Angel Investor
               </span>
