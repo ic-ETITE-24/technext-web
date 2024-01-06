@@ -86,7 +86,7 @@ const Footer = () => {
                 <li className=" mt-2">SPONSORSHIP BROCHURE</li>
               </Link>
               <Link
-                href="https://drive.google.com/file/d/1XP9x3H4hHvw87s9_bXkKb68TWE_zXpgr/view?usp=sharing"
+                href="https://technext.vit.ac.in/TECHNEXT_EVENT_BROCHURE.pdf"
                 target="_blank"
                 rel="noreferrer noopener"
               >
