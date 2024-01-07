@@ -22,7 +22,7 @@ const Main = () => {
       if (typeof window !== "undefined") {
         const windowWidth = window.innerWidth;
         const newWidth = windowWidth <= 768 ? "70%" : "35%";
-        const newHeight = windowWidth <= 768 ? "60vh" : "75vh";
+        const newHeight = windowWidth <= 768 ? "57vh" : "75vh";
         setModalWidth(newWidth);
         setModalHeight(newHeight);
       }
