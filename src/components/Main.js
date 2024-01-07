@@ -16,12 +16,15 @@ import { IoMdClose } from "react-icons/io";
 const Main = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [modalWidth, setModalWidth] = useState("35%");
+  const [modalHeight, setModalHeight] = useState("75vh");
   useEffect(() => {
     const handleResize = () => {
       if (typeof window !== "undefined") {
         const windowWidth = window.innerWidth;
         const newWidth = windowWidth <= 768 ? "70%" : "35%";
+        const newHeight = windowWidth <= 768 ? "60vh" : "75vh";
         setModalWidth(newWidth);
+        setModalHeight(newHeight);
       }
     };
 
@@ -73,7 +76,7 @@ const Main = () => {
               content: {
                 backgroundColor: "rgb(127, 128, 127)",
                 width: modalWidth,
-                height: "75vh",
+                height: modalHeight,
                 margin: "auto",
                 border: "1px solid #ccc",
                 // borderRadius: "12px",
