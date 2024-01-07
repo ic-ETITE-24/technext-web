@@ -8,10 +8,11 @@ import axios from "axios";
 import Link from "next/link";
 
 function Registration() {
-  const [conutryName, setCountryName] = useState("");
+  const [countryName, setCountryName] = useState("");
 
   const [error, setError] = useState(false);
   const [price, setPrice] = useState(null);
+  const [newPrice, setNewPrice] = useState(null);
   const [text, setText] = useState(null);
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
@@ -42,12 +43,15 @@ function Registration() {
   function countryCall() {
     if (error) {
       setPrice("₹999");
+      setNewPrice("₹499")
       setText("Per Person for National Participants");
-    } else if (conutryName === "India") {
+    } else if (countryName === "India") {
       setPrice("₹999");
+      setNewPrice("₹499")
       setText("Per Person for National Participants");
     } else {
       setPrice("$49.99");
+      setNewPrice("$24.99")
       setText("Per Person for international Participants");
     }
   }
@@ -59,10 +63,12 @@ function Registration() {
           Registration
         </div>
         <div className="flex flex-wrap place-content-center place-self-center h-[600px] ">
-          <div className="rounded-xl items-center flex place-content-center relative m-10 w-5/12 sm:w-4/12 md:w-[300px] lg:w-[450px]">
+          <div className="rounded-xl items-center flex place-content-center relative m-10 w-[250px] sm:w-4/12 md:w-[300px] lg:w-[450px]">
             <div className="rounded-xl absolute inset-0 backdrop-blur-md backdrop-brightness-90"></div>
-            <div className="text-white text-6xl sm:text-8xl md:text-8xl relative p-8 2xl:text-[120px] price">
-              {price}
+            <p className="line-through text-white relative text-xl md:text-3xl price self-start pt-10">{price}</p>
+            
+            <div className="text-white text-6xl sm:text-8xl md:text-8xl relative py-8 pl-2 2xl:text-[120px] price">
+              {newPrice}
             </div>
           </div>
           <div className=" sm:pt-10 md:pt-0 self-center">
