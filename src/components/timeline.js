@@ -102,7 +102,7 @@ function Timeline() {
             contentStyle={{ background: "rgb(249 115 22)" }}
             iconStyle={{ background: "rgb(249 115 22)", color: "#fff" }}
             contentArrowStyle={{ borderRight: "7px solid  rgb(249 115 22)" }}
-            date="13 January 2023"
+            date="21 January 2023"
 
             // icon={<WorkIcon />}
           >
