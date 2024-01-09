@@ -13,7 +13,7 @@ function Regulations() {
         <div className="flex lg:flex-nowrap flex-wrap justify-around items-center lg:h-[600px]">
           <div className="flex items-center four gap-6 sm:pl-4">
             <div className="text-orange-500 text-6xl sm:pl-12 2xl:pl-20 sm:text-9xl md:text-[160px] 2xl:text-[210px]">
-              4
+              1-4
             </div>
             <div className="text-white text-4xl sm:text-5xl md:text-[78px] 2xl:text-[100px] md:leading-[4rem] 2xl:leading-[5rem]">
               MEMBERS&nbsp;
