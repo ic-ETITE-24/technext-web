@@ -43,15 +43,15 @@ function Registration() {
   function countryCall() {
     if (error) {
       setPrice("₹999");
-      setNewPrice("₹499")
+      setNewPrice("₹499");
       setText("Per Person for National Participants");
     } else if (countryName === "India") {
       setPrice("₹999");
-      setNewPrice("₹499")
+      setNewPrice("₹499");
       setText("Per Person for National Participants");
     } else {
       setPrice("$49.99");
-      setNewPrice("$24.99")
+      setNewPrice("$24.99");
       setText("Per Person for international Participants");
     }
   }
@@ -62,45 +62,59 @@ function Registration() {
         <div className="mx-10 text-white md:mx-20 text-lg sm:text-4xl font-[600] py-10">
           Registration
         </div>
-        <div className="flex flex-wrap place-content-center place-self-center h-[600px] ">
-          <div className="rounded-xl items-center flex place-content-center relative m-10 w-[250px] sm:w-4/12 md:w-[300px] lg:w-[450px]">
-            <div className="rounded-xl absolute inset-0 backdrop-blur-md backdrop-brightness-90"></div>
-            <p className="line-through text-white relative text-xl md:text-3xl price self-start pt-10">{price}</p>
-            
-            <div className="text-white text-6xl sm:text-8xl md:text-8xl relative py-8 pl-2 2xl:text-[120px] price">
-              {newPrice}
-            </div>
+        <div className="flex flex-col items-center px-5">
+          <div className="flex flex-col rounded-lg p-5 border-4 border-double border-orange-500 ">
+            <p className=" text-orange-500 text-4xl text-center sm:text-3xl md:text-5xl font-bold">New Year's Offering</p>
+            <p className=" text-white text-2xl text-center sm:text-xl md:text-3xl font-bold"><span className=" text-4xl text-center sm:text-3xl md:text-5xl font-bold">50% OFF </span>on all registration fees</p>
+            <p className=" text-orange-500 text-4xl text-center sm:text-3xl md:text-5xl font-bold"> TILL 13 JANUARY, 2024</p>
           </div>
-          <div className=" sm:pt-10 md:pt-0 self-center">
-            <div className="text-orange-500 text-4xl text-center sm:text-3xl md:text-5xl">
-              <h1>{text}</h1>
-            </div>
-            <div className="flex flex-wrap flex-col items-center md:flex-row md:justify-start sm:justify-center pt-16 gap-10 md:gap-0 md:pl-0 md:pt-6 2xl:pt-10 sm:pt-24">
-              <button
-                className="bg-orange-500 rounded text-white text-2xl sm:text-5xl md:text-2xl 2xl:text-3xl w-fit px-3 py-2"
-                disabled
-              >
-                <Link href="/portal/register" className="flex flex-row items-center">
-                  REGISTER NOW
-                  <span>
-                    <Image
-                      className="sm:w-[20px] w-[15px]"
-                      src={checkout}
-                      alt="register"
-                    />
-                  </span>
-                </Link>
-              </button>
 
-              <button
-                className="md:ml-10 2xl:ml-16 rounded text-white border-[3px] sm:mt-10 md:mt-0 md:text-2xl sm:text-5xl border-white text-2xl 2xl:text-4xl w-fit px-4 py-1 hover:bg-orange-500 hover:border-orange-500 hover:text-white"
-                onClick={openModal}
-              >
-                Learn More
-              </button>
+          <div className="pb-20 flex flex-wrap place-content-center place-self-center h-[600px] ">
+            <div className="rounded-xl items-center flex place-content-center relative m-10 w-[250px] sm:w-4/12 md:w-[300px] lg:w-[450px]">
+              <div className="rounded-xl absolute inset-0 backdrop-blur-md backdrop-brightness-90"></div>
+              <p className="line-through text-white relative text-xl md:text-3xl price self-start pt-10">
+                {price}
+              </p>
+
+              <div className="text-white text-6xl sm:text-8xl md:text-8xl relative py-8 pl-2 2xl:text-[120px] price">
+                {newPrice}
+              </div>
+            </div>
+            <div className=" sm:pt-10 md:pt-0 self-center">
+              <div className="text-orange-500 text-4xl text-center sm:text-3xl md:text-5xl">
+                <h1>{text}</h1>
+              </div>
+              <div className="flex flex-wrap flex-col items-center md:flex-row md:justify-start sm:justify-center pt-16 gap-10 md:gap-0 md:pl-0 md:pt-6 2xl:pt-10 sm:pt-24">
+                <button
+                  className="bg-orange-500 rounded text-white text-2xl sm:text-5xl md:text-2xl 2xl:text-3xl w-fit px-3 py-2"
+                  disabled
+                >
+                  <Link
+                    href="/portal/register"
+                    className="flex flex-row items-center"
+                  >
+                    REGISTER NOW
+                    <span>
+                      <Image
+                        className="sm:w-[20px] w-[15px]"
+                        src={checkout}
+                        alt="register"
+                      />
+                    </span>
+                  </Link>
+                </button>
+
+                <button
+                  className="md:ml-10 2xl:ml-16 rounded text-white border-[3px] sm:mt-10 md:mt-0 md:text-2xl sm:text-5xl border-white text-2xl 2xl:text-4xl w-fit px-4 py-1 hover:bg-orange-500 hover:border-orange-500 hover:text-white"
+                  onClick={openModal}
+                >
+                  Learn More
+                </button>
+              </div>
             </div>
           </div>
         </div>
+
         <Modal
           isOpen={modalIsOpen}
           onRequestClose={closeModal}
