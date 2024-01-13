@@ -66,7 +66,7 @@ function Registration() {
           <div className="flex flex-col rounded-lg p-5 border-4 border-double border-orange-500 ">
             <p className=" text-orange-500 text-4xl text-center sm:text-3xl md:text-5xl font-bold">New Year's Offering</p>
             <p className=" text-white text-2xl text-center sm:text-xl md:text-3xl font-bold"><span className=" text-4xl text-center sm:text-3xl md:text-5xl font-bold">50% OFF </span>on all registration fees</p>
-            <p className=" text-orange-500 text-4xl text-center sm:text-3xl md:text-5xl font-bold"> TILL 13 JANUARY, 2024</p>
+            <p className=" text-orange-500 text-4xl text-center sm:text-3xl md:text-5xl font-bold"> TILL 21 JANUARY, 2024</p>
           </div>
 
           <div className="pb-20 flex flex-wrap place-content-center place-self-center h-[600px] ">
