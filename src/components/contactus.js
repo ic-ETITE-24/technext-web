@@ -2,6 +2,7 @@ import css from "./contactus.module.css";
 import Image from "next/image";
 import expo from "../assets/expo-mark.png";
 import { useEffect, useRef, useState } from "react";
+import { Toaster, toast } from "sonner";
 import axios from "axios";
 
 function ContactUs() {
@@ -41,25 +42,22 @@ function ContactUs() {
       enteredQuery.trim() === "" ||
       enteredCode.trim() === ""
     ) {
-      alert("Please fill all the fields");
+      toast.error("Please fill all the fields");
       return false;
     }
-    if (enteredNumber.length !== 10) {
-      alert("Please enter a valid mobile number");
+    if (enteredNumber.length < 10) {
+      toast.error("Please enter a valid mobile number");
       return false;
     }
     return true;
   }
 
-  function submitQueryData(event) {
+  async function submitQueryData(event) {
     event.preventDefault();
     const enteredName =
       firstNameInputRef.current.value + " " + lastNameInputRef.current.value;
     const enteredEmail = emailInputRef.current.value;
     const enteredNumber = mobileInputRef.current.value;
-    // const enteredMonth = monthInputRef.current.value;
-    // const enteredDay = dayInputRef.current.value;
-    // const enteredYear = yearInputRef.current.value;
     const enteredQuery = queryInputRef.current.value;
     const enteredCode = ccInputRef.current.value;
 
@@ -78,29 +76,21 @@ function ContactUs() {
     const queryData = {
       name: enteredName,
       email: enteredEmail,
-      mobile: enteredNumber,
-      // month: enteredMonth,
-      // day: enteredDay,
-      // year: enteredYear,
+      mobile: enteredCode + enteredNumber,
       query: enteredQuery,
     };
-
-    // axios
-    //   .post(`/api/hello`, queryData, {
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //     },
-    //   })
-    //   .then((response) => {
-    //     console.log(response.data);
-    //   })
-    //   .catch((error) => {
-    //     console.error("Error:", error);
-    //   });
+    const response = axios.post(
+      `${process.env.NEXT_PUBLIC_BASE_URL}/users/contact`,
+      queryData
+    );
+    if ((await response).data.status) {
+      toast.success("Query Submitted Successfully");
+    }
   }
 
   return (
     <div className="text-white" id={css.bg}>
+      <Toaster richColors closeButton position="top-right" theme="light" />
       <div className="mx-10 md:mx-20 text-lg sm:text-4xl font-[600] py-10">
         Contact Us
       </div>
