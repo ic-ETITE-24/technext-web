@@ -28,6 +28,9 @@
   overflow-y: auto;
 }
 
+html{
+  scroll-behavior: smooth;
+}
 .scrollable-form {
   max-height: 80vh;
   overflow-y: auto;

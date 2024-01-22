@@ -14,23 +14,25 @@ import Participate from "@/components/participate";
 export default function Home() {
   return (
     <>
-    <Head>
-      <title>Technext | Home</title>
-      <link rel="icon" type="image/x-icon" href="/favicon.ico"></link>
-    </Head>
-    <main>
-      <Main />
-      <AboutEvent />
-      <Participate />
-      <Regulations />
-      <Registration />
-      <Timeline />
-      <Prizes />
-      <Tracks />
-      <Investors />
-      <ContactUs />
-      <Footer />
-    </main>
+      <Head>
+        <title>Technext | Home</title>
+        <link rel="icon" type="image/x-icon" href="/favicon.ico"></link>
+      </Head>
+      <main>
+        <Main />
+        <AboutEvent />
+        <Participate />
+        <Regulations />
+        <Registration />
+        <section id="timeline">
+          <Timeline />
+        </section>
+        <Prizes />
+        <Tracks />
+        <Investors />
+        <ContactUs />
+        <Footer />
+      </main>
     </>
   );
 }
