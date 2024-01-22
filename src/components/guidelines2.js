@@ -36,13 +36,10 @@ function Guidelines2() {
             <li>
               Participants must select one of the project tracks specified for
               the competition. For detailed information on the event timeline,
-              please visit our
-              <u
-                className="hover:cursor-pointer mx-2"
-                onClick={() => Router.push(`/#timeline`)}
-              >
+              please visit our{" "}
+              <a href="/#timeline" className="underline hover:text-white/80">
                 website
-              </u>
+              </a>
             </li>
             <li>
               Teams will have two and a half months from the announcement of
