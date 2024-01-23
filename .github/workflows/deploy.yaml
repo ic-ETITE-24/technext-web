@@ -1,42 +1,42 @@
-name: Build and Deploy to Server
+# name: Build and Deploy to Server
 
-on:
-  push:
-    branches:
-      - main # Adjust the branch as needed
+# on:
+#   push:
+#     branches:
+#       - main # Adjust the branch as needed
 
-jobs:
-  Build:
-      runs-on: ubuntu-latest
-      steps:
-        - name: Checkout
-          uses: actions/checkout@v2
+# jobs:
+#   Build:
+#       runs-on: ubuntu-latest
+#       steps:
+#         - name: Checkout
+#           uses: actions/checkout@v2
 
-        - name: Setup Node
-          uses: actions/setup-node@v2
-          with:
-            node-version: "16"
+#         - name: Setup Node
+#           uses: actions/setup-node@v2
+#           with:
+#             node-version: "16"
 
-        - name: Install Dependencies
-          run: npm ci
+#         - name: Install Dependencies
+#           run: npm ci
 
-        - name: Build with Next.js
-          run: npm run build
+#         - name: Build with Next.js
+#           run: npm run build
 
-  Deploy:
-    needs: Build
-    runs-on: ubuntu-latest
+#   Deploy:
+#     needs: Build
+#     runs-on: ubuntu-latest
 
-    steps:
-      - name: SSH and Deploy
-        uses: appleboy/ssh-action@v1.0.0
-        with:
-          host: ${{ secrets.SERVER_HOST }}
-          username: ${{ secrets.SERVER_USERNAME }}
-          password: ${{ secrets.SSH_PASSWORD }}
-          port: 22
-          script: |
-            cd technext-landing/
-            echo "${{ secrets.SSH_KEY }}" | sudo -S git pull origin main 
-            echo "${{ secrets.SSH_KEY }}" | sudo -S docker compose down
-            echo "${{ secrets.SSH_KEY }}" | sudo -S docker compose up -d --build
+#     steps:
+#       - name: SSH and Deploy
+#         uses: appleboy/ssh-action@v1.0.0
+#         with:
+#           host: ${{ secrets.SERVER_HOST }}
+#           username: ${{ secrets.SERVER_USERNAME }}
+#           password: ${{ secrets.SSH_PASSWORD }}
+#           port: 22
+#           script: |
+#             cd technext-landing/
+#             echo "${{ secrets.SSH_KEY }}" | sudo -S git pull origin main 
+#             echo "${{ secrets.SSH_KEY }}" | sudo -S docker compose down
+#             echo "${{ secrets.SSH_KEY }}" | sudo -S docker compose up -d --build
