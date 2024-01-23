@@ -109,7 +109,7 @@ const Main = () => {
                     ON ALL REGISTRATION FEES
                   </p>
                   <p className="text-2xl md:text-3xl ham font-extrabold ">
-                    TILL <span className="text-orange-500">21 JANUARY, 2024</span>
+                    TILL <span className="text-orange-500">26th JANUARY, 2024</span>
                   </p>
                 </div>
               </div>
