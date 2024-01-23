@@ -20,7 +20,8 @@
 .teamInfo {
   height: 100vh;
   width: 100%;
-  background: url(../assets/portal/grid-bg.png), url(../assets/portal/main-bg.png);
+  background: url(../assets/portal/grid-bg.png),
+    url(../assets/portal/main-bg.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -28,9 +29,10 @@
   overflow-y: auto;
 }
 
-html{
+html {
   scroll-behavior: smooth;
 }
+
 .scrollable-form {
   max-height: 80vh;
   overflow-y: auto;
@@ -38,18 +40,21 @@ html{
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(to bottom,
+  background: linear-gradient(
+      to bottom,
       transparent,
-      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
 }
 @font-face {
-  font-family: 'futura BdCn BT';
-  src: url('./../../public/FuturaBoldCondensedBT.ttf');
+  font-family: "futura BdCn BT";
+  src: url("./../../public/FuturaBoldCondensedBT.ttf");
 }
 
 @font-face {
-  font-family: 'futura Md BT';
-  src: url('./../../public/FuturaMediumBT.ttf');
+  font-family: "futura Md BT";
+  src: url("./../../public/FuturaMediumBT.ttf");
 }
 
 @font-face {
@@ -61,21 +66,21 @@ body {
   src: url(./../../public/FuturaExtraBlackCondensedItalicBT.ttf);
 }
 
-body, .left {
-  font-family: 'futura Md BT';
+body,
+.left {
+  font-family: "futura Md BT";
   font-weight: 400;
 }
 
-span{
-  font-family: 'futura BdCn BT';
+span {
+  font-family: "futura BdCn BT";
 }
 
 p {
-  font-family: 'futura Md BT';
+  font-family: "futura Md BT";
   font-weight: 100;
   font-size: 16px;
   padding-bottom: 24px;
-  
 }
 
 .selected {
@@ -84,7 +89,7 @@ p {
 .unselected {
   font-family: "Futura XBlkCnIt BT";
 }
-input{
+input {
   font-family: "futura BdCn BT";
 }
 .box {
@@ -92,7 +97,6 @@ input{
   bottom: 100%;
   top: auto;
 }
-
 
 .ham {
   font-family: "futura Md BT";
@@ -116,8 +120,17 @@ button,
   animation: text-growth 0.35s ease-in-out forwards;
 }
 
-h1,h2,h3,h4,h5,h6,button,label, .four, .price {
-  font-family: 'futura BdCn BT';
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button,
+label,
+.four,
+.price {
+  font-family: "futura BdCn BT";
   font-weight: 400;
 }
 
@@ -135,15 +148,15 @@ h1,h2,h3,h4,h5,h6,button,label, .four, .price {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #FF7A00;
+  background: #ff7a00;
   border-radius: 1rem;
 }
 
-.country > div > div{
+.country > div > div {
   padding-bottom: 0%;
 }
 
-.country > div > div > button{
+.country > div > div > button {
   padding-bottom: 10px;
 }
 
@@ -151,6 +164,11 @@ h1,h2,h3,h4,h5,h6,button,label, .four, .price {
   color: #00000036;
 }
 
-.country > div > div > button > .ReactFlagsSelect-module_selectValue__152eS > span{
+.country
+  > div
+  > div
+  > button
+  > .ReactFlagsSelect-module_selectValue__152eS
+  > span {
   color: #000000;
 }
