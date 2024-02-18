@@ -148,9 +148,9 @@ export default function Home() {
         <div className="mx-8 my-auto h-fit w-[100%] rounded-md py-6 backdrop-blur-md backdrop-brightness-125 lg:w-[50%]">
           <div className="flex justify-center whitespace-pre pt-2 text-4xl text-white lg:text-5xl">
             <div className="selected">LOGIN </div>
-            <Link href="/portal/register">
+            {/*<Link href="/portal/register">
               <div className="unselected text-white/50">| REGISTER</div>
-            </Link>
+  </Link>*/}
           </div>
           <div>
             <form onSubmit={handleSubmit}>

@@ -64,7 +64,7 @@ const Main = () => {
               <span className="text-[#FF7A00]">TECHNEXT EXPO 2024</span>
             </span>
           </div>
-          <Modal
+          {/*<Modal
             isOpen={modalIsOpen}
             onRequestClose={closeModal}
             shouldCloseOnOverlayClick={true}
@@ -141,14 +141,14 @@ const Main = () => {
                   </div>
                 </Link>
               </div>
-              {/* <h1 className="text-3xl md:text-5xl text-center">New Year's Offering</h1>
-              <div>
-                <span className="text-5xl md:text-8xl">50%</span>
-                <span className="text-3xl md:text-5xl">{" "}Off</span>
-              </div>
-              <div className="text-xl md:text-3xl">on Registration</div> */}
+              // <h1 className="text-3xl md:text-5xl text-center">New Year's Offering</h1>
+             // <div>
+             //   <span className="text-5xl md:text-8xl">50%</span>
+             //   <span className="text-3xl md:text-5xl">{" "}Off</span>
+             // </div>
+             // <div className="text-xl md:text-3xl">on Registration</div> 
             </div>
-          </Modal>
+          </Modal>*/}
           <div className="text-center flex flex-wrap justify-end items-center mr-4">
             <div className="mx-[10px]">
               <Link
@@ -161,12 +161,12 @@ const Main = () => {
               </Link>
             </div>
             <Link
-              href="/portal/register"
+              href="/portal"
               target="_blank"
               rel="noopener noreferrer"
               className="uppercase mx-[15px] my-1 sm:mx-[30px] px-2 sm:px-5 py-1 sm:py-2 sm:text-xl text-[10px] bg-[#FF7A00] sm:rounded-lg rounded-md hover:bg-[#ff9837] hover:text-white hover:font-[400] active:bg-[#FF7A00] xl:flex hidden items-center gap-x-2"
             >
-              <span className="ham">register now</span>
+              <span className="ham">LOGIN</span>
               <IoMdExit />
             </Link>
           </div>
@@ -192,15 +192,15 @@ const Main = () => {
             disabled
           >
             <Link
-              href="/portal/register"
+              href="/portal"
               className="flex flex-row items-center"
             >
-              REGISTER NOW
+              LOGIN
               <span>
                 <Image
                   className="sm:w-[20px] w-[15px] ml-2"
                   src={checkout}
-                  alt="register"
+                  alt="Login"
                 />
               </span>
             </Link>
