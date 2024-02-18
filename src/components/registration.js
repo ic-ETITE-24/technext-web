@@ -63,11 +63,11 @@ function Registration() {
           Registration
         </div>
         <div className="flex flex-col items-center px-5">
-          <div className="flex flex-col rounded-lg p-5 border-4 border-double border-orange-500 ">
+         {/*} <div className="flex flex-col rounded-lg p-5 border-4 border-double border-orange-500 ">
             <p className=" text-orange-500 text-4xl text-center sm:text-3xl md:text-5xl font-bold">New Year's Offering</p>
             <p className=" text-white text-2xl text-center sm:text-xl md:text-3xl font-bold"><span className=" text-4xl text-center sm:text-3xl md:text-5xl font-bold">50% OFF </span>on all registration fees</p>
             <p className=" text-orange-500 text-4xl text-center sm:text-3xl md:text-5xl font-bold"> CLOSING SOON</p>
-          </div>
+  </div>*/}
 
           <div className="pb-20 flex flex-wrap place-content-center place-self-center h-[600px] ">
             <div className="rounded-xl items-center flex place-content-center relative m-10 w-[250px] sm:w-4/12 md:w-[300px] lg:w-[450px]">
@@ -90,10 +90,10 @@ function Registration() {
                   disabled
                 >
                   <Link
-                    href="/portal/register"
+                    href="/portal"
                     className="flex flex-row items-center"
                   >
-                    REGISTER NOW
+                    LOGIN
                     <span>
                       <Image
                         className="sm:w-[20px] w-[15px]"
