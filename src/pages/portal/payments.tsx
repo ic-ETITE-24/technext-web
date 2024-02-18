@@ -87,9 +87,9 @@ export default function Payment() {
           
           <div className=" mx-auto xl:w-[35vw] rounded-[0.200rem] bg-[#0000005E] p-6 md:w-[40vw] sm:w-[60vw] w-[80vw]">
             <p className="adieu text-center text-2xl">
-              Complete Payment to Login
+              The registrations have been closed.
             </p>
-            <div>
+            {/* <div>
               <div className="flex flex-col justify-center gap-2">
                 <button
                   disabled={isSubmitting}
@@ -102,7 +102,7 @@ export default function Payment() {
                   {isSubmitting ? "Please Wait... " : "PROCEED"}
                 </button>
               </div>
-            </div>
+            </div> */}
           </div>
           {/* <div className="mx-auto flex w-[25vw] flex-row items-center justify-between rounded-[0.200rem] bg-[#1E1E1E] p-4 px-[10%] text-white xl:w-[40vw] mdl:w-[60vw] sm:w-[80vw] sm:flex-col">
                     <p>Don't have an account yet?</p>
