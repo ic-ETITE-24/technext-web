@@ -4,6 +4,7 @@ import expo from "../assets/expo-mark.png";
 import inv1 from "../assets/inv1new.png";
 import inv2 from "../assets/inv2new.png";
 import inv3 from "../assets/investor3.png";
+import inv4 from "../assets/314cap.png";
 import inv3title from "../assets/java-capital.svg";
 import { TbWorld } from "react-icons/tb";
 import { FaLinkedin } from "react-icons/fa";
@@ -113,6 +114,29 @@ function Investors() {
                 />
                 <h1 className="self-center text-center text-white/50 lg:text-2xl">
                   JAVA CAPITAL
+                </h1>
+                <div className="self-center flex justify-center gap-x-4 py-4 text-white">
+                  <Link href="https://www.linkedin.com/company/javacapital/">
+                    <FaLinkedin className="stroke-white/25" size={25} />
+                  </Link>
+                  <Link href="https://www.javacapital.co/">
+                    <TbWorld className="stroke-white/25" size={25} />
+                  </Link>
+                </div>
+              </div>
+            </div>
+            <div className="mx-auto my-auto h-[40%] w-[80%] lg:w-[35%] sm:w-[60%] rounded-md pb-3 backdrop-blur-md backdrop-brightness-125 lg:mt-10">
+              <div className="flex flex-col justify-center">
+                <Image
+                  src={inv4}
+                  alt="investor4"
+                  quality={100}
+                  height={300}
+                  width={350}
+                  className="self-center py-16 mt-4"
+                />
+                <h1 className="self-center text-center text-white/50 lg:text-2xl">
+                  3ONE4 CAPITAL
                 </h1>
                 <div className="self-center flex justify-center gap-x-4 py-4 text-white">
                   <Link href="https://www.linkedin.com/company/javacapital/">
