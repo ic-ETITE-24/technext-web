@@ -34,7 +34,7 @@ export default function Payment() {
           headers: {
             Authorization: `Bearer ${access_token}`,
           },
-        },
+        }
       );
 
       if (response.status >= 200 && response.status < 300) {
@@ -82,14 +82,13 @@ export default function Payment() {
         <link rel="icon" type="image/x-icon" href="/favicon.ico"></link>
       </Head>
       <div className="flex items-center justify-center Registers">
-      <Toaster richColors closeButton position="top-right" theme="light" />
+        <Toaster richColors closeButton position="top-right" theme="light" />
         <div className="flex flex-col gap-5  text-white ">
-          
           <div className=" mx-auto xl:w-[35vw] rounded-[0.200rem] bg-[#0000005E] p-6 md:w-[40vw] sm:w-[60vw] w-[80vw]">
             <p className="adieu text-center text-2xl">
-              The registrations have been closed.
+              Complete Payment to Login
             </p>
-            {/* <div>
+            <div>
               <div className="flex flex-col justify-center gap-2">
                 <button
                   disabled={isSubmitting}
@@ -102,7 +101,7 @@ export default function Payment() {
                   {isSubmitting ? "Please Wait... " : "PROCEED"}
                 </button>
               </div>
-            </div> */}
+            </div>
           </div>
           {/* <div className="mx-auto flex w-[25vw] flex-row items-center justify-between rounded-[0.200rem] bg-[#1E1E1E] p-4 px-[10%] text-white xl:w-[40vw] mdl:w-[60vw] sm:w-[80vw] sm:flex-col">
                     <p>Don't have an account yet?</p>
