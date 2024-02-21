@@ -139,10 +139,10 @@ function Investors() {
                   3ONE4 CAPITAL
                 </h1>
                 <div className="self-center flex justify-center gap-x-4 py-4 text-white">
-                  <Link href="https://www.linkedin.com/company/javacapital/">
+                  <Link href="https://www.linkedin.com/company/3one4-capital/">
                     <FaLinkedin className="stroke-white/25" size={25} />
                   </Link>
-                  <Link href="https://www.javacapital.co/">
+                  <Link href="https://www.3one4capital.com/">
                     <TbWorld className="stroke-white/25" size={25} />
                   </Link>
                 </div>
